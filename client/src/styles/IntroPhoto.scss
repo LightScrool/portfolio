@@ -1,0 +1,17 @@
+.IntroPhoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    & svg {
+        width: 100%;
+        height: auto;
+    }
+
+    &__border {
+        position: absolute;
+        overflow: visible;
+    }
+}

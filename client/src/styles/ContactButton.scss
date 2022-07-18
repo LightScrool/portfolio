@@ -1,0 +1,20 @@
+@import "variables";
+
+.ContactButton {
+    font-family: $font-main;
+    font-size: 1.5rem;
+    font-weight: $fw-semi;
+    text-transform: uppercase;
+    color: $color-black;
+
+    padding: 1.2rem 3.8rem;
+    border-radius: 100vmax;
+    border: $color-yellow 0.2rem solid;
+    background-color: $color-yellow;
+
+    transition: all $time-standard;
+    &:hover {
+        background-color: transparent;
+        color: $color-yellow;
+    }
+}
