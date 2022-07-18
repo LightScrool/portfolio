@@ -1,0 +1,10 @@
+@import "variables";
+
+.Logo{
+    font-family: $font-main;
+    font-weight: $fw-extra;
+    font-size: 2.4rem;
+    color: #fff;
+
+    cursor: pointer;
+}

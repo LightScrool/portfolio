@@ -1,0 +1,14 @@
+@import "variables";
+
+.Intro {
+    background: $gradient-red;
+    width: 100vw;
+    height: 100vh;
+
+    &__inner {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

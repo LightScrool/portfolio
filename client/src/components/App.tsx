@@ -1,23 +1,14 @@
-import React, { FC } from 'react';
-import '../styles/App.css';
+import React, {FC} from 'react';
+import '../styles/App.scss';
+import Intro from "./Intro";
+import Header from "./Header";
 
 const App: FC = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Header/>
+            <Intro/>
+        </>
     );
 }
 
