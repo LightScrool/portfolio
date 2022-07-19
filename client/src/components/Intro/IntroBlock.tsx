@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
-import "../styles/IntroBlock.scss";
-import Media from "./Media";
-import ContactButton from "./ContactButton";
+import "../../styles/Intro/IntroBlock.scss";
+import Media from "../Media";
+import ContactButton from "../ContactButton";
 
 const IntroBlock: FC = () => {
     return (

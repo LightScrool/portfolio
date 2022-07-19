@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import "../styles/Header.scss";
-import Container from "./Container";
+import "../../styles/Header/Header.scss";
+import Container from "../Container";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 

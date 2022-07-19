@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import "../styles/NavigationItem.scss";
+import "../../styles/Header/NavigationItem.scss";
 
 interface NavigationItemProps {
     children: ReactNode

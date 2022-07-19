@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import SVG, {SVGIds} from '../assests/SVG';
-import "../styles/IntroPhoto.scss";
-import ImageInsideVector from "./ImageInsideVector";
-import photo from "../assests/pictures/my-photo-1.jpg";
+import SVG, {SVGIds} from '../../assests/SVG';
+import "../../styles/Intro/IntroPhoto.scss";
+import ImageInsideVector from "../ImageInsideVector";
+import photo from "../../assests/pictures/my-photo-1.jpg";
 
 const IntroPhoto: FC = () => {
     return (

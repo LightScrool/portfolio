@@ -1,6 +1,6 @@
 import React from 'react';
-import "../styles/IntroBackground.scss";
-import SVG, {SVGIds} from "../assests/SVG";
+import "../../styles/Intro/IntroBackground.scss";
+import SVG, {SVGIds} from "../../assests/SVG";
 
 const IntroBackground = () => {
     return (

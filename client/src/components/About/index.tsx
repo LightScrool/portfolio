@@ -1,10 +1,10 @@
 import React from 'react';
-import "../styles/About.scss";
-import Container from "./Container";
-import SVG, {SVGIds} from "../assests/SVG";
+import "../../styles/About/About.scss";
+import Container from "../Container";
+import SVG, {SVGIds} from "../../assests/SVG";
 import AboutTextBlock from "./AboutTextBlock";
-import ImageInsideVector from "./ImageInsideVector";
-import photo from "../assests/pictures/my-photo-2.jpg"
+import ImageInsideVector from "../ImageInsideVector";
+import photo from "../../assests/pictures/my-photo-2.jpg"
 
 const About = () => {
     const text = "На данный момент я учусь в НИУ ВШЭ на «Программнай инженерии», год окончания - 2025 \n Учусь на бюджете, благодаря 288 баллам за ЕГЭ: \n Математика - 99 \n Информатика - 96 \n Русский язык- 93"

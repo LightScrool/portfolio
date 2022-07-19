@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import "../styles/Intro.scss";
-import Container from "./Container";
+import "../../styles/Intro/Intro.scss";
+import Container from "../Container";
 import IntroBlock from "./IntroBlock";
 import IntroPhoto from "./IntroPhoto";
 import IntroBackground from "./IntroBackground";
-import SVG, {SVGIds} from "../assests/SVG";
+import SVG, {SVGIds} from "../../assests/SVG";
 
 const Intro: FC = () => {
     return (

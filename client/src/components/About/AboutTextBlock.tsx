@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import "../styles/AboutTextBlock.scss";
+import "../../styles/About/AboutTextBlock.scss";
 
 interface AboutTextBlockProps {
     title: string

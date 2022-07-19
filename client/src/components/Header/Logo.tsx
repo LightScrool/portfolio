@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import "../styles/Logo.scss";
+import "../../styles/Header/Logo.scss";
 
 const Logo: FC = () => {
     return (
