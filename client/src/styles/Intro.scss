@@ -1,15 +1,45 @@
 @import "variables";
 
 .Intro {
-    background: $gradient-red;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
+    background: $gradient-red;
+    border-radius: 0 0 50vmin 0;
+
+    overflow: hidden;
+
     &__inner {
+        position: relative;
+        z-index: 100;
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
+    }
+
+    &__arrows {
+        position: absolute;
+        width: 2.6rem;
+        height: auto;
+
+        bottom: 2rem;
+        left: 50%;
+
+        cursor: pointer;
+        animation: arrows-up-down 2.5s ease-in-out infinite;
+
+        @keyframes  arrows-up-down{
+            0% {
+                transform: translate(-50%, 0.5rem);
+            }
+            50% {
+                transform: translate(-50%, -0.5rem);
+            }
+            100% {
+                transform: translate(-50%, 0.5rem);
+            }
+        }
     }
 }

@@ -24,6 +24,10 @@ const IntroPhoto: FC = () => {
                     width: "1",
                 }}
             />
+            <SVG
+                className="IntroPhoto__wave"
+                Id={SVGIds.wave}
+            />
         </div>
     );
 };
