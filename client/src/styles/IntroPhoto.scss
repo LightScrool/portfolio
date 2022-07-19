@@ -1,3 +1,5 @@
+@import "variables";
+
 .IntroPhoto {
     display: flex;
     justify-content: center;
@@ -5,13 +7,16 @@
     width: 100%;
     position: relative;
 
-    &__picture, &__border {
+    &__picture {
         width: 100%;
         height: auto;
         z-index: 100;
+        filter: $shadow;
     }
 
     &__border {
+        width: 100%;
+        height: auto;
         position: absolute;
         overflow: visible;
         z-index: 150;
