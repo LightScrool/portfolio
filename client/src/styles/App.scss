@@ -4,6 +4,13 @@ html {
     font-size: 15px;
 }
 
+div {
+    font-family: $font-main;
+    font-size: 1.3rem;
+    font-weight: $fw-regular;
+    line-height: 1.25;
+}
+
 h1 {
     font-family: $font-main;
     font-size: 3rem;

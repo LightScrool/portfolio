@@ -1,0 +1,30 @@
+@import "variables";
+
+.AboutTextBlock {
+    color: $color-black;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        &:after {
+            $thickness: 5px;
+
+            display: block;
+            content: "";
+            width: 5rem;
+            height: $thickness;
+
+            margin: 1rem 0;
+
+            background-color: $color-red;
+            border-radius: $thickness;
+        }
+    }
+
+    &__text {
+        white-space: pre-line;
+    }
+}
