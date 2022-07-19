@@ -13,6 +13,7 @@ const IntroPhoto: FC = () => {
                 maskVector={
                     <SVG Id={SVGIds.maskFrame1}/>
                 }
+                viewBox="0 0 100 94"
             />
             <SVG
                 className="IntroPhoto__border"
