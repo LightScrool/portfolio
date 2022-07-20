@@ -1,10 +1,11 @@
 @import "src/styles/variables";
 
 .About {
-    margin: 6rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     &__photo {
         width: calc(50% - 1rem);
