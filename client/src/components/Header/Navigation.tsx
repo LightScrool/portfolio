@@ -1,8 +1,8 @@
 import React, {FC, ReactNode} from 'react';
 import "../../styles/Header/Navigation.scss";
 import NavigationItem from "./NavigationItem";
-import SVG, {SVGIds} from "../../assests/SVG";
 import {useTranslation} from "react-i18next";
+import LanguagesButton from "./LanguagesButton";
 
 const Navigation: FC = () => {
     const {t} = useTranslation();
@@ -14,16 +14,14 @@ const Navigation: FC = () => {
     ]
 
     return (
-        <ul className="Navigation">
+        <div className="Navigation">
             {items.map(text => (
                 <NavigationItem>
                     {text}
                 </NavigationItem>
             ))}
-            <NavigationItem>
-                <SVG Id={SVGIds.languages}/>
-            </NavigationItem>
-        </ul>
+            <LanguagesButton/>
+        </div>
     );
 };
 

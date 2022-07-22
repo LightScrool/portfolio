@@ -7,9 +7,7 @@ interface NavigationItemProps {
 
 const NavigationItem: FC<NavigationItemProps> = ({children}) => {
     return (
-        <li className="NavigationItem">
-            {children}
-        </li>
+        <a className="NavigationItem">{children}</a>
     );
 };
 

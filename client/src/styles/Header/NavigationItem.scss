@@ -5,10 +5,7 @@
     font-weight: $fw-regular;
     font-size: 1.5rem;
     color: #fff;
-
-    & svg {
-        width: 1.5rem;
-    }
+    white-space: nowrap;
 
     cursor: pointer;
 }

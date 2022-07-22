@@ -1,3 +1,25 @@
 {
-
+  "navigation": {
+    "home": "Home",
+    "about": "About me",
+    "works": "Works"
+  },
+  "intro": {
+    "title": {
+      "text": "Hello, I am",
+      "name": "Artem Yakushevskiy"
+    },
+    "subtitle": "Web & Front-end developer"
+  },
+  "contactButton": "Contact me",
+  "about": {
+    "briefly": {
+      "title": "Briefly about me",
+      "text": "I started being interested in programming back in the 8th grade and for a long time could not decide what exactly do I wanted to do , so at a good basic level I know several programming languages, including: C#, Python and JS. In the end, I chose Front-end development and studied HTML, CSS and JavaScript quite deeply."
+    },
+    "education": {
+      "title": "My education",
+      "text": "At the moment, I am studying in Heigher School of Economics for Software engineering, graduation year - 2025\nI am studying for free, thanks to 288 points for the RNE:\nMath - 99\nComputer Science - 96\nRussian - 93\n"
+    }
+  }
 }
