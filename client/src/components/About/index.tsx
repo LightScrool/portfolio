@@ -18,7 +18,7 @@ const About = () => {
                     <ImageInsideVector
                         className="About__photo"
                         imageURL={photo}
-                        maskVector={<MySvg Id={TMySvgId.maskFrame2}/>}
+                        maskVector={<MySvg Id={TMySvgId.maskFrame2} fill={{color: "#fff", opacity: 1}}/>}
                         viewBox="0 0 100 82"
                         imageTransform={"scale(1.45) translate(-12, -9.3)"}
                     />
