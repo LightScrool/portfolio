@@ -3,6 +3,7 @@ import '../styles/App.scss';
 import Intro from "./Intro";
 import Header from "./Header";
 import About from "./About";
+import Skills from "./Skills";
 
 const App: FC = () => {
     return (
@@ -10,6 +11,7 @@ const App: FC = () => {
             <Header/>
             <Intro/>
             <About/>
+            <Skills/>
         </>
     );
 }

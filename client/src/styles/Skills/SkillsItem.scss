@@ -1,0 +1,29 @@
+@import "../variables";
+
+.SkillsItem {
+    margin-bottom: 2rem;
+    width: calc(50% - 1rem);
+
+    display: grid;
+    grid-template-areas: "icon title" "icon text";
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+
+    &__icon {
+        grid-area: icon;
+        width: 6rem;
+        height: auto;
+    }
+
+    &__title {
+        grid-area: title;
+        color: $color-black;
+    }
+
+    &__text {
+        grid-area: text;
+    }
+}

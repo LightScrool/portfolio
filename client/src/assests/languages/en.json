@@ -21,5 +21,56 @@
       "title": "My education",
       "text": "At the moment, I am studying in Heigher School of Economics for Software engineering, graduation year - 2025\nI am studying for free, thanks to 288 points for the RNE:\nMath - 99\nComputer Science - 96\nRussian - 93\n"
     }
+  },
+  "skills": {
+    "title": "My hard skills",
+    "layout": {
+      "title": "Layout",
+      "text": "I feel very confident in HTML and CSS. I can make up using flex and grid. As a preprocessor, I usually use SASS in the SCSS syntax. I also understand what the BEM methodology is"
+    },
+    "javaScript": {
+      "title": "JavaScript",
+      "text": "I understand how the JS engine works, what micro- and macro-tasks are, how asynchrony and promises work, and much, much more"
+    },
+    "typeScript": {
+      "title": "TypeScript",
+      "text": "Although it is faster to code in standard JS, strict typing allows you to notice many errors even at the stage of writing code. That's why I use TypeScript very often"
+    },
+    "react": {
+      "title": "React",
+      "text": "I write using functional components and hooks. I can use libraries such as Redux, Axios, react router dom, react transition group and others"
+    },
+    "nodeJS": {
+      "title": "NodeJS",
+      "text": "In my pet projects, I write back-end using Node. Also, of course, I know how to use npm and yarn package managers"
+    },
+    "git": {
+      "title": "Git",
+      "text": "I know how to use GitHub and the Git version control system both in the console and inside my IDE"
+    },
+    "oop": {
+      "title": "OOP & FP",
+      "text": "I understand the essence and principles of object-oriented and functional programming, I easily read and write code in both of these paradigms"
+    },
+    "algorithms": {
+      "title": "Algorithms",
+      "text": "Thanks to participating in many Olympiads and solving problems on the acmp and codesignal websites, I learned to solve algorithmic problems well enough and calculate the effectiveness of algorithms"
+    },
+    "testing": {
+      "title": "Unit testing",
+      "text": "I have written a lot of unit tests in C#. I understand what it is and why it is needed. I also know how to analyze test code coverage"
+    },
+    "sql": {
+      "title": "SQL",
+      "text": "I understand how databases work and I know how to write queries to them. I have experience working with SQLite, MySQL, PostgreSQL"
+    },
+    "python": {
+      "title": "Python",
+      "text": "Before I plunged into the web development, for a long time I wrote on python. Among other things, I have experience using the following libraries: tkinter, typing, sqlite3, webbrowser, selenium, bs4, requests, pandas"
+    },
+    "dotNet": {
+      "title": ".NET",
+      "text": "The main academic language at the Higher School of Economics is C#, so I just have to be able to handle it confidently"
+    }
   }
 }
