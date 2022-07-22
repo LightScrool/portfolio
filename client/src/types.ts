@@ -12,3 +12,24 @@ export enum TSkill {
     python = "python",
     dotNet = "dotNet",
 }
+
+export enum TMySvgId {
+    languages,
+    maskFrame1,
+    maskFrame2,
+    circle,
+    wave,
+    dots,
+    arrows
+}
+
+export type TSvgStroke = {
+    width: string | number
+    color: string
+    opacity: number
+}
+
+export type TSvgFill = {
+    color: string
+    opacity: number
+}

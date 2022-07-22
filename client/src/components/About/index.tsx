@@ -1,7 +1,8 @@
 import React from 'react';
 import "../../styles/About/About.scss";
 import Container from "../Container";
-import SVG, {SVGIds} from "../../assests/SVG";
+import MySvg from "../../assests/MySvg";
+import {TMySvgId} from "../../types";
 import AboutTextBlock from "./AboutTextBlock";
 import ImageInsideVector from "../ImageInsideVector";
 import photo from "../../assests/pictures/my-photo-2.jpg"
@@ -17,7 +18,7 @@ const About = () => {
                     <ImageInsideVector
                         className="About__photo"
                         imageURL={photo}
-                        maskVector={<SVG Id={SVGIds.maskFrame2}/>}
+                        maskVector={<MySvg Id={TMySvgId.maskFrame2}/>}
                         viewBox="0 0 100 82"
                         imageTransform={"scale(1.45) translate(-12, -9.3)"}
                     />

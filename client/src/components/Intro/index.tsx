@@ -4,7 +4,8 @@ import Container from "../Container";
 import IntroBlock from "./IntroBlock";
 import IntroPhoto from "./IntroPhoto";
 import IntroBackground from "./IntroBackground";
-import SVG, {SVGIds} from "../../assests/SVG";
+import MySvg from "../../assests/MySvg";
+import {TMySvgId} from "../../types";
 
 const Intro: FC = () => {
     return (
@@ -13,9 +14,10 @@ const Intro: FC = () => {
                 <div className="Intro__inner">
                     <IntroBlock/>
                     <IntroPhoto/>
-                    <SVG
+                    <MySvg
                         className="Intro__arrows"
-                        Id={SVGIds.arrows}
+                        Id={TMySvgId.arrows}
+                        fill={{color: "#fff", opacity: 0.65}}
                     />
                 </div>
                 <IntroBackground/>

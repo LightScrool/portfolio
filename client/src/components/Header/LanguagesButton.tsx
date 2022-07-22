@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import "../../styles/Header/LanguagesButton.scss";
-import SVG, {SVGIds} from "../../assests/SVG";
+import MySvg from "../../assests/MySvg";
 import {useTranslation} from "react-i18next";
+import {TMySvgId} from "../../types";
 
 const LanguagesButton: FC = () => {
     const {i18n} = useTranslation();
@@ -15,7 +16,7 @@ const LanguagesButton: FC = () => {
 
     return (
         <a onClick={onClick} className="LanguagesButton">
-            <SVG Id={SVGIds.languages}/>
+            <MySvg Id={TMySvgId.languages}/>
         </a>
     );
 };
