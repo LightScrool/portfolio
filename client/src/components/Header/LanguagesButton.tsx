@@ -16,7 +16,7 @@ const LanguagesButton: FC = () => {
 
     return (
         <a onClick={onClick} className="LanguagesButton">
-            <MySvg Id={TMySvgId.languages}/>
+            <MySvg Id={TMySvgId.languages} fill={{color: "#fff", opacity: 1}}/>
         </a>
     );
 };
