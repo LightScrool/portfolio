@@ -72,5 +72,8 @@
       "title": ".NET",
       "text": "The main academic language at the Higher School of Economics is C#, so I just have to be able to handle it confidently"
     }
+  },
+  "site": {
+    "title": "How this site was made"
   }
 }

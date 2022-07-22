@@ -20,7 +20,8 @@ export enum TMySvgId {
     circle,
     wave,
     dots,
-    arrows
+    arrows,
+    react
 }
 
 export type TSvgStroke = {

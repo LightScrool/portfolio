@@ -4,6 +4,7 @@ import Intro from "./Intro";
 import Header from "./Header";
 import About from "./About";
 import Skills from "./Skills";
+import Site from "./Site";
 
 const App: FC = () => {
     return (
@@ -12,6 +13,7 @@ const App: FC = () => {
             <Intro/>
             <About/>
             <Skills/>
+            <Site/>
         </>
     );
 }

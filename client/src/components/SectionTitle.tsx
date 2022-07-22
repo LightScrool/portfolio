@@ -3,12 +3,18 @@ import "../styles/SectionTitle.scss";
 
 interface SectionTitleProps {
     text: string,
-    dark?: boolean
+    dark?: boolean,
+    className?: string
 }
 
-const SectionTitle: FC<SectionTitleProps> = ({text, dark=false}) => {
+const SectionTitle: FC<SectionTitleProps> = (
+    {
+        text,
+        dark = false,
+        className = ""
+    }) => {
     return (
-        <h1 className={dark ? "SectionTitle dark": "SectionTitle"}>
+        <h1 className={dark ? `SectionTitle dark ${className}` : `SectionTitle ${className}`}>
             {text}
         </h1>
     );
