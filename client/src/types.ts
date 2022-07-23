@@ -21,11 +21,13 @@ export enum TMySvgId {
     wave,
     dots,
     arrows,
-    react
+    react,
+    gitHub,
+    codeSignal
 }
 
 export type TSvgStroke = {
-    width: string | number
+    width: string | number // TODO: only number
     color: string
     opacity: number
 }

@@ -75,5 +75,10 @@
   },
   "site": {
     "title": "How this site was made"
+  },
+  "works": {
+    "title": "Other works",
+    "gitHub": "Search for more of my projects on GitHub",
+    "codeSignal": "Check out my CodeSignal profile"
   }
 }

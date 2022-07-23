@@ -1,0 +1,38 @@
+@import "../variables";
+
+.Works {
+    &__body {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.Works-item {
+    width: calc(50% - 1rem);
+    max-width: 28rem;
+
+    padding: 0 1rem;
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+
+    &__picture {
+        display: block;
+        margin: auto;
+
+        width: 100%;
+        max-width: 20rem;
+        padding-bottom: 2rem;
+    }
+
+    &__text {
+        font-size: 2.25rem;
+        font-weight: $fw-bold;
+        color: $color-black;
+
+        text-align: center;
+    }
+}
