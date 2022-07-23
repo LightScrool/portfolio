@@ -6,6 +6,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Site from "./Site";
 import Works from "./Works";
+import Footer from "./Footer";
 
 const App: FC = () => {
     return (
@@ -16,6 +17,7 @@ const App: FC = () => {
             <Skills/>
             <Site/>
             <Works/>
+            <Footer/>
         </>
     );
 }
