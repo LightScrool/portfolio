@@ -22,8 +22,10 @@ export enum TMySvgId {
     dots,
     arrows,
     react,
-    gitHub,
-    codeSignal
+    gitHubFill,
+    gitHubStroke,
+    codeSignalFill,
+    codeSignalStroke
 }
 
 export type TSvgStroke = {
