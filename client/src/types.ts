@@ -14,7 +14,8 @@ export enum TSkill {
 }
 
 export enum TMySvgId {
-    languages,
+    languagesFill,
+    languagesStroke,
     maskFrame1,
     maskFrame2,
     circle,
