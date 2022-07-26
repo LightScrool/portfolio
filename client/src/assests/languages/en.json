@@ -81,28 +81,28 @@
         "text": "Front-end part of the site is based on the ReactJS library"
       },
       {
+        "title": "Figma",
+        "text": "I made the design of the site myself, you can see the layout at the link"
+      },
+      {
         "title": "SASS",
         "text": "All styles are written by using a preprocessor in SCSS syntax"
-      },
-      {
-        "title": "Git & Github",
-        "text": "During development I used Git as VCS, you can find the source code on my GitHub"
-      },
-      {
-        "title": "TypeScript",
-        "text": "Why not dynamically typed default JavaScript?\nBecause I can."
-      },
-      {
-        "title": "NodeJS",
-        "text": "The Back-end part of the site is small, so NodeJS is an ideal option for writing it on"
       },
       {
         "title": "SVG",
         "text": "The site uses a minimum of raster graphics and there are absolutely no .png images on it"
       },
       {
-        "title": "Figma",
-        "text": "I made the design of the site myself, you can see the layout at the link"
+        "title": "Git & Github",
+        "text": "During development I used Git as VCS, you can find the source code on my GitHub"
+      },
+      {
+        "title": "NodeJS",
+        "text": "The Back-end part of the site is small, so NodeJS is an ideal option for writing it on"
+      },
+      {
+        "title": "TypeScript",
+        "text": "Why not dynamically typed default JavaScript?\nBecause I can."
       }
     ]
   },

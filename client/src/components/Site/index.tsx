@@ -34,7 +34,13 @@ const Site: FC = () => {
                         />
                     </div>
                     {items.map((item, index) => (
-                        <SiteTextBlock key={index} index={index} title={item.title} text={item.text}/>
+                        <SiteTextBlock
+                            key={index}
+                            index={index}
+                            show={animationPercent > 0.5}
+                            title={item.title}
+                            text={item.text}
+                        />
                     ))}
                 </div>
             </Container>
