@@ -1,0 +1,86 @@
+@import "../variables";
+
+.SiteTextBlock {
+    position: absolute;
+    max-width: 22rem;
+    color: #fff;
+
+    text-align: center;
+
+    &__title {
+        font-size: 2.25rem;
+        font-weight: $fw-bold;
+
+        &:after {
+            display: block;
+            content: "";
+            width: 4rem;
+            height: 5px;
+            border-radius: 5px;
+            background-color: $color-red;
+            margin: 1rem auto;
+        }
+    }
+
+    &__text {
+        white-space: pre-line;
+    }
+
+
+    // Right
+    &#SiteTextBlock2 &__title:after,
+    &#SiteTextBlock3 &__title:after,
+    &#SiteTextBlock4 &__title:after {
+        margin-right: 0;
+    }
+    &#SiteTextBlock2,
+    &#SiteTextBlock3,
+    &#SiteTextBlock4 {
+        text-align: right;
+    }
+
+
+    // Left
+    &#SiteTextBlock5 &__title:after,
+    &#SiteTextBlock6 &__title:after,
+    &#SiteTextBlock7 &__title:after {
+        margin-left: 0;
+    }
+    &#SiteTextBlock5,
+    &#SiteTextBlock6,
+    &#SiteTextBlock7 {
+        text-align: left;
+    }
+
+
+    // Positioning
+    &#SiteTextBlock1 { // React
+        top: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &#SiteTextBlock2 { // SASS
+        top: 15rem;
+        right: 2rem;
+    }
+    &#SiteTextBlock3 { // Git & Github
+        top: calc(50vh + 1rem);
+        right: 0;
+    }
+    &#SiteTextBlock4 { // TypeScript
+        bottom: 4rem;
+        right: 17.6rem;
+    }
+    &#SiteTextBlock5 { // NodeJS
+        bottom: 6rem;
+        left: 10rem;
+    }
+    &#SiteTextBlock6 { // SVG
+        top: calc(50vh - 3rem);
+        left: 0;
+    }
+    &#SiteTextBlock7 { // Figma
+        top: 12.8rem;
+        left: 5rem;
+    }
+}
