@@ -7,10 +7,12 @@ import Skills from "./Skills";
 import Site from "./Site";
 import Works from "./Works";
 import Footer from "./Footer";
+import {Provider} from "react-redux";
+import store from "../store";
 
 const App: FC = () => {
     return (
-        <>
+        <Provider store={store}>
             <Header/>
             <Intro/>
             <About/>
@@ -18,7 +20,7 @@ const App: FC = () => {
             <Site/>
             <Works/>
             <Footer/>
-        </>
+        </Provider>
     );
 }
 
