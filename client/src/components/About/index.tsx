@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import "../../styles/About/About.scss";
 import Container from "../Container";
 import MySvg from "../../assests/MySvg";
@@ -7,12 +7,17 @@ import AboutTextBlock from "./AboutTextBlock";
 import ImageInsideVector from "../ImageInsideVector";
 import photo from "../../assests/pictures/my-photo-2.jpg"
 import {useTranslation} from "react-i18next";
+import useSetOffset from "../../hooks/useSetOffset";
+import {TOffsetsReducerActionType} from "../../types/offsets";
 
 const About = () => {
+    const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
+    useSetOffset(offsetCheckoutBlock, TOffsetsReducerActionType.SET_ABOUT);
+
     const {t} = useTranslation();
 
     return (
-        <section className="About">
+        <section className="About" ref={offsetCheckoutBlock}>
             <Container>
                 <div className="About__inner">
                     <ImageInsideVector

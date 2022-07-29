@@ -7,10 +7,15 @@ import MySvg from "../../assests/MySvg";
 import {TMySvgId} from "../../types";
 import useScrollPercentAnimation from "../../hooks/useScrollPercentAnimation";
 import SiteTextBlock from "./SiteTextBlock";
+import {TOffsetsReducerActionType} from "../../types/offsets";
+import useSetOffset from "../../hooks/useSetOffset";
 
 const Site: FC = () => {
+    const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
+    useSetOffset(offsetCheckoutBlock, TOffsetsReducerActionType.SET_WORKS);
+
     const revolutionsQuantity = 1.5;
-    const animationBlock = useRef<HTMLDivElement>(null); // The block inside which the percentage of animations is calculated
+    const animationBlock = offsetCheckoutBlock; // The block inside which the percentage of animations is calculated
     const animationPercent = useScrollPercentAnimation(animationBlock);
 
     const {t} = useTranslation();
