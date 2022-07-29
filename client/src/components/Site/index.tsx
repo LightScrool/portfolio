@@ -15,7 +15,7 @@ const Site: FC = () => {
     useSetOffset(offsetCheckoutBlock, TOffsetsReducerActionType.SET_WORKS);
 
     const revolutionsQuantity = 1.5;
-    const animationBlock = offsetCheckoutBlock; // The block inside which the percentage of animations is calculated
+    const animationBlock = offsetCheckoutBlock;
     const animationPercent = useScrollPercentAnimation(animationBlock);
 
     const {t} = useTranslation();
