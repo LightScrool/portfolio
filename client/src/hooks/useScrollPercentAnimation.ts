@@ -8,7 +8,7 @@ const useScrollPercentAnimation = (animationBlock: RefObject<any>): number => {
             if (!animationBlock.current) return;
 
             const startScroll: number = animationBlock.current.offsetTop;
-            const endScroll: number = startScroll + animationBlock.current.scrollHeight - window.innerHeight;
+            const endScroll: number = startScroll + animationBlock.current.scrollHeight - document.documentElement.clientHeight;
             const currentScroll: number = window.scrollY;
 
             let currentAnimationPercent: number = (currentScroll - startScroll) / (endScroll - startScroll);
