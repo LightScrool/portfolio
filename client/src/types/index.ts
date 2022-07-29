@@ -43,3 +43,9 @@ export type TSvgFill = {
 }
 
 export type TState = ReturnType<typeof store.getState>
+
+export type TNavItem = {
+    name: string,
+    offset: number,
+    text: string,
+}

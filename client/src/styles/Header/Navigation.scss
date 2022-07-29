@@ -1,6 +1,18 @@
-.Navigation{
+@import "../variables";
+
+.Navigation {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 5rem;
+
+    &__item {
+        font-family: $font-main;
+        font-weight: $fw-regular;
+        font-size: 1.5rem;
+        color: #fff;
+        white-space: nowrap;
+
+        cursor: pointer;
+    }
 }
