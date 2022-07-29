@@ -8,7 +8,18 @@ const useSetOffset = (offsetCheckoutBlock: RefObject<any>, actionType: TOffsetsR
     useEffect(() => {
         const onResize = (): void => {
             if (!offsetCheckoutBlock.current) return;
-            const offset = offsetCheckoutBlock.current.offsetTop;
+
+            const offsetWoMargin = offsetCheckoutBlock.current.offsetTop;
+            const marginTop = Number(window
+                .getComputedStyle(offsetCheckoutBlock.current)
+                .getPropertyValue('margin-top')
+                .slice(0, -2));
+            let offset = offsetWoMargin - marginTop;
+            const minValue = 0;
+            const maxValue = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            offset = (offset < minValue) ? minValue : offset;
+            offset = (offset > maxValue) ? maxValue : offset;
+
             dispatch({type: actionType, payload: offset});
         }
         window.addEventListener('resize', onResize);
