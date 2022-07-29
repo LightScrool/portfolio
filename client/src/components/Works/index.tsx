@@ -5,7 +5,7 @@ import SectionTitle from "../SectionTitle";
 import {useTranslation} from "react-i18next";
 import MySvg from "../../assests/MySvg";
 import {TMySvgId} from "../../types";
-import ClickableSvg from "../ClickableSvg";
+import SvgWithHover from "../SvgWithHover";
 
 const Works: FC = () => {
     const {t} = useTranslation();
@@ -16,7 +16,7 @@ const Works: FC = () => {
                 <SectionTitle className="Works__title" text={t("works.title")}/>
                 <div className="Works__body">
                     <div className="Works-item">
-                        <ClickableSvg
+                        <SvgWithHover
                             className="Works-item__picture"
                             offHoverSvg={<MySvg Id={TMySvgId.gitHubFill}/>}
                             onHoverSvg={<MySvg Id={TMySvgId.gitHubStroke}/>}
@@ -25,7 +25,7 @@ const Works: FC = () => {
                         <div className="Works-item__text">{t("works.gitHub")}</div>
                     </div>
                     <div className="Works-item">
-                        <ClickableSvg
+                        <SvgWithHover
                             className="Works-item__picture"
                             offHoverSvg={<MySvg Id={TMySvgId.codeSignalFill}/>}
                             onHoverSvg={<MySvg Id={TMySvgId.codeSignalStroke}/>}

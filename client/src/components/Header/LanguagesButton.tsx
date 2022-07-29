@@ -3,7 +3,7 @@ import "../../styles/Header/LanguagesButton.scss";
 import MySvg from "../../assests/MySvg";
 import {useTranslation} from "react-i18next";
 import {TMySvgId} from "../../types";
-import ClickableSvg from "../ClickableSvg";
+import SvgWithHover from "../SvgWithHover";
 
 const LanguagesButton: FC = () => {
     const {i18n} = useTranslation();
@@ -16,7 +16,7 @@ const LanguagesButton: FC = () => {
     }
 
     return (
-        <ClickableSvg
+        <SvgWithHover
             className="LanguagesButton"
             offHoverSvg={<MySvg Id={TMySvgId.languagesFill} fill={{color: "#fff", opacity: 1}}/>}
             onHoverSvg={<MySvg Id={TMySvgId.languagesStroke} fill={{color: "#fff", opacity: 1}}/>}

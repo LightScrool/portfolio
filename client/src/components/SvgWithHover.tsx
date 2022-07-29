@@ -1,11 +1,11 @@
 import React, {FC, ReactNode} from 'react';
-import "../styles/ClickableSvg.scss";
+import "../styles/SvgWithHover.scss";
 
-interface ClickableSvgProps {
+interface SvgWithHoverProps {
     className?: string,
     offHoverSvg: ReactNode,
     onHoverSvg: ReactNode,
-    onClick: (event?: React.MouseEvent) => void,
+    onClick?: (event?: React.MouseEvent) => void,
 }
 
 /*
@@ -13,7 +13,7 @@ interface ClickableSvgProps {
 * svg fill. Also note, that sometimes we can't use different props
 * of MySvg, cause of required stroke-position inside or outside, not center
 * */
-const ClickableSvg: FC<ClickableSvgProps> = (
+const SvgWithHover: FC<SvgWithHoverProps> = (
     {
         className = "",
         offHoverSvg,
@@ -21,15 +21,15 @@ const ClickableSvg: FC<ClickableSvgProps> = (
         onClick
     }) => {
     return (
-        <a className={`ClickableSvg ${className}`} onClick={onClick}>
-            <div className="ClickableSvg__off-hover">
+        <a className={`SvgWithHover ${className}`} onClick={onClick}>
+            <div className="SvgWithHover__off-hover">
                 {offHoverSvg}
             </div>
-            <div className="ClickableSvg__on-hover">
+            <div className="SvgWithHover__on-hover">
                 {onHoverSvg}
             </div>
         </a>
     );
 };
 
-export default ClickableSvg;
+export default SvgWithHover;
