@@ -1,3 +1,5 @@
+import store from "../store";
+
 export enum TSkill {
     layout = "layout",
     javaScript = "javaScript",
@@ -39,3 +41,5 @@ export type TSvgFill = {
     color: string
     opacity: number
 }
+
+export type TState = ReturnType<typeof store.getState>
