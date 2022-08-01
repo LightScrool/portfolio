@@ -9,10 +9,11 @@ const LanguagesButton: FC = () => {
     const {i18n} = useTranslation();
 
     const onClick: () => void = () => {
-        if (i18n.language === 'ru')
-            i18n.changeLanguage('en')
-        else
-            i18n.changeLanguage('ru')
+        const language = (i18n.language === 'ru') ? 'en' : 'ru';
+        i18n.changeLanguage(language).then(() => {
+                window.dispatchEvent(new Event("resize"));
+            }
+        )
     }
 
     return (
