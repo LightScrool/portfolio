@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import "../../styles/Site/SiteTextBlock.scss";
 import {Transition} from "react-transition-group";
+import {TIMING} from "../../styles/variables";
 
 interface SiteTextBlockProps {
     title: string,
@@ -22,7 +23,7 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
             in={show}
             timeout={{
                 enter: 20 + index*50, // Too small value is cause bug, when item appears instantly
-                exit: 1200,
+                exit: TIMING.slow,
             }}
             unmountOnExit={true}
         >

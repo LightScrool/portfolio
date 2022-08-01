@@ -9,6 +9,7 @@ import useScrollPercentAnimation from "../../hooks/useScrollPercentAnimation";
 import SiteTextBlock from "./SiteTextBlock";
 import {TOffsetsReducerActionType} from "../../types/offsets";
 import useSetOffset from "../../hooks/useSetOffset";
+import {COLORS} from "../../styles/variables";
 
 const Site: FC = () => {
     const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ const Site: FC = () => {
                         <MySvg
                             style={{transform: `rotate(${animationPercent * revolutionsQuantity * 360}deg)`}}
                             Id={TMySvgId.react}
-                            fill={{color: "#4AD8F8", opacity: 1}}
+                            fill={{color: COLORS.blue, opacity: 1}}
                         />
                     </div>
                     {items.map((item, index) => (
