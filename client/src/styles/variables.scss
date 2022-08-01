@@ -1,4 +1,5 @@
-// TODO: create variables.ts
+// ATTENTION!
+// If you want to change this file, do not forget to make the same changes in variables.ts file
 
 // Fonts
 $font-main: 'Montserrat', sans-serif;
@@ -7,6 +8,9 @@ $fw-medium: 500;
 $fw-semi: 600;
 $fw-bold: 700;
 $fw-extra: 800;
+
+// Sizes
+$header-size: 6rem;
 
 // Colors
 $color-black: #333;
@@ -18,9 +22,10 @@ $color-dark-white: #F7F7F7;
 // Patterns
 $gradient-red: linear-gradient(242.56deg, #FF715E 12.86%, #FF4646 87.14%);
 $gradient-black: linear-gradient(242.56deg, #3D3D3D 12.86%, #333333 87.14%);
-$shadow: drop-shadow(-10px 10px 40px rgba(0, 0, 0, 0.2));
+$shadow-picture: drop-shadow(-10px 10px 40px rgba(0, 0, 0, 0.2));
+$shadow-block: 0 5px 10px rgba(0, 0, 0, 0.15);
 
 // Timing
-$time-fast: .1s;
-$time-standard: .3s;
+$time-fast: 0.1s;
+$time-standard: 0.3s;
 $time-slow: 1.2s;

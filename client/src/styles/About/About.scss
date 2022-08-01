@@ -10,7 +10,7 @@
     &__photo {
         width: calc(50% - 1rem);
         height: auto;
-        filter: $shadow;
+        filter: $shadow-picture;
     }
 
     &__text-blocks {
