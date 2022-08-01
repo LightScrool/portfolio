@@ -25,11 +25,11 @@
         transform: translateY(-100%);
     }
     &._fixed {
-        transition: all $time-standard;
+        transition: transform $time-standard;
         transform: translateY(0);
     }
     &._postFixed {
-        transition: all $time-standard;
+        transition: transform $time-standard;
         transform: translateY(-100%);
     }
 }
