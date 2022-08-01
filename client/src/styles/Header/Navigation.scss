@@ -14,7 +14,25 @@
         white-space: nowrap;
 
         cursor: pointer;
-
         @include scale-on-hover(1.1);
+
+        position: relative;
+        &:after {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 3px;
+            border-radius: 3px;
+
+            background-color: transparent;
+            transition: all $time-standard;
+
+            position: absolute;
+        }
+        &._active {
+            &:after {
+                background-color: #fff;
+            }
+        }
     }
 }
