@@ -30,8 +30,9 @@ const Works: FC = () => {
             <Container>
                 <SectionTitle className="Works__title" text={t("works.title")}/>
                 <div className="Works__body">
-                    {items.map(item => (
-                        <div className="Works-item">
+                    {items.map((item, index) => (
+                        // These elements are static, so it is ok to use index as key here
+                        <div className="Works-item" key={index}>
                             <SvgWithHover
                                 className="Works-item__picture"
                                 offHoverSvg={item.offHoverSvg}

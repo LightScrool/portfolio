@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 import "../../styles/Site/SiteTextBlock.scss";
 import {Transition} from "react-transition-group";
 import {TIMING} from "../../styles/variables";
@@ -18,6 +18,8 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
         show
     }) => {
 
+    const nodeRef = useRef<HTMLDivElement>(null);
+
     return (
         <Transition
             in={show}
@@ -26,9 +28,14 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
                 exit: TIMING.slow,
             }}
             unmountOnExit={true}
+            nodeRef={nodeRef}
         >
             {state => (
-                <div className={`SiteTextBlock ${state}`} id={`SiteTextBlock${index + 1}`}>
+                <div
+                    ref={nodeRef}
+                    className={`SiteTextBlock ${state}`}
+                    id={`SiteTextBlock${index + 1}`}
+                >
                     <div className="SiteTextBlock__title">
                         {title}
                     </div>
