@@ -14,5 +14,7 @@
         white-space: nowrap;
 
         cursor: pointer;
+
+        @include scale-on-hover(1.1);
     }
 }

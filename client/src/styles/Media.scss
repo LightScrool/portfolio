@@ -20,10 +20,6 @@
             height: auto;
         }
 
-        transform: scale(1);
-        transition: all $time-fast;
-        &:hover {
-            transform: scale(1.2);
-        }
+        @include scale-on-hover(1.2);
     }
 }
