@@ -1,4 +1,5 @@
 import store from "../store";
+import {ReactNode} from "react";
 
 export enum TSkill {
     layout = "layout",
@@ -54,4 +55,11 @@ export type TMediaItem = {
     name: string,
     picture: string,
     href: string
+}
+
+export type TWorksItem = {
+    offHoverSvg: ReactNode,
+    onHoverSvg: ReactNode,
+    href: string,
+    text: string,
 }
