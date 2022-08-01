@@ -4,15 +4,16 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import useTypedSelector from "../../hooks/useTypedSelector";
+import {TIMING} from "../../styles/variables";
 
 const Header: FC = () => {
-    const [fixed, setFixed] = useState<boolean>();
     const aboutOffset = useTypedSelector(state => state.offsets.about);
+    const [fixed, setFixed] = useState<boolean>(true);
+    const [classMod, setClassMod] = useState<string>("");
 
     useEffect(() => {
         function onScrollOrResize() {
             setFixed(window.scrollY >= aboutOffset - 1);
-            console.log(window.scrollY);
         }
 
         window.addEventListener('scroll', onScrollOrResize);
@@ -25,8 +26,18 @@ const Header: FC = () => {
         }
     }, [aboutOffset])
 
+    useEffect(() => {
+        if (fixed) {
+            setClassMod("_preFixed")
+            setTimeout(() => setClassMod("_fixed"), 20);
+            return
+        }
+        setClassMod("_postFixed")
+        setTimeout(() => setClassMod(""), TIMING.standard);
+    }, [fixed])
+
     return (
-        <header className={"Header " + (fixed ? "_fixed" : "")}>
+        <header className={"Header " + classMod}>
             <Container>
                 <div className="Header__inner">
                     <Logo/>

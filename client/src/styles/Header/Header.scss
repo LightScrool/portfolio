@@ -15,9 +15,21 @@
         align-items: center;
     }
 
-    &._fixed {
+    &._fixed, &._preFixed, &._postFixed {
         position: fixed;
         background-color: $color-black;
         box-shadow: $shadow-block;
+    }
+
+    &._preFixed {
+        transform: translateY(-100%);
+    }
+    &._fixed {
+        transition: all $time-standard;
+        transform: translateY(0);
+    }
+    &._postFixed {
+        transition: all $time-standard;
+        transform: translateY(-100%);
     }
 }
