@@ -5,13 +5,8 @@
     color: $color-black;
 
     &:after {
-        display: block;
-        content: "";
-        width: 5rem;
-        height: 5px;
+        @include line(5rem, 5px, $color-red);
         margin: 2rem auto 4rem;
-        background-color: $color-red;
-        border-radius: 5px;
     }
 
     &.dark {

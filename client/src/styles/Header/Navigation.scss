@@ -18,15 +18,8 @@
 
         position: relative;
         &:after {
-            display: block;
-            content: "";
-            width: 100%;
-            height: 3px;
-            border-radius: 3px;
-
-            background-color: transparent;
+            @include line(100%, 3px, transparent);
             transition: all $time-standard;
-
             position: absolute;
         }
         &._active {

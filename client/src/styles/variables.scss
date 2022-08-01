@@ -40,3 +40,12 @@ $time-slow: 1.2s;
         transform: scale($scale-ratio);
     }
 }
+
+@mixin line($width, $height, $color) {
+    display: block;
+    content: "";
+    width: $width;
+    height: $height;
+    border-radius: $height;
+    background-color: $color;
+}

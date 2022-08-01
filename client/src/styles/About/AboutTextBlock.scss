@@ -10,17 +10,8 @@
 
     &__title {
         &:after {
-            $thickness: 5px;
-
-            display: block;
-            content: "";
-            width: 5rem;
-            height: $thickness;
-
+            @include line(5rem, 5px, $color-red);
             margin: 1rem 0;
-
-            background-color: $color-red;
-            border-radius: $thickness;
         }
     }
 

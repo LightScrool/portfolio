@@ -17,14 +17,8 @@
     }
 
     &__line {
-        display: block;
-        content: "";
-        width: 4rem;
-        height: 5px;
-        border-radius: 5px;
-        background-color: $color-red;
+        @include line(4rem, 5px, $color-red);
         margin: 1rem auto;
-
         transition: all $time-slow;
     }
 
