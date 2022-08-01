@@ -49,3 +49,9 @@ export type TNavItem = {
     offset: number,
     text: string,
 }
+
+export type TMediaItem = {
+    name: string,
+    picture: string,
+    href: string
+}
