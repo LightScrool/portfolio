@@ -63,18 +63,18 @@
 
     // ------Positioning------
     &#SiteTextBlock1 { // React
-        top: 4rem;
+        top: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
     &#SiteTextBlock2 { // Figma
-        top: 12.8rem;
+        top: 10.3rem;
         left: 5rem;
     }
 
     &#SiteTextBlock3 { // SASS
-        top: 15rem;
+        top: 12.5rem;
         right: 2rem;
     }
 
@@ -91,12 +91,12 @@
     }
 
     &#SiteTextBlock6 { // NodeJS
-        bottom: 6rem;
+        bottom: 3.5rem;
         left: 10rem;
     }
 
     &#SiteTextBlock7 { // TypeScript
-        bottom: 4rem;
+        bottom: 1.5rem;
         right: 17.6rem;
     }
 }
