@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {TIMING} from "../../styles/variables";
+import {createWindowEventListeners} from "../../utils";
 
 const Header: FC = () => {
     const aboutOffset = useTypedSelector(state => state.offsets.about);
@@ -44,14 +45,7 @@ const Header: FC = () => {
         // Function is not working correctly before offsets was stated in Redux
         if (!aboutOffset) return;
 
-        window.addEventListener('scroll', onScrollOrResize);
-        window.addEventListener('resize', onScrollOrResize);
-        onScrollOrResize();
-
-        return function () {
-            window.removeEventListener('scroll', onScrollOrResize);
-            window.removeEventListener('resize', onScrollOrResize);
-        }
+        return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
     }, [aboutOffset])
 
     return (

@@ -1,4 +1,5 @@
 import {RefObject, useEffect, useState} from "react";
+import {createWindowEventListeners} from "../utils";
 
 const useScrollPercentAnimation = (animationBlock: RefObject<any>): number => {
     const [animationPercent, setAnimationPercent] = useState<number>(0);
@@ -17,14 +18,7 @@ const useScrollPercentAnimation = (animationBlock: RefObject<any>): number => {
             setAnimationPercent(currentAnimationPercent);
         }
 
-        window.addEventListener('scroll', onScrollOrResize);
-        window.addEventListener('resize', onScrollOrResize);
-        onScrollOrResize();
-
-        return function () {
-            window.removeEventListener('scroll', onScrollOrResize);
-            window.removeEventListener('resize', onScrollOrResize);
-        }
+        return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
     }, [])
 
     return animationPercent;

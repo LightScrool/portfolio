@@ -4,6 +4,7 @@ import LanguagesButton from "./LanguagesButton";
 import {TNavItem} from "../../types";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {useTranslation} from "react-i18next";
+import {createWindowEventListeners} from "../../utils";
 
 const Navigation: FC = () => {
     const {t} = useTranslation();
@@ -36,14 +37,7 @@ const Navigation: FC = () => {
             setActiveItem(newActiveName);
         }
 
-        window.addEventListener('scroll', onScrollOrResize);
-        window.addEventListener('resize', onScrollOrResize);
-        onScrollOrResize();
-
-        return function () {
-            window.removeEventListener('scroll', onScrollOrResize);
-            window.removeEventListener('resize', onScrollOrResize);
-        }
+        return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
     }, [items])
 
     function onClick(offset: number) {

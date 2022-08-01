@@ -1,6 +1,7 @@
 import {useDispatch} from "react-redux";
 import {TOffsetsReducerActionType} from "../types/offsets";
 import {RefObject, useEffect} from "react";
+import {createWindowEventListeners} from "../utils";
 
 const useSetOffset = (offsetCheckoutBlock: RefObject<any>, actionType: TOffsetsReducerActionType): void => {
     const dispatch = useDispatch();
@@ -22,12 +23,8 @@ const useSetOffset = (offsetCheckoutBlock: RefObject<any>, actionType: TOffsetsR
 
             dispatch({type: actionType, payload: offset});
         }
-        window.addEventListener('resize', onResize);
-        onResize();
 
-        return function () {
-            window.removeEventListener('resize', onResize);
-        }
+        return createWindowEventListeners(onResize, ['resize']);
     }, [])
 }
 
