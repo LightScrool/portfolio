@@ -6,14 +6,15 @@ import HabrCareerIcon from "../assests/icons/HabrCareer.jpg";
 import GitHubIcon from "../assests/icons/GitHub.jpg";
 import VKIcon from "../assests/icons/VK.jpg";
 import TelegramIcon from "../assests/icons/Telegram.jpg";
+import {HYPER_REFERENCES} from "../data";
 
 const Media = () => {
     const items: Array<TMediaItem> = [
-        {name: "VK", picture: VKIcon, href: "https://vk.com/artem19o"},
-        {name: "Telegram", picture: TelegramIcon, href: "https://t.me/LightScrool"},
-        {name: "HabrCareer", picture: HabrCareerIcon, href: "https://career.habr.com/lightscrool"},
-        {name: "GitHub", picture: GitHubIcon, href: "https://github.com/LightScrool"},
-        {name: "HeadHunter", picture: HeadHunterIcon, href: "https://perm.hh.ru/resume/cd83bc1eff099f6a690039ed1f315647384a4a"},
+        {name: "VK", picture: VKIcon, href: HYPER_REFERENCES.VK},
+        {name: "Telegram", picture: TelegramIcon, href: HYPER_REFERENCES.Telegram},
+        {name: "HabrCareer", picture: HabrCareerIcon, href: HYPER_REFERENCES.HabrCareer},
+        {name: "GitHub", picture: GitHubIcon, href: HYPER_REFERENCES.GitHub},
+        {name: "HeadHunter", picture: HeadHunterIcon, href: HYPER_REFERENCES.HeadHunter},
     ]
 
     return (

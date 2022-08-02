@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 import MySvg from "../../assests/MySvg";
 import {TMySvgId, TWorksItem} from "../../types";
 import SvgWithHover from "../SvgWithHover";
+import {HYPER_REFERENCES} from "../../data";
 
 const Works: FC = () => {
     const {t} = useTranslation();
@@ -14,13 +15,13 @@ const Works: FC = () => {
         {
             offHoverSvg: <MySvg Id={TMySvgId.gitHubFill}/>,
             onHoverSvg: <MySvg Id={TMySvgId.gitHubStroke}/>,
-            href: "https://github.com/LightScrool",
+            href: HYPER_REFERENCES.GitHub,
             text: t("works.gitHub")
         },
         {
             offHoverSvg: <MySvg Id={TMySvgId.codeSignalFill}/>,
             onHoverSvg: <MySvg Id={TMySvgId.codeSignalStroke}/>,
-            href: "https://app.codesignal.com/profile/lightscrool",
+            href: HYPER_REFERENCES.CodeSignal,
             text: t("works.codeSignal")
         },
     ]
