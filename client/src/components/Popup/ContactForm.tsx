@@ -2,8 +2,11 @@ import React, {FC, useState} from 'react';
 import "../../styles/Popup/ContactForm.scss";
 import {useDispatch} from "react-redux";
 import {TPopupReducerActionType} from "../../types/popup";
+import {useTranslation} from "react-i18next";
 
 const ContactForm: FC = () => {
+    const {t} = useTranslation();
+
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [message, setMessage] = useState<string>("");
@@ -19,21 +22,21 @@ const ContactForm: FC = () => {
             <input
                 className="ContactForm__input"
                 type="text"
-                placeholder="Представьтесь, пожалуйста"
+                placeholder={t("contactForm.name")}
                 value={name}
                 onChange={event => setName(event.target.value)}
             />
             <input
                 className="ContactForm__input"
                 type="text"
-                placeholder="Как с вами связаться?"
+                placeholder={t("contactForm.email")}
                 value={email}
                 onChange={event => setEmail(event.target.value)}
             />
             <textarea
                 className="ContactForm__textarea"
                 rows={8}
-                placeholder="Сообщение"
+                placeholder={t("contactForm.message")}
                 value={message}
                 onChange={event => setMessage(event.target.value)}
             />
@@ -41,7 +44,7 @@ const ContactForm: FC = () => {
                 className="ContactForm__button"
                 onClick={send}
             >
-                Отправить
+                {t("contactForm.button")}
             </button>
         </div>
     );

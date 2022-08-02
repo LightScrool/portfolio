@@ -12,6 +12,12 @@
     "subtitle": "Web & Front-end разработчик"
   },
   "contactButton": "Связаться",
+  "contactForm": {
+    "name": "Представьтесь, пожалуйста",
+    "email": "Как с вами связаться?",
+    "message": "Сообщение",
+    "button": "Отправить"
+  },
   "about": {
     "briefly": {
       "title": "Кратко обо мне",

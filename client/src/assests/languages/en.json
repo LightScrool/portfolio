@@ -12,6 +12,12 @@
     "subtitle": "Web & Front-end developer"
   },
   "contactButton": "Contact me",
+  "contactForm": {
+    "name": "Introduce yourself",
+    "email": "How can I contact you?",
+    "message": "Message",
+    "button": "Send"
+  },
   "about": {
     "briefly": {
       "title": "Briefly about me",
