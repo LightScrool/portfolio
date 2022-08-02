@@ -1,11 +1,15 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useRef, useState} from 'react';
 import "../../styles/Popup/ContactForm.scss";
 import {useDispatch} from "react-redux";
 import {TPopupReducerActionType} from "../../types/popup";
 import {useTranslation} from "react-i18next";
+import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 
 const ContactForm: FC = () => {
     const {t} = useTranslation();
+
+    const customScrollElement = useRef(null);
+    useCustomScrollbar(customScrollElement);
 
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
@@ -35,6 +39,7 @@ const ContactForm: FC = () => {
             />
             <textarea
                 className="ContactForm__textarea"
+                ref={customScrollElement}
                 rows={8}
                 placeholder={t("contactForm.message")}
                 value={message}
