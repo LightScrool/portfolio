@@ -1,12 +1,13 @@
 import React, {FC, useRef} from 'react';
-import "../styles/Popup.scss";
+import "../../styles/Popup/Popup.scss";
 import {Transition} from "react-transition-group";
-import {TIMING} from "../styles/variables";
-import MySvg from "../assests/MySvg";
-import {TMySvgId} from "../types";
-import useTypedSelector from "../hooks/useTypedSelector";
+import {TIMING} from "../../styles/variables";
+import MySvg from "../../assests/MySvg";
+import {TMySvgId} from "../../types";
+import useTypedSelector from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
-import {TPopupReducerActionType} from "../types/popup";
+import {TPopupReducerActionType} from "../../types/popup";
+import ContactForm from "./ContactForm";
 
 const Popup: FC = () => {
 
@@ -41,7 +42,7 @@ const Popup: FC = () => {
                         <a className="Popup__close-button" onClick={closePopup}>
                             <MySvg Id={TMySvgId.cross} fill={{color: "#000", opacity: 1}}/>
                         </a>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eius eum exercitationem modi perspiciatis quae quam sapiente suscipit tempore ut.
+                        <ContactForm/>
                     </div>
                 </div>
             )}

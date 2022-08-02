@@ -14,6 +14,7 @@ $header-size: 6rem;
 
 // Colors
 $color-black: #333;
+$color-grey: #999;
 $color-red: #FE654F;
 $color-blue: #4AD8F8;
 $color-yellow: #FAF33E;
@@ -48,4 +49,22 @@ $time-slow: 1.2s;
     height: $height;
     border-radius: $height;
     background-color: $color;
+}
+
+@mixin my-button {
+    font-family: $font-main;
+    font-size: 1.5rem;
+    font-weight: $fw-semi;
+    color: $color-black;
+
+    padding: 1.2rem 3.8rem;
+    border-radius: 3.8rem;
+    border: $color-yellow 3px solid;
+    background-color: $color-yellow;
+
+    transition: all $time-standard;
+    &:hover {
+        background-color: transparent;
+        color: $color-yellow;
+    }
 }

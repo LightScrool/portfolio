@@ -1,4 +1,4 @@
-@import "variables";
+@import "src/styles/variables";
 
 .Popup {
     display: block;
@@ -16,7 +16,7 @@
         display: block;
         width: 100%;
         max-width: 36rem;
-        padding: 3rem 2rem;
+        padding: 4rem 2rem 3rem;
 
         position: absolute;
         top: 50%;
@@ -30,11 +30,11 @@
 
     &__close-button {
         display: flex;
-        width: 1.2rem;
+        width: 18px;
         height: auto;
         position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: calc(2rem - 9px);
+        right: 2rem;
 
         cursor: pointer;
         transform-origin: center center;

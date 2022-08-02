@@ -1,0 +1,31 @@
+@import "../variables";
+
+.ContactForm{
+    &__input, &__textarea{
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        border: 2px solid $color-grey;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+
+        font-family: $font-main;
+        font-size: 1.5rem;
+        color: $color-black;
+
+        &::placeholder {
+            color: $color-grey;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+    }
+
+    &__button {
+        @include my-button;
+        &:hover {
+            color: $color-black;
+        }
+    }
+}
