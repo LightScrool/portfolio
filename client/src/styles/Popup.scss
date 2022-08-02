@@ -1,0 +1,67 @@
+@import "variables";
+
+.Popup {
+    display: block;
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+    transition: background $time-standard;
+
+    &__body {
+        display: block;
+        width: 100%;
+        max-width: 36rem;
+        padding: 3rem 2rem;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform $time-standard;
+
+        background-color: #fff;
+        border-radius: 2rem;
+    }
+
+    &__close-button {
+        display: flex;
+        width: 1.2rem;
+        height: auto;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+
+        cursor: pointer;
+        transform-origin: center center;
+        transition: transform $time-standard;
+
+        & path {
+            fill: $color-black;
+            transition: fill $time-standard;
+        }
+
+        &:hover {
+            transform: rotate(90deg);
+
+            & path {
+                fill: $color-red;
+            }
+        }
+    }
+}
+
+// ------react-transition-group------
+.entering, .exiting {
+    &.Popup {
+        background: transparent;
+    }
+
+    & .Popup__body {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}

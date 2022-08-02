@@ -9,10 +9,12 @@ import Works from "./Works";
 import Footer from "./Footer";
 import {Provider} from "react-redux";
 import store from "../store";
+import Popup from "./Popup";
 
 const App: FC = () => {
     return (
         <Provider store={store}>
+            <Popup/>
             <Header/>
             <Intro/>
             <About/>
