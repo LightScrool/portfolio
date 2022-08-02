@@ -26,6 +26,13 @@
         white-space: pre-line;
 
         transition: all $time-slow;
+
+        & a {
+            color: #fff;
+            &:visited{
+                color: #fff;
+            }
+        }
     }
 
 

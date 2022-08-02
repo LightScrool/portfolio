@@ -58,6 +58,11 @@ export type TMediaItem = {
     href: string
 }
 
+export type TSiteItem = {
+    name: string,
+    href?: string
+}
+
 export type TWorksItem = {
     offHoverSvg: ReactNode,
     onHoverSvg: ReactNode,
