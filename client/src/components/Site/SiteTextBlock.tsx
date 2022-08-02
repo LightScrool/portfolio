@@ -25,7 +25,7 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
         <Transition
             in={show}
             timeout={{
-                enter: 20 + index * 50, // Too small value is cause bug, when item appears instantly
+                enter: 20, // Too small value is cause bug, when item appears instantly
                 exit: TIMING.slow,
             }}
             unmountOnExit={true}

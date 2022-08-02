@@ -52,7 +52,7 @@ const Site: FC = () => {
                         <SiteTextBlock
                             key={index}
                             index={index}
-                            show={animationPercent > 0.5}
+                            show={animationPercent > 0.35 + 0.05*index}
                             data={item}
                         />
                     ))}
