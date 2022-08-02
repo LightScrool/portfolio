@@ -56,7 +56,7 @@
 }
 
 // ------react-transition-group------
-.entering, .exiting {
+.entering, .exiting, .exited {
     &.Popup {
         background: transparent;
     }

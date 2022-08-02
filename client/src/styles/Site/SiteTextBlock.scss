@@ -97,7 +97,7 @@
 
 // ------react-transition-group------
 
-.entering, .exiting {
+.entering, .exiting, .exited {
     &.SiteTextBlock {
         opacity: 0;
     }
