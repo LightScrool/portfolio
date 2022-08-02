@@ -3,7 +3,11 @@ import {TOffsetsReducerActionType} from "../types/offsets";
 import {RefObject, useEffect} from "react";
 import {createWindowEventListeners} from "../utils";
 
-const useSetOffset = (offsetCheckoutBlock: RefObject<any>, actionType: TOffsetsReducerActionType): void => {
+const useSetOffset = (
+    offsetCheckoutBlock: RefObject<HTMLElement>,
+    actionType: TOffsetsReducerActionType
+): void => {
+
     const dispatch = useDispatch();
 
     useEffect(() => {

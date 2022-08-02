@@ -1,5 +1,6 @@
 import store from "../store";
 import {ReactNode} from "react";
+import {HYPER_REFERENCES} from "../data";
 
 export enum TSkill {
     layout = "layout",
@@ -55,17 +56,17 @@ export type TNavItem = {
 export type TMediaItem = {
     name: string,
     picture: string,
-    href: string
+    href: HYPER_REFERENCES
 }
 
 export type TSiteItem = {
     name: string,
-    href?: string
+    href?: HYPER_REFERENCES
 }
 
 export type TWorksItem = {
     offHoverSvg: ReactNode,
     onHoverSvg: ReactNode,
-    href: string,
+    href: HYPER_REFERENCES,
     text: string,
 }

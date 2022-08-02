@@ -1,7 +1,10 @@
 import {RefObject, useEffect, useState} from "react";
 import {createWindowEventListeners} from "../utils";
 
-const useScrollPercentAnimation = (animationBlock: RefObject<any>): number => {
+const useScrollPercentAnimation = (
+    animationBlock: RefObject<HTMLElement>
+): number => {
+
     const [animationPercent, setAnimationPercent] = useState<number>(0);
 
     useEffect(() => {

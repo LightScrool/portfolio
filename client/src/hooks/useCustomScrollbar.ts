@@ -11,7 +11,7 @@ const defaultConfiguration: TOptions = {
 }
 
 const useCustomScrollbar = (
-    ref: RefObject<any>,
+    ref: RefObject<HTMLElement>,
     configuration: TOptions = defaultConfiguration,
 ) => {
 

@@ -8,7 +8,7 @@ import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 const ContactForm: FC = () => {
     const {t} = useTranslation();
 
-    const customScrollElement = useRef(null);
+    const customScrollElement = useRef<HTMLTextAreaElement>(null);
     useCustomScrollbar(customScrollElement);
 
     const [name, setName] = useState<string>("");
