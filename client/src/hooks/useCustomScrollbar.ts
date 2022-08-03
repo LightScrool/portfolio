@@ -23,7 +23,7 @@ const useCustomScrollbar = (
         return function () {
             if (scroll) scroll.destroy();
         }
-    }, [ref])
+    }, [ref, configuration])
 }
 
 export default useCustomScrollbar;
