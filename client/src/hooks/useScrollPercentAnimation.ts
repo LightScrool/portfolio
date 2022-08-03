@@ -22,7 +22,7 @@ const useScrollPercentAnimation = (
         }
 
         return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
-    }, [])
+    }, [animationBlock])
 
     return animationPercent;
 }

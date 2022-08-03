@@ -7,7 +7,8 @@ interface SvgWithHoverProps {
     onHoverSvg: ReactNode,
     onClick?: (event?: React.MouseEvent) => void,
     href?: string,
-    target?: string
+    target?: string,
+    rel?: string
 }
 
 /*
@@ -22,7 +23,8 @@ const SvgWithHover: FC<SvgWithHoverProps> = (
         onHoverSvg,
         onClick,
         href,
-        target
+        target,
+        rel
     }) => {
     return (
         <a
@@ -30,6 +32,7 @@ const SvgWithHover: FC<SvgWithHoverProps> = (
             onClick={onClick}
             href={href}
             target={target}
+            rel={rel}
         >
             <div className="SvgWithHover__off-hover">
                 {offHoverSvg}

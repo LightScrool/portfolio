@@ -14,8 +14,14 @@ const Popup: FC = () => {
     const active = useTypedSelector(state => state.popup.active);
 
     const dispatch = useDispatch();
-    const closePopup = () => dispatch({type: TPopupReducerActionType.SET_ACTIVE, payload: false});
-    const stopPropagation = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => event.stopPropagation();
+    const closePopup = (event: React.MouseEvent) => {
+        event.preventDefault();
+        dispatch({type: TPopupReducerActionType.SET_ACTIVE, payload: false});
+    };
+    const stopPropagation = (event: React.MouseEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+    };
 
     const nodeRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +45,7 @@ const Popup: FC = () => {
                         className="Popup__body"
                         onClick={stopPropagation}
                     >
-                        <a className="Popup__close-button" onClick={closePopup}>
+                        <a className="Popup__close-button" href="/#" onClick={closePopup}>
                             <MySvg Id={TMySvgId.cross} fill={{color: "#000", opacity: 1}}/>
                         </a>
                         <ContactForm/>

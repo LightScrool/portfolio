@@ -4,12 +4,13 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 
 const Logo: FC = () => {
     const offset = useTypedSelector(state => state.offsets.home);
-    const onClick = () => {
-            window.scrollTo(0, offset)
+    const onClick = (event: React.MouseEvent) => {
+        event.preventDefault();
+        window.scrollTo(0, offset)
     }
 
     return (
-        <a className="Logo" onClick={onClick}>
+        <a className="Logo" href="/#" onClick={onClick}>
             LightScrool
         </a>
     );

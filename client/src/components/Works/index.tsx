@@ -40,6 +40,7 @@ const Works: FC = () => {
                                 onHoverSvg={item.onHoverSvg}
                                 href={item.href}
                                 target="_blank"
+                                rel="noreferrer noopener"
                             />
                             <div className="Works-item__text">{item.text}</div>
                         </div>

@@ -45,7 +45,14 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
                         {
                             data.href
                                 ?
-                                <Trans components={{href: <a href={data.href} target="_blank"/>}}>{`site.items.${data.name}.text`}</Trans>
+                                <Trans
+                                    components={{
+                                        // Can't use <a/> because of eslint
+                                        href: <a href={data.href} target="_blank" rel="noreferrer noopener">{""}</a>
+                                    }}
+                                >
+                                    {`site.items.${data.name}.text`}
+                                </Trans>
                                 :
                                 t(`site.items.${data.name}.text`)
                         }

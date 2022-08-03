@@ -20,7 +20,7 @@ const Media = () => {
     return (
         <div className="Media">
             {items.map(item => (
-                <a key={item.name} className="Media__item" href={item.href} target="_blank">
+                <a key={item.name} className="Media__item" href={item.href} target="_blank" rel="noreferrer noopener">
                     <img src={item.picture} alt={item.name}/>
                 </a>
             ))}

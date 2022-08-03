@@ -25,7 +25,7 @@ const Navigation: FC = () => {
             offset: offsets.works,
             text: t('navigation.works'),
         },
-    ], [offsets])
+    ], [offsets, t])
 
     const [activeItem, setActiveItem] = useState<string>("");
     useEffect(() => {
@@ -41,7 +41,8 @@ const Navigation: FC = () => {
     }, [items])
 
     function onClick(offset: number) {
-        return function () {
+        return function (event: React.MouseEvent) {
+            event.preventDefault();
             window.scrollTo(0, offset)
         }
     }
@@ -52,6 +53,7 @@ const Navigation: FC = () => {
                 <a
                     key={item.name}
                     className={`Navigation__item${activeItem === item.name ? " _active" : ""}`}
+                    href="/#"
                     onClick={onClick(item.offset)}
                 >
                     {item.text}

@@ -29,7 +29,7 @@ const useSetOffset = (
         }
 
         return createWindowEventListeners(onResize, ['resize']);
-    }, [])
+    }, [offsetCheckoutBlock, actionType, dispatch])
 }
 
 export default useSetOffset;
