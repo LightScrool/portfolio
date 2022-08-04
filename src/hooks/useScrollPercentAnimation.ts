@@ -11,8 +11,9 @@ const useScrollPercentAnimation = (
         function onScrollOrResize() {
             if (!animationBlock.current) return;
 
-            const startScroll: number = animationBlock.current.offsetTop;
-            const endScroll: number = startScroll + animationBlock.current.scrollHeight - document.documentElement.clientHeight;
+            const blockBCR = animationBlock.current.getBoundingClientRect()
+            const startScroll: number = blockBCR.top + window.scrollY;
+            const endScroll: number = blockBCR.bottom + window.scrollY - document.documentElement.clientHeight;
             const currentScroll: number = window.scrollY;
 
             let currentAnimationPercent: number = (currentScroll - startScroll) / (endScroll - startScroll);
