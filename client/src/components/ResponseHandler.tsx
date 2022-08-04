@@ -1,8 +1,9 @@
 import React, {FC, useRef} from 'react';
-import "../../styles/Popup/ResponseHandler.scss";
-import MySvg from "../../assests/MySvg";
-import {TMySvgId} from "../../types";
+import "../styles/ResponseHandler.scss";
+import MySvg from "../assests/MySvg";
+import {TMySvgId} from "../types";
 import {Transition} from "react-transition-group";
+import {TIMING} from "../styles/variables";
 
 interface ResponseHandlerProps {
     text: string,
@@ -24,7 +25,10 @@ const ResponseHandler: FC<ResponseHandlerProps> = (
     return (
         <Transition
             in={active}
-            timeout={20/* Too small value is cause bug, when item appears instantly */}
+            timeout={{
+                enter: 20,// Too small value is cause bug, when item appears instantly
+                exit: TIMING.standard,
+            }}
             unmountOnExit={true}
             nodeRef={nodeRef}
         >

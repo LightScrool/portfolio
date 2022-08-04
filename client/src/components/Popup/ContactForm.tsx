@@ -3,7 +3,10 @@ import "../../styles/Popup/ContactForm.scss";
 import {useTranslation} from "react-i18next";
 import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 import emailJS from "emailjs-com";
-import ResponseHandler from "./ResponseHandler";
+import ResponseHandler from "../ResponseHandler";
+import Loader from "../Loader";
+import {useDispatch} from "react-redux";
+import {TPopupReducerActionType} from "../../types/popup";
 
 const ContactForm: FC = () => {
     const {t} = useTranslation();
@@ -20,6 +23,11 @@ const ContactForm: FC = () => {
     const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
     const [showErrorMsg, setShowErrorMsg] = useState<boolean>(false);
 
+    const dispatch = useDispatch();
+    const closePopup = () => {
+        dispatch({type: TPopupReducerActionType.SET_ACTIVE, payload: false});
+    };
+
     function sendMessage() {
         if (!form.current) return;
 
@@ -35,18 +43,28 @@ const ContactForm: FC = () => {
             .then(response => {
                 console.log(response);
                 setShowSuccessMsg(true);
-                setTimeout(() => setShowSuccessMsg(false), 3000)
+                setTimeout(() => {
+                    setShowSuccessMsg(false);
+                    closePopup();
+                }, 2500)
             })
 
             .catch(error => {
                 console.log(error);
                 setShowErrorMsg(true);
-                setTimeout(() => setShowErrorMsg(false), 3000)
+                setTimeout(() => {
+                    setShowErrorMsg(false);
+                    closePopup();
+                }, 2500)
             })
 
             .finally(() => {
-                setIsLoading(false)
+                setIsLoading(false);
             })
+
+        setName("");
+        setContact("");
+        setMessage("");
     }
 
     // Form should be always mounted, because if it doesn't popup will change its size
@@ -60,7 +78,10 @@ const ContactForm: FC = () => {
 
     return (
         <>
-            {isLoading && <label className="Loader ContactForm__handler"/>}
+            <Loader
+                active={isLoading}
+                className="ContactForm__handler"
+            />
             <ResponseHandler
                 text={t("contactForm.success")}
                 active={showSuccessMsg}
