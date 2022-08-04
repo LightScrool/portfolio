@@ -16,7 +16,9 @@
     "name": "Introduce yourself",
     "email": "How can I contact you?",
     "message": "Message",
-    "button": "Send"
+    "button": "Send",
+    "success": "The message has been sent!",
+    "error": "Error!\nThe message has not been sent!"
   },
   "about": {
     "briefly": {

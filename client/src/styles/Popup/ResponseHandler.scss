@@ -1,0 +1,59 @@
+@import "../variables";
+
+.ResponseHandler {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all $time-standard;
+
+    &__icon {
+        width: 5rem;
+        height: auto;
+
+        animation: success-animation $time-slow linear;
+
+        &._error {
+            animation: error-animation $time-standard linear;
+        }
+    }
+
+    &__text {
+        padding-top: 1rem;
+        text-align: center;
+        white-space: pre-line;
+    }
+
+    @keyframes success-animation {
+        0% {
+            transform: rotate(12deg) scale(1);
+        }
+        66% {
+            transform: rotate(-12deg) scale(1.05);
+        }
+        100% {
+            transform: rotate(0) scale(1);
+        }
+    }
+
+    @keyframes error-animation {
+        10%, 50%, 90% {
+            transform: translateX(-0.5rem);
+        }
+        0%, 100% {
+            transform: translateX(0);
+        }
+        30%, 70% {
+            transform: translateX(0.5rem);
+        }
+    }
+}
+
+
+// ------react-transition-group------
+.entering, .exiting, .exited, {
+    &.ResponseHandler {
+        opacity: 0;
+    }
+}

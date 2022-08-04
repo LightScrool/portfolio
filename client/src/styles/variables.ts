@@ -23,6 +23,7 @@ export const COLORS = {
     blue: "#4AD8F8",
     yellow: "#FAF33E",
     darkWhite: "#F7F7F7",
+    green: "#4FFE65"
 }
 
 export const PATTERNS = {

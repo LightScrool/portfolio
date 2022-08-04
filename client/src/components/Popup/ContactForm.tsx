@@ -3,6 +3,7 @@ import "../../styles/Popup/ContactForm.scss";
 import {useTranslation} from "react-i18next";
 import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 import emailJS from "emailjs-com";
+import ResponseHandler from "./ResponseHandler";
 
 const ContactForm: FC = () => {
     const {t} = useTranslation();
@@ -16,10 +17,8 @@ const ContactForm: FC = () => {
 
     const form = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    // Form should be always mounted, because if it doesn't popup will change its size
-    const formVisibilityStyles = useMemo<CSSProperties>(() => (
-        isLoading ? {opacity: 0, visibility: "hidden"} : {opacity: 1, visibility: "visible"}
-    ), [isLoading])
+    const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
+    const [showErrorMsg, setShowErrorMsg] = useState<boolean>(false);
 
     function sendMessage() {
         if (!form.current) return;
@@ -34,13 +33,15 @@ const ContactForm: FC = () => {
         )
 
             .then(response => {
-                // TODO: notify user
                 console.log(response);
+                setShowSuccessMsg(true);
+                setTimeout(() => setShowSuccessMsg(false), 3000)
             })
 
             .catch(error => {
-                // TODO: notify user
                 console.log(error);
+                setShowErrorMsg(true);
+                setTimeout(() => setShowErrorMsg(false), 3000)
             })
 
             .finally(() => {
@@ -48,9 +49,29 @@ const ContactForm: FC = () => {
             })
     }
 
+    // Form should be always mounted, because if it doesn't popup will change its size
+    // TODO: textarea bug
+    const formVisibilityStyles = useMemo<CSSProperties>(() => {
+        if (isLoading || showSuccessMsg || showErrorMsg) {
+            return {opacity: 0, visibility: "hidden"};
+        }
+        return {opacity: 1, visibility: "visible"};
+    }, [isLoading, showSuccessMsg, showErrorMsg])
+
     return (
         <>
-            {isLoading && <label className="Loader"/>}
+            {isLoading && <label className="Loader ContactForm__handler"/>}
+            <ResponseHandler
+                text={t("contactForm.success")}
+                active={showSuccessMsg}
+                className="ContactForm__handler"
+            />
+            <ResponseHandler
+                text={t("contactForm.error")}
+                active={showErrorMsg}
+                className="ContactForm__handler"
+                error={true}
+            />
             <form
                 className="ContactForm"
                 style={formVisibilityStyles}

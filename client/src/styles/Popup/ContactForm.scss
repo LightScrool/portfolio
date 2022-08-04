@@ -39,10 +39,6 @@
     display: block;
     width: 5rem;
     height: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% -  0.5rem));
 
     &:after {
         content: " ";
@@ -64,4 +60,12 @@
             transform: rotate(360deg);
         }
     }
+}
+
+.ContactForm__handler {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% -  0.5rem));
 }

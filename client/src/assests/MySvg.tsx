@@ -321,6 +321,26 @@ const MySvg: FC<SVGProps> = (
                     />
                 </svg>
             )
+
+        case TMySvgId.checkMark:
+            return (
+                <svg className={className} style={style} onClick={onClick} viewBox="0 0 100 100" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke={COLORS.green} strokeWidth="4"/>
+                    <path d="M21 47.8525L41.7631 68.9997L79.7629 31" stroke={COLORS.green} strokeWidth="4"/>
+                </svg>
+
+            )
+
+        case TMySvgId.errorCross:
+            return (
+                <svg className={className} style={style} onClick={onClick} viewBox="0 0 100 100" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke={COLORS.red} strokeWidth="4"/>
+                    <path d="M26 26.1953L74 74M74 26L26 73.8047" stroke={COLORS.red} strokeWidth="4"/>
+                </svg>
+            )
+
     }
 };
 

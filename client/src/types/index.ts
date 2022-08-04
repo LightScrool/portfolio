@@ -31,7 +31,9 @@ export enum TMySvgId {
     gitHubStroke,
     codeSignalFill,
     codeSignalStroke,
-    cross
+    cross,
+    checkMark,
+    errorCross
 }
 
 export type TSvgStroke = {
