@@ -14,12 +14,14 @@ const useSetOffset = (
         const onResize = (): void => {
             if (!offsetCheckoutBlock.current) return;
 
-            const offsetWoMargin = offsetCheckoutBlock.current.offsetTop;
+            const offsetWoMargin = offsetCheckoutBlock.current.getBoundingClientRect().top + window.scrollY;
             const marginTop = Number(window
                 .getComputedStyle(offsetCheckoutBlock.current)
                 .getPropertyValue('margin-top')
                 .slice(0, -2));
+
             let offset = offsetWoMargin - marginTop;
+
             const minValue = 0;
             const maxValue = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             offset = (offset < minValue) ? minValue : offset;
