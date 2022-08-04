@@ -61,6 +61,7 @@ $time-slow: 1.2s;
     border-radius: 3.8rem;
     border: $color-yellow 3px solid;
     background-color: $color-yellow;
+    cursor: pointer;
 
     transition: all $time-standard;
     &:hover {
