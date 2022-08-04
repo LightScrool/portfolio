@@ -27,5 +27,38 @@
         &:hover {
             color: $color-black;
         }
+
+        &:disabled {
+            background-color: #ddd;
+            border-color: #999;
+        }
+    }
+
+    &__loader {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        margin: 15.6rem auto;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            margin: 0.5rem;
+            border-radius: 50%;
+            border: 0.35rem solid;
+            border-color: $color-black transparent $color-black transparent;
+            animation: rotation $time-slow linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     }
 }

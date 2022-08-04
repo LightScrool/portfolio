@@ -1,7 +1,5 @@
-import React, {FC, useRef} from 'react';
+import React, {FC, useRef, useState} from 'react';
 import "../../styles/Popup/ContactForm.scss";
-import {useDispatch} from "react-redux";
-import {TPopupReducerActionType} from "../../types/popup";
 import {useTranslation} from "react-i18next";
 import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 import emailJS from "emailjs-com";
@@ -12,12 +10,17 @@ const ContactForm: FC = () => {
     const customScrollElement = useRef<HTMLTextAreaElement>(null);
     useCustomScrollbar(customScrollElement);
 
-    const dispatch = useDispatch();
+    const [name, setName] = useState<string>("");
+    const [contact, setContact] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+
     const form = useRef<HTMLFormElement>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
     function sendMessage() {
         if (!form.current) return;
 
-        console.log("submit");
+        setIsLoading(true);
 
         emailJS.sendForm(
             "service_4kogcbn",
@@ -25,31 +28,43 @@ const ContactForm: FC = () => {
             form.current,
             "16FU0KEkZHu91z_nC"
         )
+
             .then(response => {
                 // TODO: notify user
                 console.log(response);
             })
+
             .catch(error => {
                 // TODO: notify user
                 console.log(error);
             })
 
-        dispatch({type: TPopupReducerActionType.SET_ACTIVE, payload: false})
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     return (
+        isLoading
+        ?
+        <label className="ContactForm__loader"/>
+        :
         <form className="ContactForm" ref={form}>
             <input
                 name="name"
                 className="ContactForm__input"
                 type="text"
                 placeholder={t("contactForm.name")}
+                value={name}
+                onChange={(event) => setName(event.target.value)}
             />
             <input
                 name="contact"
                 className="ContactForm__input"
                 type="text"
                 placeholder={t("contactForm.email")}
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
             />
             <textarea
                 name="message"
@@ -57,11 +72,15 @@ const ContactForm: FC = () => {
                 ref={customScrollElement}
                 rows={8}
                 placeholder={t("contactForm.message")}
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
             />
             <button
-                type="submit"
                 className="ContactForm__button"
                 onClick={sendMessage}
+                disabled={!name
+                    || !contact
+                    || !message}
             >
                 {t("contactForm.button")}
             </button>
