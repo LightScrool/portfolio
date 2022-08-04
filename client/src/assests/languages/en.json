@@ -104,9 +104,9 @@
         "title": "Git & Github",
         "text": "During development I used Git as VCS, you can find the source code on <href>my GitHub</href>"
       },
-      "NodeJS": {
-        "title": "NodeJS",
-        "text": "The Back-end part of the site is small, so NodeJS is an ideal option for writing it on"
+      "i18next": {
+        "title": "i18next",
+        "text": "Thanks to this library, the site can instantly change localization from English to Russian"
       },
       "TypeScript": {
         "title": "TypeScript",

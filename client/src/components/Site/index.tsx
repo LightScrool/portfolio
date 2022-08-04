@@ -28,7 +28,7 @@ const Site: FC = () => {
         {name: "SASS"},
         {name: "SVG"},
         {name: "Git", href: HYPER_REFERENCES.GitHubProject},
-        {name: "NodeJS"},
+        {name: "i18next"},
         {name: "TypeScript"},
     ];
 
