@@ -1,4 +1,4 @@
-import React, {FC, useRef, useState} from 'react';
+import React, {CSSProperties, FC, useMemo, useRef, useState} from 'react';
 import "../../styles/Popup/ContactForm.scss";
 import {useTranslation} from "react-i18next";
 import useCustomScrollbar from "../../hooks/useCustomScrollbar";
@@ -16,6 +16,10 @@ const ContactForm: FC = () => {
 
     const form = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    // Form should be always mounted, because if it doesn't popup will change its size
+    const formVisibilityStyles = useMemo<CSSProperties>(() => (
+        isLoading ? {opacity: 0, visibility: "hidden"} : {opacity: 1, visibility: "visible"}
+    ), [isLoading])
 
     function sendMessage() {
         if (!form.current) return;
@@ -45,46 +49,49 @@ const ContactForm: FC = () => {
     }
 
     return (
-        isLoading
-        ?
-        <label className="ContactForm__loader"/>
-        :
-        <form className="ContactForm" ref={form}>
-            <input
-                name="name"
-                className="ContactForm__input"
-                type="text"
-                placeholder={t("contactForm.name")}
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-            />
-            <input
-                name="contact"
-                className="ContactForm__input"
-                type="text"
-                placeholder={t("contactForm.email")}
-                value={contact}
-                onChange={(event) => setContact(event.target.value)}
-            />
-            <textarea
-                name="message"
-                className="ContactForm__textarea"
-                ref={customScrollElement}
-                rows={8}
-                placeholder={t("contactForm.message")}
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-            />
-            <button
-                className="ContactForm__button"
-                onClick={sendMessage}
-                disabled={!name
-                    || !contact
-                    || !message}
+        <>
+            {isLoading && <label className="Loader"/>}
+            <form
+                className="ContactForm"
+                style={formVisibilityStyles}
+                ref={form}
             >
-                {t("contactForm.button")}
-            </button>
-        </form>
+                <input
+                    name="name"
+                    className="ContactForm__input"
+                    type="text"
+                    placeholder={t("contactForm.name")}
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                />
+                <input
+                    name="contact"
+                    className="ContactForm__input"
+                    type="text"
+                    placeholder={t("contactForm.email")}
+                    value={contact}
+                    onChange={(event) => setContact(event.target.value)}
+                />
+                <textarea
+                    name="message"
+                    className="ContactForm__textarea"
+                    ref={customScrollElement}
+                    rows={8}
+                    placeholder={t("contactForm.message")}
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                />
+                <button
+                    className="ContactForm__button"
+                    onClick={sendMessage}
+                    disabled={!name
+                        || !contact
+                        || !message}
+                >
+                    {t("contactForm.button")}
+                </button>
+            </form>
+        </>
     );
 };
 
