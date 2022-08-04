@@ -27,7 +27,7 @@ const Site: FC = () => {
         {name: "Figma", href: HYPER_REFERENCES.Figma},
         {name: "SASS"},
         {name: "SVG"},
-        {name: "Git", href: HYPER_REFERENCES.GitHub},
+        {name: "Git", href: HYPER_REFERENCES.GitHubProject},
         {name: "NodeJS"},
         {name: "TypeScript"},
     ];
