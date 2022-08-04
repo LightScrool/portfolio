@@ -8,3 +8,8 @@ export enum HYPER_REFERENCES {
     CodeSignal = "https://app.codesignal.com/profile/lightscrool",
     Figma = "https://www.figma.com/file/mTEq9TY3ZqpNGKUkaFNkC4/Portfolio?node-id=286%3A100"
 }
+
+export const PHONE_NUMBER = {
+    href: "+79197088972",
+    pretty: "+7 (919) 708-89-72"
+}
