@@ -111,6 +111,8 @@ const ContactForm: FC = () => {
                     onChange={(event) => setContact(event.target.value)}
                 />
                 <CustomTextArea
+                    name="message"
+                    className="ContactForm__textarea"
                     value={message}
                     setValue={setMessage}
                     placeholder={t("contactForm.message")}
