@@ -26,7 +26,7 @@ const ResponseHandler: FC<ResponseHandlerProps> = (
         <Transition
             in={active}
             timeout={{
-                enter: 20,// Too small value is cause bug, when item appears instantly
+                enter: 30,// Too small value is cause bug, when item appears instantly
                 exit: TIMING.standard,
             }}
             unmountOnExit={true}

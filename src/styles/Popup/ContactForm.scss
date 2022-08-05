@@ -35,12 +35,13 @@
             border-color: #999;
         }
     }
-}
 
-.ContactForm__handler {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% - 0.5rem));
+    &__handler {
+        display: block;
+        position: absolute;
+        z-index: 1100;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% - 0.5rem));
+    }
 }

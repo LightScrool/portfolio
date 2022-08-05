@@ -52,7 +52,7 @@
 
 
 // ------react-transition-group------
-.entering, .exiting, .exited, {
+.entering, .exiting, .exited {
     &.ResponseHandler {
         opacity: 0;
     }

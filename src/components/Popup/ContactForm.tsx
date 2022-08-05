@@ -4,9 +4,8 @@ import {useTranslation} from "react-i18next";
 import emailJS from "emailjs-com";
 import ResponseHandler from "../ResponseHandler";
 import Loader from "../Loader";
-import {useDispatch} from "react-redux";
-import {TPopupReducerActionType} from "../../types/popup";
 import CustomTextArea from "../CustomTextArea";
+import useLoading from "../../hooks/useLoading";
 
 const ContactForm: FC = () => {
     const {t} = useTranslation();
@@ -16,61 +15,29 @@ const ContactForm: FC = () => {
     const [message, setMessage] = useState<string>("");
 
     const form = useRef<HTMLFormElement>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
-    const [showErrorMsg, setShowErrorMsg] = useState<boolean>(false);
 
-    const dispatch = useDispatch();
-    const closePopup = () => {
-        dispatch({type: TPopupReducerActionType.SET_ACTIVE, payload: false});
-    };
-
-    function sendMessage() {
+    const [sendMessage, isLoading, successResult, errorResult] = useLoading(async () => {
         if (!form.current) return;
 
-        setIsLoading(true);
+        setName("");
+        setContact("");
+        setMessage("");
 
-        emailJS.sendForm(
+        return emailJS.sendForm(
             "service_4kogcbn",
             "template_jkfg53r",
             form.current,
             "16FU0KEkZHu91z_nC"
         )
-
-            .then(response => {
-                console.log(response);
-                setShowSuccessMsg(true);
-                setTimeout(() => {
-                    setShowSuccessMsg(false);
-                    closePopup();
-                }, 2500)
-            })
-
-            .catch(error => {
-                console.log(error);
-                setShowErrorMsg(true);
-                setTimeout(() => {
-                    setShowErrorMsg(false);
-                    closePopup();
-                }, 2500)
-            })
-
-            .finally(() => {
-                setIsLoading(false);
-            })
-
-        setName("");
-        setContact("");
-        setMessage("");
-    }
+    }, 2500);
 
     // Form should be always mounted, because if it doesn't popup will be changing its size
     const formVisibilityStyles = useMemo<CSSProperties>(() => {
-        if (isLoading || showSuccessMsg || showErrorMsg) {
+        if (isLoading || successResult !== null || errorResult !== null) {
             return {opacity: 0, visibility: "hidden"};
         }
         return {opacity: 1, visibility: "visible"};
-    }, [isLoading, showSuccessMsg, showErrorMsg])
+    }, [isLoading, successResult, errorResult])
 
     return (
         <>
@@ -80,12 +47,12 @@ const ContactForm: FC = () => {
             />
             <ResponseHandler
                 text={t("contactForm.success")}
-                active={showSuccessMsg}
+                active={successResult !== null}
                 className="ContactForm__handler"
             />
             <ResponseHandler
                 text={t("contactForm.error")}
-                active={showErrorMsg}
+                active={errorResult !== null}
                 className="ContactForm__handler"
                 error={true}
             />
