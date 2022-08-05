@@ -1,6 +1,7 @@
 @import "../variables";
 
 .CustomScrollbarThumb {
+    z-index: 500;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 100vw;
     cursor: pointer;

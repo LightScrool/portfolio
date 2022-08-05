@@ -7,6 +7,8 @@ import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
 import enResource from "./assests/languages/en.json";
 import ruResource from "./assests/languages/ru.json";
+import store from "./store";
+import {Provider} from "react-redux";
 
 i18n
     .use(initReactI18next)
@@ -26,7 +28,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <App/>
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </React.StrictMode>
 );
 

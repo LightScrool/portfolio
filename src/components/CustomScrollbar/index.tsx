@@ -1,4 +1,4 @@
-import React, {CSSProperties, ReactNode} from 'react';
+import React, {CSSProperties, ReactNode, UIEventHandler} from 'react';
 import {Scrollbars} from "react-custom-scrollbars-2";
 import CustomScrollbarThumb from "./CustomScrollbarThumb";
 
@@ -6,13 +6,15 @@ interface CustomScrollbarProps {
     children: ReactNode
     className?: string
     style?: CSSProperties
+    onScroll?: UIEventHandler
 }
 
 const CustomScrollbar = React.forwardRef<Scrollbars, CustomScrollbarProps>((
     {
         children,
         className,
-        style
+        style,
+        onScroll
     }, ref) => {
     return (
         <Scrollbars
@@ -21,6 +23,7 @@ const CustomScrollbar = React.forwardRef<Scrollbars, CustomScrollbarProps>((
             ref={ref}
             renderThumbHorizontal={CustomScrollbarThumb}
             renderThumbVertical={CustomScrollbarThumb}
+            onScroll={onScroll}
         >
             {children}
         </Scrollbars>
