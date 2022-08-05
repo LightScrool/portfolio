@@ -1,18 +1,15 @@
 import React, {CSSProperties, FC, useMemo, useRef, useState} from 'react';
 import "../../styles/Popup/ContactForm.scss";
 import {useTranslation} from "react-i18next";
-import useCustomScrollbar from "../../hooks/useCustomScrollbar";
 import emailJS from "emailjs-com";
 import ResponseHandler from "../ResponseHandler";
 import Loader from "../Loader";
 import {useDispatch} from "react-redux";
 import {TPopupReducerActionType} from "../../types/popup";
+import CustomTextArea from "../CustomTextArea";
 
 const ContactForm: FC = () => {
     const {t} = useTranslation();
-
-    const customScrollElement = useRef<HTMLTextAreaElement>(null);
-    useCustomScrollbar(customScrollElement);
 
     const [name, setName] = useState<string>("");
     const [contact, setContact] = useState<string>("");
@@ -114,14 +111,11 @@ const ContactForm: FC = () => {
                     value={contact}
                     onChange={(event) => setContact(event.target.value)}
                 />
-                <textarea
-                    name="message"
-                    className="ContactForm__textarea"
-                    ref={customScrollElement}
-                    rows={8}
-                    placeholder={t("contactForm.message")}
+                <CustomTextArea
                     value={message}
-                    onChange={(event) => setMessage(event.target.value)}
+                    setValue={setMessage}
+                    className="ContactForm__textarea"
+                    placeholder={t("contactForm.message")}
                 />
                 <button
                     className="ContactForm__button"
