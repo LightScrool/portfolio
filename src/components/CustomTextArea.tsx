@@ -44,11 +44,17 @@ const CustomTextArea: FC<CustomTextAreaAreaProps> = (
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setValue(event.target.value);
-
-        event.target.style.height = "auto";
-        const scrollHeight = event.target.scrollHeight;
-        event.target.style.height = `${scrollHeight}px`;
     }
+
+    // Need to do this in useEffect with [value] deps and not in onChange function, because
+    // value might be changed from outside (for example, on clearing form)
+    useEffect(() => {
+        if (!textarea.current) return;
+
+        textarea.current.style.height = "auto";
+        const scrollHeight = textarea.current.scrollHeight;
+        textarea.current.style.height = `${scrollHeight}px`;
+    }, [value])
 
     return (
         <div className={className}>
