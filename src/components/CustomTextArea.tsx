@@ -43,7 +43,11 @@ const CustomTextArea: FC<CustomTextAreaAreaProps> = (
     }, [initialHeight, currentHeight, value])
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        setCurrentHeight(event.target ? event.target.scrollHeight : initialHeight);
+        event.target.style.height = "auto";
+        const scrollHeight = event.target.scrollHeight;
+        event.target.style.height = `${scrollHeight}px`;
+
+        setCurrentHeight(scrollHeight);
         setValue(event.target.value);
     }
 
