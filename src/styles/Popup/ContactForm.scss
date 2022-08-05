@@ -1,13 +1,10 @@
 @import "../variables";
 
 .ContactForm{
-    &__textarea, &__input {
+    &__input{
         width: 100%;
         height: auto;
         margin-bottom: 2rem;
-    }
-
-    &__input{
         padding: 1rem;
         border: 2px solid $color-grey;
         border-radius: 0.5rem;
@@ -21,12 +18,10 @@
         }
     }
 
-    &__textarea {
-        resize: none;
-    }
-
     &__button {
         @include my-button;
+        margin-top: 2rem;
+
         &:hover {
             color: $color-black;
         }

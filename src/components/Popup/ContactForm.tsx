@@ -64,8 +64,7 @@ const ContactForm: FC = () => {
         setMessage("");
     }
 
-    // Form should be always mounted, because if it doesn't popup will change its size
-    // TODO: textarea bug
+    // Form should be always mounted, because if it doesn't popup will be changing its size
     const formVisibilityStyles = useMemo<CSSProperties>(() => {
         if (isLoading || showSuccessMsg || showErrorMsg) {
             return {opacity: 0, visibility: "hidden"};
@@ -114,7 +113,6 @@ const ContactForm: FC = () => {
                 <CustomTextArea
                     value={message}
                     setValue={setMessage}
-                    className="ContactForm__textarea"
                     placeholder={t("contactForm.message")}
                 />
                 <button
