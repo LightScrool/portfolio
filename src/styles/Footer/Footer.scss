@@ -3,16 +3,25 @@
 .Footer {
     display: block;
     height: 22rem;
+    width: 100%;
+    overflow: hidden;
 
-    background: $gradient-red;
-    background-size: 100vw 100vh;
+    &__background {
+        $border-width: 5px;
 
-    border-radius: 11rem 0 0 0;
-    width: calc(100% + 0.33rem);
-    border: 0.33rem $color-black solid;
-    border-right: 0;
-    border-bottom: 0;
-    transform: translateX(-0.33rem);
+        display: block;
+        width: calc(100% + #{$border-width});
+        height: 100%;
+
+        background: $gradient-red;
+        background-size: 100vw 100vh;
+        border-radius: 11rem 0 0 0;
+        border: $border-width $color-black solid;
+        border-right: 0;
+        border-bottom: 0;
+
+        transform: translateX(-$border-width);
+    }
 
     &__text, &__phone {
         font-size: 1.6rem;

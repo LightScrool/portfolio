@@ -11,20 +11,22 @@ const Footer: FC = () => {
 
     return (
         <footer className="Footer">
-            <Container>
-                <div className="Footer-grid">
-                    <div className="Footer-grid__item">
-                        <ContactButton/>
+            <div className="Footer__background">
+                <Container>
+                    <div className="Footer-grid">
+                        <div className="Footer-grid__item">
+                            <ContactButton/>
+                        </div>
+                        <div className="Footer-grid__item">
+                            <Media/>
+                        </div>
+                        <div className="Footer-grid__item">
+                            <div className="Footer__text">{t('footer.name')}</div>
+                            <a className="Footer__phone" href={`tel:${PHONE_NUMBER.href}`}>{PHONE_NUMBER.pretty}</a>
+                        </div>
                     </div>
-                    <div className="Footer-grid__item">
-                        <Media/>
-                    </div>
-                    <div className="Footer-grid__item">
-                        <div className="Footer__text">{t('footer.name')}</div>
-                        <a className="Footer__phone" href={`tel:${PHONE_NUMBER.href}`}>{PHONE_NUMBER.pretty}</a>
-                    </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </footer>
     );
 };
