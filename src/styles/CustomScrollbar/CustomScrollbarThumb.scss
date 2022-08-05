@@ -1,0 +1,17 @@
+@import "../variables";
+
+.CustomScrollbarThumb {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 100vw;
+    cursor: pointer;
+
+    transition: background $time-standard;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}

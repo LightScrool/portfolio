@@ -1,6 +1,7 @@
 import React, {ChangeEvent, FC, useEffect, useMemo, useRef, useState} from 'react';
 import "../styles/CustomTextArea.scss";
 import {Scrollbars} from "react-custom-scrollbars-2";
+import CustomScrollbar from "./CustomScrollbar";
 
 interface CustomTextAreaAreaProps {
     name: string
@@ -48,23 +49,19 @@ const CustomTextArea: FC<CustomTextAreaAreaProps> = (
 
     return (
         <div className={className}>
-            <Scrollbars
+            <CustomScrollbar
                 className="CustomTextArea-scrollbar"
-                style={{
-                    margin: 0,
-                    padding: 15,
-                }}
                 ref={scrollbar}
             >
-            <textarea
-                name={name}
-                className="CustomTextArea"
-                style={{height: currentHeight}}
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-            />
-            </Scrollbars>
+                <textarea
+                    name={name}
+                    className="CustomTextArea"
+                    style={{height: currentHeight}}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onChange}
+                />
+            </CustomScrollbar>
         </div>
     );
 };
