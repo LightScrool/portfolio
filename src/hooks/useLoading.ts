@@ -1,12 +1,12 @@
 import {useState} from "react";
 
-const useLoading = (
-    asyncCallback: () => Promise<any>,
+const useLoading = <T>(
+    asyncCallback: () => Promise<T>,
     resultClearTimeout: number | null = null
-): [() => Promise<any>, boolean, any, Error | null] => {
+): [() => Promise<T | Error>, boolean, T | null, Error | null] => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [successResult, setSuccessResult] = useState<any>(null);
+    const [successResult, setSuccessResult] = useState<T | null>(null);
     const [errorResult, setErrorResult] = useState<Error | null>(null);
 
     const loadingCallback = () => {
@@ -15,10 +15,12 @@ const useLoading = (
         return asyncCallback()
             .then(result => {
                 setSuccessResult(result);
+                return result;
             })
 
             .catch((error: Error) => {
                 setErrorResult(error);
+                return error
             })
 
             .finally(() => {
