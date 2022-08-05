@@ -1,7 +1,8 @@
-import React, {ChangeEvent, FC, useEffect, useMemo, useRef, useState} from 'react';
+import React, {ChangeEvent, FC, useEffect, useRef} from 'react';
 import "../styles/CustomTextArea.scss";
 import {Scrollbars} from "react-custom-scrollbars-2";
 import CustomScrollbar from "./CustomScrollbar";
+import {createWindowEventListeners} from "../utils";
 
 interface CustomTextAreaAreaProps {
     name: string
@@ -25,30 +26,28 @@ const CustomTextArea: FC<CustomTextAreaAreaProps> = (
     }) => {
 
     const scrollbar = useRef<Scrollbars>(null);
-    const initialHeight = useMemo<number>(() => {
-        if (!scrollbar.current) return 0;
-
-        return Number(window
-            .getComputedStyle(scrollbar.current.container)
-            .getPropertyValue('height')
-            .slice(0, -2)) - 10;
-
-        // eslint-disable-next-line
-    }, [scrollbar.current]);
-
-    const [currentHeight, setCurrentHeight] = useState<number>(initialHeight);
+    const textarea = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
-        if (!value) setCurrentHeight(initialHeight);
-    }, [initialHeight, currentHeight, value])
+        return createWindowEventListeners(() => {
+            if (!scrollbar.current || !textarea.current) return 0;
+
+            const standardHeight = Number(window
+                .getComputedStyle(scrollbar.current.container)
+                .getPropertyValue('height')
+                .slice(0, -2)) - 10;
+
+            textarea.current.style.minHeight = `${standardHeight}px`;
+
+        }, ["resize"])
+    });
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+        setValue(event.target.value);
+
         event.target.style.height = "auto";
         const scrollHeight = event.target.scrollHeight;
         event.target.style.height = `${scrollHeight}px`;
-
-        setCurrentHeight(scrollHeight);
-        setValue(event.target.value);
     }
 
     return (
@@ -58,9 +57,9 @@ const CustomTextArea: FC<CustomTextAreaAreaProps> = (
                 ref={scrollbar}
             >
                 <textarea
+                    ref={textarea}
                     name={name}
                     className="CustomTextArea"
-                    style={{height: currentHeight}}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
