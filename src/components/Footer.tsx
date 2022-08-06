@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import "../../styles/Footer/Footer.scss";
-import Container from "../Container";
-import ContactButton from "../ContactButton";
-import Media from "../Media";
+import "../styles/Footer/Footer.scss";
+import Container from "./Container";
+import ContactButton from "./ContactButton";
+import Media from "./Media";
 import {useTranslation} from "react-i18next";
-import {PHONE_NUMBER} from "../../data";
+import {PHONE_NUMBER} from "../data";
 
 const Footer: FC = () => {
     const {t} = useTranslation();

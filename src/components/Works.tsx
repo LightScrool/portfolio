@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import "../../styles/Works/Works.scss";
-import Container from "../Container";
-import SectionTitle from "../SectionTitle";
+import "../styles/Works/Works.scss";
+import Container from "./Container";
+import SectionTitle from "./SectionTitle";
 import {useTranslation} from "react-i18next";
-import MySvg from "../../assests/MySvg";
-import {TMySvgId, TWorksItem} from "../../types";
-import SvgWithHover from "../SvgWithHover";
-import {HYPER_REFERENCES} from "../../data";
+import MySvg from "../assests/MySvg";
+import {TMySvgId, TWorksItem} from "../types";
+import SvgWithHover from "./SvgWithHover";
+import {HYPER_REFERENCES} from "../data";
 
 const Works: FC = () => {
     const {t} = useTranslation();
