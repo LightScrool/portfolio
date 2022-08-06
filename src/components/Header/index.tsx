@@ -49,7 +49,7 @@ const Header: FC = () => {
         if (!aboutOffset) return;
 
         return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
-    }, [aboutOffset])
+    }, [aboutOffset, bodyScrollbar])
 
     return (
         <header className={"Header " + classMod}>

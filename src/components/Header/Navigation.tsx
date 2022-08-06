@@ -43,7 +43,7 @@ const Navigation: FC = () => {
         }
 
         return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
-    }, [items])
+    }, [items, bodyScrollbar])
 
     const scrollTo = useScrollTo();
     function onClick(offset: number) {
