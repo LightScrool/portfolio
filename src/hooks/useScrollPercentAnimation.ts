@@ -12,13 +12,13 @@ const useScrollPercentAnimation = (
             if (!animationBlock.current) return;
 
             const blockBCR = animationBlock.current.getBoundingClientRect()
-            const startScroll: number = blockBCR.top + window.scrollY;
-            const endScroll: number = blockBCR.bottom + window.scrollY - document.documentElement.clientHeight;
-            const currentScroll: number = window.scrollY;
+            const startScrollDiff: number = -blockBCR.top;
+            const endScrollDiff: number = blockBCR.bottom - document.documentElement.clientHeight;
 
-            let currentAnimationPercent: number = (currentScroll - startScroll) / (endScroll - startScroll);
+            let currentAnimationPercent: number = startScrollDiff / (endScrollDiff + startScrollDiff);
             currentAnimationPercent = (currentAnimationPercent < 0) ? 0 : currentAnimationPercent;
             currentAnimationPercent = (currentAnimationPercent > 1) ? 1 : currentAnimationPercent;
+
             setAnimationPercent(currentAnimationPercent);
         }
 
