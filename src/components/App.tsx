@@ -15,37 +15,33 @@ import {TBodyScrollbarReducerActionType} from "../types/bodyScrollbar";
 
 const App: FC = () => {
     const dispatch = useDispatch();
-    const bodyScroll = useRef<Scrollbars>(null);
+    const bodyScrollbar = useRef<Scrollbars>(null);
 
     useEffect(() => {
-        if (!bodyScroll.current) return;
+        if (!bodyScrollbar.current) return;
 
         dispatch({
-            type: TBodyScrollbarReducerActionType.SET_SCROLL_TO,
-            payload: bodyScroll.current.scrollTop
+            type: TBodyScrollbarReducerActionType.SET_SCROLLBAR,
+            payload: bodyScrollbar.current
         });
 
         return function () {
             dispatch({
-                type: TBodyScrollbarReducerActionType.SET_SCROLL_TO,
-                payload: () => {}
+                type: TBodyScrollbarReducerActionType.SET_SCROLLBAR,
+                payload: null
             });
         }
-    }, [bodyScroll]);
+    }, [bodyScrollbar]);
 
     function onScroll() {
-        if (!bodyScroll.current) return;
-        dispatch({
-            type: TBodyScrollbarReducerActionType.SET_CURRENT_SCROLL,
-            payload: bodyScroll.current.getScrollTop()
-        });
+        window.dispatchEvent(new Event("scroll"));
     }
 
     return (
         <div className="App">
             <CustomScrollbar
                 className="App__scroll"
-                ref={bodyScroll}
+                ref={bodyScrollbar}
                 onScroll={onScroll}
             >
                 <Popup/>

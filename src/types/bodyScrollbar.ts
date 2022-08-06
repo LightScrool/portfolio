@@ -1,21 +1,14 @@
-export type TBodyScrollbarReducerState = {
-    currentScroll: number,
-    scrollTo: (position: number) => void
-}
+import {Scrollbars} from "react-custom-scrollbars-2";
+
+export type TBodyScrollbarReducerState = Scrollbars | null;
 
 export enum TBodyScrollbarReducerActionType {
-    SET_CURRENT_SCROLL = "SET_CURRENT_SCROLL",
-    SET_SCROLL_TO = "SET_SCROLL_TO"
+    SET_SCROLLBAR = "SET_SCROLLBAR"
 }
 
-type TSetCurrentScrollAction = {
-    type: TBodyScrollbarReducerActionType.SET_CURRENT_SCROLL,
-    payload: number
+type TSetScrollbarAction = {
+    type: TBodyScrollbarReducerActionType.SET_SCROLLBAR,
+    payload: Scrollbars
 }
 
-type TSetScrollToAction = {
-    type: TBodyScrollbarReducerActionType.SET_SCROLL_TO,
-    payload: (position: number) => void
-}
-
-export type TBodyScrollbarReducerAction = TSetCurrentScrollAction | TSetScrollToAction
+export type TBodyScrollbarReducerAction = TSetScrollbarAction

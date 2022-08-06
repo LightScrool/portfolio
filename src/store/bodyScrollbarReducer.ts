@@ -1,9 +1,6 @@
 import {TBodyScrollbarReducerAction, TBodyScrollbarReducerActionType, TBodyScrollbarReducerState} from "../types/bodyScrollbar";
 
-const initialState: TBodyScrollbarReducerState = {
-    currentScroll: 0,
-    scrollTo: () => {}
-}
+const initialState: TBodyScrollbarReducerState = null
 
 const bodyScrollbarReducer = (
     state: TBodyScrollbarReducerState = initialState,
@@ -11,10 +8,8 @@ const bodyScrollbarReducer = (
 ) => {
 
     switch (action.type) {
-        case TBodyScrollbarReducerActionType.SET_CURRENT_SCROLL:
-            return {...state, currentScroll: action.payload}
-        case TBodyScrollbarReducerActionType.SET_SCROLL_TO:
-            return {...state, scrollTo: action.payload}
+        case TBodyScrollbarReducerActionType.SET_SCROLLBAR:
+            return action.payload
         default:
             return state
     }
