@@ -9,14 +9,16 @@ import {TMySvgId} from "../../types";
 import useSetOffset from "../../hooks/useSetOffset";
 import {TOffsetsReducerActionType} from "../../types/offsets";
 import useTypedSelector from "../../hooks/useTypedSelector";
+import useScrollTo from "../../hooks/useScrollTo";
 
 const Intro: FC = () => {
     const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
     useSetOffset(offsetCheckoutBlock, TOffsetsReducerActionType.SET_HOME);
 
     const offset = useTypedSelector(state => state.offsets.about);
+    const scrollTo = useScrollTo();
     const onClick = () => {
-        window.scrollTo(0, offset)
+        scrollTo(offset);
     }
 
     return (

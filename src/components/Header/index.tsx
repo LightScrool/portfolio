@@ -12,10 +12,13 @@ const Header: FC = () => {
     const fixed = useRef<boolean>(false);
     const [classMod, setClassMod] = useState<string>("");
 
+    const bodyScrollbar = useTypedSelector(state => state.bodyScrollbar);
     const ditMountCheck = useRef<boolean>(true);
     useEffect(() => {
         function onScrollOrResize() {
-            const newFixed = window.scrollY >= aboutOffset - 1;
+            if (!bodyScrollbar) return;
+
+            const newFixed = bodyScrollbar.getScrollTop() >= aboutOffset - 1;
 
             // ditMount case, classes are set without pre- and post- statuses
             if (ditMountCheck.current) {

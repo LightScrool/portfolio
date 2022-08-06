@@ -5,6 +5,7 @@ import {TNavItem} from "../../types";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {useTranslation} from "react-i18next";
 import {createWindowEventListeners} from "../../utils";
+import useScrollTo from "../../hooks/useScrollTo";
 
 const Navigation: FC = () => {
     const {t} = useTranslation();
@@ -27,12 +28,16 @@ const Navigation: FC = () => {
         },
     ], [offsets, t])
 
+    const bodyScrollbar = useTypedSelector(state => state.bodyScrollbar);
     const [activeItem, setActiveItem] = useState<string>("");
+
     useEffect(() => {
         function onScrollOrResize() {
+            if (!bodyScrollbar) return;
+
             let newActiveName = ""
             for (const item of items) {
-                if (window.scrollY >= item.offset- 1) newActiveName = item.name;
+                if (bodyScrollbar.getScrollTop() >= item.offset- 1) newActiveName = item.name;
             }
             setActiveItem(newActiveName);
         }
@@ -40,10 +45,11 @@ const Navigation: FC = () => {
         return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
     }, [items])
 
+    const scrollTo = useScrollTo();
     function onClick(offset: number) {
         return function (event: React.MouseEvent) {
             event.preventDefault();
-            window.scrollTo(0, offset)
+            scrollTo(offset)
         }
     }
 
