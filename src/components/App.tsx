@@ -31,7 +31,7 @@ const App: FC = () => {
                 payload: null
             });
         }
-    }, [bodyScrollbar]);
+    }, [bodyScrollbar, dispatch]);
 
     function onScroll() {
         window.dispatchEvent(new Event("scroll"));

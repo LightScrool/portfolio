@@ -4,7 +4,12 @@ const useScrollTo = () => {
     const bodyScrollbar = useTypedSelector(state => state.bodyScrollbar);
 
     return function (offset: number) {
-        if (bodyScrollbar) bodyScrollbar.scrollTop(offset);
+        // For some reason TypeScript doesn't see "view" field of Scrollbars
+        // @ts-ignore
+        if (bodyScrollbar) bodyScrollbar.view.scroll({
+            top: offset,
+            behavior: 'smooth',
+        });
     }
 }
 
