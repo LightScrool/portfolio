@@ -37,7 +37,7 @@ const Navigation: FC = () => {
 
             let newActiveName = ""
             for (const item of items) {
-                if (bodyScrollbar.getScrollTop() >= item.offset- 1) newActiveName = item.name;
+                if (bodyScrollbar.getScrollTop() >= item.offset - 1) newActiveName = item.name;
             }
             setActiveItem(newActiveName);
         }
@@ -46,6 +46,7 @@ const Navigation: FC = () => {
     }, [items, bodyScrollbar])
 
     const scrollTo = useScrollTo();
+
     function onClick(offset: number) {
         return function (event: React.MouseEvent) {
             event.preventDefault();
@@ -55,16 +56,22 @@ const Navigation: FC = () => {
 
     return (
         <div className="Navigation">
-            {items.map(item => (
-                <a
-                    key={item.name}
-                    className={`Navigation__item${activeItem === item.name ? " _active" : ""}`}
-                    href="/#"
-                    onClick={onClick(item.offset)}
-                >
-                    {item.text}
-                </a>
-            ))}
+            {
+                window.matchMedia("(max-width: 650px)").matches
+                    ?
+                    <></>
+                    :
+                    items.map(item => (
+                        <a
+                            key={item.name}
+                            className={`Navigation__item${activeItem === item.name ? " _active" : ""}`}
+                            href="/#"
+                            onClick={onClick(item.offset)}
+                        >
+                            {item.text}
+                        </a>
+                    ))
+            }
             <LanguagesButton/>
         </div>
     );

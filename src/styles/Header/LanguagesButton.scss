@@ -1,4 +1,4 @@
-.LanguagesButton{
+.LanguagesButton {
     display: flex;
     align-items: center;
     width: 1.5rem;
@@ -7,5 +7,9 @@
     & svg {
         width: 100%;
         height: auto;
+    }
+
+    @media (max-width: 650px) {
+        width: 1.9rem;
     }
 }

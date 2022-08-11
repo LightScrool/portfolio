@@ -6,6 +6,13 @@
     align-items: center;
     gap: 5rem;
 
+    @media (max-width: 770px) {
+        gap: 4rem;
+    }
+    @media (max-width: 670px) {
+        gap: 3.5rem;
+    }
+
     &__item {
         font-family: $font-main;
         font-weight: $fw-regular;
@@ -18,11 +25,13 @@
         @include scale-on-hover(1.1);
 
         position: relative;
+
         &:after {
             @include line(100%, 3px, transparent);
             transition: all $time-standard;
             position: absolute;
         }
+
         &._active {
             &:after {
                 background-color: #fff;

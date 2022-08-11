@@ -1,6 +1,6 @@
 @import "src/styles/variables";
 
-.Logo{
+.Logo {
     font-family: $font-main;
     font-weight: $fw-extra;
     font-size: 2.4rem;
@@ -10,4 +10,16 @@
     cursor: pointer;
 
     @include scale-on-hover(1.1);
+
+    @media (max-width: 650px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 380px) {
+        font-size: 2.7rem;
+    }
+
+    @media (max-width: 340px) {
+        font-size: 2.4rem;
+    }
 }
