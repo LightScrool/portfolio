@@ -2,7 +2,7 @@
 
 .Intro {
     width: 100%;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(100 * var(--vh, 1vh));
 
     background: $gradient-red;
     border-radius: 0 0 50vmin 0;
