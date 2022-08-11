@@ -29,7 +29,8 @@
 
         & a {
             color: #fff;
-            &:visited{
+
+            &:visited {
                 color: #fff;
             }
         }
@@ -113,8 +114,20 @@
         transform: scale(0.9);
     }
 
-    & .SiteTextBlock__line {
+    &#SiteTextBlock1 .SiteTextBlock__line {
+        transform: scale(0);
+    }
+
+    &#SiteTextBlock2 .SiteTextBlock__line,
+    &#SiteTextBlock4 .SiteTextBlock__line,
+    &#SiteTextBlock6 .SiteTextBlock__line {
         transform: scale(0) translateX(-100%);
+    }
+
+    &#SiteTextBlock3 .SiteTextBlock__line,
+    &#SiteTextBlock5 .SiteTextBlock__line,
+    &#SiteTextBlock7 .SiteTextBlock__line {
+        transform: scale(0) translateX(100%);
     }
 
     & .SiteTextBlock__text {
