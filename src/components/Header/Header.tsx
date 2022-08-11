@@ -14,6 +14,7 @@ const Header: FC = () => {
 
     const bodyScrollbar = useTypedSelector(state => state.bodyScrollbar);
     const ditMountCheck = useRef<boolean>(true);
+    const newClassModTimeout = useRef<NodeJS.Timeout>();
     useEffect(() => {
         function onScrollOrResize() {
             if (!bodyScrollbar) return;
@@ -33,15 +34,16 @@ const Header: FC = () => {
 
             // general case
             if (newFixed !== fixed.current){
+                clearTimeout(newClassModTimeout.current);
                 fixed.current = newFixed;
 
                 if (fixed.current) {
                     setClassMod("_preFixed")
-                    setTimeout(() => setClassMod("_fixed"), 20);
+                    newClassModTimeout.current = setTimeout(() => setClassMod("_fixed"), 20);
                     return
                 }
                 setClassMod("_postFixed")
-                setTimeout(() => setClassMod(""), TIMING.standard);
+                newClassModTimeout.current = setTimeout(() => setClassMod(""), TIMING.standard);
             }
         }
 
