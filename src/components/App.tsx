@@ -12,11 +12,21 @@ import CustomScrollbar from "./CustomScrollbar";
 import {Scrollbars} from "react-custom-scrollbars-2";
 import {useDispatch} from "react-redux";
 import {TBodyScrollbarReducerActionType} from "../types/bodyScrollbar";
+import {createWindowEventListeners} from "../utils";
 
 const App: FC = () => {
+    useEffect(() => {
+        function onResize() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        createWindowEventListeners(onResize, ['resize'])
+    }, [])
+
+
     const dispatch = useDispatch();
     const bodyScrollbar = useRef<Scrollbars>(null);
-
     useEffect(() => {
         if (!bodyScrollbar.current) return;
 
