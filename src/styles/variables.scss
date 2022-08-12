@@ -32,7 +32,10 @@ $time-fast: 0.1s;
 $time-standard: 0.3s;
 $time-slow: 1.2s;
 
-// mixins
+// Media queries
+$media-portrait: (max-width: 1200px) and (max-aspect-ratio: 17/20);
+
+// Mixins
 @mixin scale-on-hover($scale-ratio) {
     will-change: transform;
     transform-origin: center center;

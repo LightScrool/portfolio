@@ -38,3 +38,7 @@ export const TIMING = {
     standard: 300,
     slow: 1200
 }
+
+export const MEDIA_QUERIES = {
+    portrait: "(max-width: 1200px) and (max-aspect-ratio: 17/20)"
+}

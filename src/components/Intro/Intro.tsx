@@ -10,6 +10,8 @@ import useSetOffset from "../../hooks/useSetOffset";
 import {TOffsetsReducerActionType} from "../../types/offsets";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import useScrollTo from "../../hooks/useScrollTo";
+import useMatchMediaFlag from "../../hooks/useMatchMediaFlag";
+import {MEDIA_QUERIES} from "../../styles/variables";
 
 const Intro: FC = () => {
     const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
@@ -21,12 +23,20 @@ const Intro: FC = () => {
         scrollTo(offset);
     }
 
+    const hidePhoto = useMatchMediaFlag(MEDIA_QUERIES.portrait);
+
     return (
         <section className="Intro" ref={offsetCheckoutBlock}>
             <Container>
                 <div className="Intro__inner">
                     <IntroBlock/>
-                    <IntroPhoto/>
+                    {
+                        hidePhoto
+                        ?
+                        <></>
+                        :
+                        <IntroPhoto/>
+                    }
                     <MySvg
                         className="Intro__arrows"
                         onClick={onClick}
