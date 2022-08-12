@@ -21,7 +21,7 @@ const App: FC = () => {
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         }
 
-        createWindowEventListeners(onResize, ['resize'])
+        return createWindowEventListeners(onResize, ['resize']);
     }, [])
 
 
