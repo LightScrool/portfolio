@@ -6,6 +6,7 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 import {useTranslation} from "react-i18next";
 import {createWindowEventListeners} from "../../utils";
 import useScrollTo from "../../hooks/useScrollTo";
+import useMatchMediaFlag from "../../hooks/useMatchMediaFlag";
 
 const Navigation: FC = () => {
     const {t} = useTranslation();
@@ -54,23 +55,25 @@ const Navigation: FC = () => {
         }
     }
 
+    const showItems = useMatchMediaFlag("(max-width: 650px)");
+
     return (
         <div className="Navigation">
             {
-                window.matchMedia("(max-width: 650px)").matches
-                    ?
-                    <></>
-                    :
-                    items.map(item => (
-                        <a
-                            key={item.name}
-                            className={`Navigation__item${activeItem === item.name ? " _active" : ""}`}
-                            href="/#"
-                            onClick={onClick(item.offset)}
-                        >
-                            {item.text}
-                        </a>
-                    ))
+                showItems
+                ?
+                <></>
+                :
+                items.map(item => (
+                    <a
+                        key={item.name}
+                        className={`Navigation__item${activeItem === item.name ? " _active" : ""}`}
+                        href="/#"
+                        onClick={onClick(item.offset)}
+                    >
+                        {item.text}
+                    </a>
+                ))
             }
             <LanguagesButton/>
         </div>
