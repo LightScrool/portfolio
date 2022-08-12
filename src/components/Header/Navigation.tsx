@@ -6,7 +6,7 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 import {useTranslation} from "react-i18next";
 import {createWindowEventListeners} from "../../utils";
 import useScrollTo from "../../hooks/useScrollTo";
-import useMatchMediaFlag from "../../hooks/useMatchMediaFlag";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Navigation: FC = () => {
     const {t} = useTranslation();
@@ -55,7 +55,7 @@ const Navigation: FC = () => {
         }
     }
 
-    const showItems = useMatchMediaFlag("(max-width: 650px)");
+    const showItems = useMediaQuery("(max-width: 650px)");
 
     return (
         <div className="Navigation">

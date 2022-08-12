@@ -10,7 +10,7 @@ import useSetOffset from "../../hooks/useSetOffset";
 import {TOffsetsReducerActionType} from "../../types/offsets";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import useScrollTo from "../../hooks/useScrollTo";
-import useMatchMediaFlag from "../../hooks/useMatchMediaFlag";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import {MEDIA_QUERIES} from "../../styles/variables";
 
 const Intro: FC = () => {
@@ -23,7 +23,7 @@ const Intro: FC = () => {
         scrollTo(offset);
     }
 
-    const hidePhoto = useMatchMediaFlag(MEDIA_QUERIES.portrait);
+    const hidePhoto = useMediaQuery(MEDIA_QUERIES.portrait);
 
     return (
         <section className="Intro" ref={offsetCheckoutBlock}>

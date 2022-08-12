@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {createWindowEventListeners} from "../utils";
 
-const useMatchMediaFlag = (mediaQuery: string) => {
+const useMediaQuery = (mediaQuery: string) => {
     const [flag, setFlag] = useState<boolean>(true);
 
     useEffect(() => {
@@ -13,4 +13,4 @@ const useMatchMediaFlag = (mediaQuery: string) => {
     return flag;
 }
 
-export default useMatchMediaFlag
+export default useMediaQuery
