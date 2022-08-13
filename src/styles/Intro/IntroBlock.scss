@@ -1,4 +1,6 @@
-.IntroBlock{
+@import "../variables";
+
+.IntroBlock {
     position: relative;
     z-index: 100;
     display: flex;
@@ -10,4 +12,16 @@
     color: #fff;
 
     white-space: nowrap;
+
+    @media #{$media-portrait} and #{$media-container} {
+        white-space: normal;
+    }
+
+    @media #{$media-portrait} and #{$media-container} and (min-width: 600px) {
+        transform: scale(1.2);
+    }
+
+    @media #{$media-portrait} and (max-width: 350px) {
+        transform: scale(0.85);
+    }
 }

@@ -9,6 +9,10 @@
 
     overflow: hidden;
 
+    @media #{$media-container} {
+        max-height: 180vw;
+    }
+
     &__inner {
         position: relative;
         z-index: 100;
