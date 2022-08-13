@@ -1,13 +1,13 @@
 import React, {FC, ReactNode} from 'react';
 import useMediaQuery from "../hooks/useMediaQuery";
 
-interface ShowOnMatchMedia {
+interface ShowOnMatchMediaProps {
     children: ReactNode
     mediaQuery: string
     inversion?: boolean
 }
 
-const ShowOnMatchMedia: FC<ShowOnMatchMedia> = (
+const ShowOnMatchMedia: FC<ShowOnMatchMediaProps> = (
     {
         children,
         mediaQuery,
