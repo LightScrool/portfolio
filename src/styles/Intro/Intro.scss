@@ -7,6 +7,7 @@
     background: $gradient-red;
     border-radius: 0 0 50vmin 0;
 
+    position: relative;
     overflow: hidden;
 
     @media #{$media-container} {

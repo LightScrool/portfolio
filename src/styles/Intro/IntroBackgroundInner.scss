@@ -1,4 +1,6 @@
-.IntroBackground {
+@import "../variables";
+
+.IntroBackgroundInner {
     display: block;
     position: absolute;
     z-index: 0;
@@ -7,38 +9,28 @@
     top: 0;
     left: 0;
 
+    overflow: hidden;
+
     & svg {
         overflow: visible;
-        height: auto;
         position: absolute;
     }
 
-    &__circle1 {
-        width: 43.5rem;
-
-        bottom: -19rem;
-        right: -47rem;
-    }
-
-    &__circle2 {
+    &__circle {
         width: 37rem;
 
         bottom: -20rem;
-        left: -43rem;
+        left: -19rem;
+
+        @media #{$media-portrait} and #{$media-container} {
+            bottom: -28rem;
+        }
     }
 
     &__wave {
         width: 35rem;
 
         top: -27rem;
-        right: -42rem;
-    }
-
-    &__dots {
-        width: 13rem;
-
-        top: 7rem;
-        left: -19rem;
+        right: -18rem;
     }
 }
-

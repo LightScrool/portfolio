@@ -3,7 +3,8 @@ import "../../styles/Intro/Intro.scss";
 import Container from "../Container";
 import IntroBlock from "./IntroBlock";
 import IntroPhoto from "./IntroPhoto";
-import IntroBackground from "./IntroBackground";
+import IntroBackgroundOuter from "./IntroBackgroundOuter";
+import IntroBackgroundInner from "./IntroBackgroundInner";
 import MySvg from "../../assests/MySvg";
 import {TMySvgId} from "../../types";
 import useSetOffset from "../../hooks/useSetOffset";
@@ -44,8 +45,9 @@ const Intro: FC = () => {
                         fill={{color: "#fff", opacity: 0.65}}
                     />
                 </div>
-                <IntroBackground/>
+                <IntroBackgroundOuter/>
             </Container>
+            <IntroBackgroundInner/>
         </section>
     );
 };
