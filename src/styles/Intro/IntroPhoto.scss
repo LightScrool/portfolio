@@ -5,21 +5,27 @@
     justify-content: center;
     align-items: center;
     width: 56%;
+    max-height: calc(100% - 2 * #{$header-size});
     position: relative;
 
+    &__size-box {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__picture, &__border {
+        position: absolute;
+        max-height: 100%;
+    }
+
     &__picture {
-        width: 100%;
-        height: auto;
         z-index: 100;
         filter: $shadow-picture;
     }
 
     &__border {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        overflow: visible;
         z-index: 150;
+        overflow: visible;
     }
 
     &__wave{
