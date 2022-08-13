@@ -8,7 +8,7 @@ const useMediaQuery = (mediaQuery: string) => {
         return createWindowEventListeners(() => {
             setFlag(window.matchMedia(mediaQuery).matches);
         }, ["resize"]);
-    }, [])
+    }, [mediaQuery])
 
     return flag;
 }
