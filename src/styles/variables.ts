@@ -40,5 +40,10 @@ export const TIMING = {
 }
 
 export const MEDIA_QUERIES = {
-    portrait: "(max-width: 1200px) and (max-aspect-ratio: 17/20)"
+    portrait: "(max-aspect-ratio: 17/20)",
+    landscape : "(max-aspect-ratio: 20/17)",
+    container: "(max-width: 1200px)",
+    fsz14: "(max-width: 900px)",
+    fsz13: "(max-width: 820px)",
+    fsz12: "(max-width: 720px)",
 }

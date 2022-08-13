@@ -33,7 +33,12 @@ $time-standard: 0.3s;
 $time-slow: 1.2s;
 
 // Media queries
-$media-portrait: (max-width: 1200px) and (max-aspect-ratio: 17/20);
+$media-portrait: (max-aspect-ratio: 17/20);
+$media-landscape: (max-aspect-ratio: 20/17);
+$media-container: (max-width: 1200px);
+$media-fsz14: (max-width: 900px);
+$media-fsz13: (max-width: 820px);
+$media-fsz12: (max-width: 720px);
 
 // Mixins
 @mixin scale-on-hover($scale-ratio) {

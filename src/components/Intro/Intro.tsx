@@ -23,7 +23,7 @@ const Intro: FC = () => {
         scrollTo(offset);
     }
 
-    const hidePhoto = useMediaQuery(MEDIA_QUERIES.portrait);
+    const hidePhoto = useMediaQuery(`${MEDIA_QUERIES.portrait} and ${MEDIA_QUERIES.container}`);
 
     return (
         <section className="Intro" ref={offsetCheckoutBlock}>
