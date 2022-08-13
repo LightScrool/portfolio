@@ -24,4 +24,9 @@
     @media #{$media-portrait} and (max-width: 350px) {
         transform: scale(0.85);
     }
+
+    @media #{$media-landscape} and (max-width: 790px){
+        transform-origin: left;
+        transform: scale(0.9);
+    }
 }

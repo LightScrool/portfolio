@@ -12,6 +12,7 @@
 
     @media #{$media-container} {
         max-height: 180vw;
+        min-height: calc(20rem + 3 * #{$header-size}); // 20rem - approximate size of IntroBlock
     }
 
     &__inner {
@@ -21,7 +22,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 1.5rem;
 
         @media  #{$media-portrait} and #{$media-container} {
             justify-content: center;

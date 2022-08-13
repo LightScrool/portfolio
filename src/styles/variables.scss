@@ -34,7 +34,8 @@ $time-slow: 1.2s;
 
 // Media queries
 $media-portrait: (max-aspect-ratio: 17/20);
-$media-landscape: (max-aspect-ratio: 20/17);
+$media-landscape: (min-aspect-ratio: 20/17);
+$media-hide-intro-outer: (max-width: 1400px);
 $media-container: (max-width: 1200px);
 $media-fsz14: (max-width: 900px);
 $media-fsz13: (max-width: 820px);

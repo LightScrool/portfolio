@@ -1,11 +1,17 @@
 @import "src/styles/variables";
 
 .IntroPhoto {
+    width: 56%;
+    max-height: calc(100% - 2 * #{$header-size});
+
+    @media #{$media-landscape} and (max-width: 790px){
+        transform-origin: right;
+        transform: scale(1.1);
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 56%;
-    max-height: calc(100% - 2 * #{$header-size});
     position: relative;
 
     &__size-box {
@@ -34,6 +40,7 @@
 
         display: block;
         width: 75%;
+        min-width: 20rem;
         height: auto;
 
         top: -9.5%;

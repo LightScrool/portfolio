@@ -25,7 +25,7 @@ const Intro: FC = () => {
     }
 
     const hidePhoto = useMediaQuery(`${MEDIA_QUERIES.portrait} and ${MEDIA_QUERIES.container}`);
-    const hideIntroBackgroundOuter = useMediaQuery(`(max-width: 1400px)`);
+    const hideIntroBackgroundOuter = useMediaQuery(MEDIA_QUERIES.hideIntroOuter);
 
     return (
         <section className="Intro" ref={offsetCheckoutBlock}>
