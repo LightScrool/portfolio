@@ -8,10 +8,6 @@ import useScrollPercentAnimation from "../../hooks/useScrollPercentAnimation";
 import {HYPER_REFERENCES} from "../../data";
 
 const SiteAnimationBlock: FC = () => {
-    const revolutionsQuantity = 1.5;
-    const animationBlock = useRef<HTMLDivElement>(null);
-    const animationPercent = useScrollPercentAnimation(animationBlock);
-
     const items: TSiteItem[] = [
         {name: "React"},
         {name: "Figma", href: HYPER_REFERENCES.Figma},
@@ -21,13 +17,19 @@ const SiteAnimationBlock: FC = () => {
         {name: "i18next"},
         {name: "TypeScript"},
     ];
+    const REVOLUTIONS_QUANTITY = 1.5;
+    const [APPEARANCE_START, APPEARANCE_END] = [0.15, 0.65];
+    const appearanceStep = (APPEARANCE_END - APPEARANCE_START) / (items.length - 1);
+
+    const animationBlock = useRef<HTMLDivElement>(null);
+    const animationPercent = useScrollPercentAnimation(animationBlock);
 
     return (
             <div className="SiteAnimationBlock" ref={animationBlock}>
                 <div className="SiteAnimationBlock__sticky">
                     <div className="SiteAnimationBlock__picture">
                         <MySvg
-                            style={{transform: `rotate(${animationPercent * revolutionsQuantity * 360}deg)`}}
+                            style={{transform: `rotate(${animationPercent * REVOLUTIONS_QUANTITY * 360}deg)`}}
                             Id={TMySvgId.react}
                             fill={{color: COLORS.blue, opacity: 1}}
                         />
@@ -36,7 +38,7 @@ const SiteAnimationBlock: FC = () => {
                         <SiteTextBlock
                             key={index}
                             index={index}
-                            show={animationPercent > 0.2 + 0.08 * index}
+                            show={animationPercent > APPEARANCE_START + appearanceStep * index}
                             data={item}
                         />
                     ))}
