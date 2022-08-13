@@ -11,8 +11,8 @@ import useSetOffset from "../../hooks/useSetOffset";
 import {TOffsetsReducerActionType} from "../../types/offsets";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import useScrollTo from "../../hooks/useScrollTo";
-import useMediaQuery from "../../hooks/useMediaQuery";
 import {MEDIA_QUERIES} from "../../styles/variables";
+import ShowOnMatchMedia from "../ShowOnMatchMedia";
 
 const Intro: FC = () => {
     const offsetCheckoutBlock = useRef<HTMLDivElement>(null);
@@ -24,21 +24,17 @@ const Intro: FC = () => {
         scrollTo(offset);
     }
 
-    const hidePhoto = useMediaQuery(`${MEDIA_QUERIES.portrait} and ${MEDIA_QUERIES.container}`);
-    const hideIntroBackgroundOuter = useMediaQuery(MEDIA_QUERIES.hideIntroOuter);
+    const hidePhotoMediaQuery = `${MEDIA_QUERIES.portrait} and ${MEDIA_QUERIES.container}`
+    const hideBGOuterMediaQuery = MEDIA_QUERIES.hideIntroOuter
 
     return (
         <section className="Intro" ref={offsetCheckoutBlock}>
             <Container>
                 <div className="Intro__inner">
                     <IntroBlock/>
-                    {
-                        hidePhoto
-                        ?
-                        <></>
-                        :
+                    <ShowOnMatchMedia mediaQuery={hidePhotoMediaQuery} inversion={true}>
                         <IntroPhoto/>
-                    }
+                    </ShowOnMatchMedia>
                     <MySvg
                         className="Intro__arrows"
                         onClick={onClick}
@@ -46,13 +42,9 @@ const Intro: FC = () => {
                         fill={{color: "#fff", opacity: 0.65}}
                     />
                 </div>
-                {
-                    hideIntroBackgroundOuter
-                    ?
-                    <></>
-                    :
+                <ShowOnMatchMedia mediaQuery={hideBGOuterMediaQuery} inversion={true}>
                     <IntroBackgroundOuter/>
-                }
+                </ShowOnMatchMedia>
             </Container>
             <IntroBackgroundInner/>
         </section>

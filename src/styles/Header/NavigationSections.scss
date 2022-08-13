@@ -1,0 +1,27 @@
+@import "../variables";
+
+.NavigationSection {
+    font-family: $font-main;
+    font-weight: $fw-regular;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+    @include scale-on-hover(1.1);
+
+    position: relative;
+
+    &:after {
+        @include line(100%, 3px, transparent);
+        transition: all $time-standard;
+        position: absolute;
+    }
+
+    &._active {
+        &:after {
+            background-color: #fff;
+        }
+    }
+}
