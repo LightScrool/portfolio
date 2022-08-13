@@ -38,17 +38,20 @@
         left: 50%;
 
         cursor: pointer;
-        animation: arrows-up-down 2.5s ease-in-out infinite;
 
-        @keyframes arrows-up-down {
-            0% {
-                transform: translate(-50%, 0.5rem);
-            }
-            50% {
-                transform: translate(-50%, -0.5rem);
-            }
-            100% {
-                transform: translate(-50%, 0.5rem);
+        @media (prefers-reduced-motion: no-preference) {
+            animation: arrows-up-down 2.5s ease-in-out infinite;
+
+            @keyframes arrows-up-down {
+                0% {
+                    transform: translate(-50%, 0.5rem);
+                }
+                50% {
+                    transform: translate(-50%, -0.5rem);
+                }
+                100% {
+                    transform: translate(-50%, 0.5rem);
+                }
             }
         }
     }
