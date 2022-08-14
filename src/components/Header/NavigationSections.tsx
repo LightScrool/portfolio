@@ -3,7 +3,7 @@ import "../../styles/Header/NavigationSections.scss";
 import {useTranslation} from "react-i18next";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {TNavItem} from "../../types";
-import {createWindowEventListeners} from "../../utils";
+import {combineClassNames, createWindowEventListeners} from "../../utils";
 import useScrollTo from "../../hooks/useScrollTo";
 
 const NavigationSections: FC = () => {
@@ -58,7 +58,7 @@ const NavigationSections: FC = () => {
             {items.map(item => (
                 <a
                     key={item.name}
-                    className={`NavigationSection${activeItem === item.name ? " _active" : ""}`}
+                    className={combineClassNames("NavigationSection", activeItem === item.name ? "_active" : "")}
                     href="/#"
                     onClick={onClick(item.offset)}
                 >

@@ -4,6 +4,7 @@ import {Transition} from "react-transition-group";
 import {TIMING} from "../../styles/variables";
 import {TSiteItem} from "../../types";
 import {Trans, useTranslation} from "react-i18next";
+import {combineClassNames} from "../../utils";
 
 interface SiteTextBlockProps {
     data: TSiteItem
@@ -34,7 +35,7 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
             {state => (
                 <div
                     ref={nodeRef}
-                    className={`SiteTextBlock ${state}`}
+                    className={combineClassNames("SiteTextBlock", state)}
                     id={`SiteTextBlock${index + 1}`}
                 >
                     <div className="SiteTextBlock__title">

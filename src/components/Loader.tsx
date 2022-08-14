@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import "../styles/Loader.scss";
+import {combineClassNames} from "../utils";
 
 interface LoaderProps {
     active: boolean,
@@ -15,7 +16,7 @@ const Loader: FC<LoaderProps> = (
     return (
         active
             ?
-            <label className={className ? `Loader ${className}` : "Loader"}/>
+            <label className={combineClassNames("Loader", className)}/>
             :
             <></>
     );

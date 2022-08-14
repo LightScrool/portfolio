@@ -4,6 +4,7 @@ import MySvg from "../assests/MySvg";
 import {TMySvgId} from "../types";
 import {Transition} from "react-transition-group";
 import {TIMING} from "../styles/variables";
+import {combineClassNames} from "../utils";
 
 interface ResponseHandlerProps {
     text: string,
@@ -21,6 +22,7 @@ const ResponseHandler: FC<ResponseHandlerProps> = (
     }) => {
 
     const nodeRef = useRef<HTMLDivElement>(null);
+    const errorClass = error ? "_error" : "";
 
     return (
         <Transition
@@ -34,11 +36,11 @@ const ResponseHandler: FC<ResponseHandlerProps> = (
         >
             {state => (
                 <div
-                    className={`ResponseHandler ${state}${className ? " " + className : ""}`}
+                    className={combineClassNames("ResponseHandler", state, className)}
                     ref={nodeRef}
                 >
                     <MySvg
-                        className={`ResponseHandler__icon${error ? " _error" : ""}`}
+                        className={combineClassNames("ResponseHandler__icon", errorClass)}
                         Id={error ? TMySvgId.errorCross : TMySvgId.checkMark}
                     />
                     <div className="ResponseHandler__text">

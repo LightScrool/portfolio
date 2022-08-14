@@ -1,5 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import "../styles/SvgWithHover.scss";
+import {combineClassNames} from "../utils";
 
 interface SvgWithHoverProps {
     className?: string,
@@ -28,7 +29,7 @@ const SvgWithHover: FC<SvgWithHoverProps> = (
     }) => {
     return (
         <a
-            className={`SvgWithHover ${className}`}
+            className={combineClassNames("SvgWithHover", className)}
             onClick={onClick}
             href={href}
             target={target}

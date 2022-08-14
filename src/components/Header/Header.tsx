@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {TIMING} from "../../styles/variables";
-import {createWindowEventListeners} from "../../utils";
+import {combineClassNames, createWindowEventListeners} from "../../utils";
 
 const Header: FC = () => {
     const aboutOffset = useTypedSelector(state => state.offsets.about);
@@ -33,7 +33,7 @@ const Header: FC = () => {
             }
 
             // general case
-            if (newFixed !== fixed.current){
+            if (newFixed !== fixed.current) {
                 clearTimeout(newClassModTimeout.current);
                 fixed.current = newFixed;
 
@@ -54,7 +54,7 @@ const Header: FC = () => {
     }, [aboutOffset, bodyScrollbar])
 
     return (
-        <header className={"Header " + classMod}>
+        <header className={combineClassNames("Header", classMod)}>
             <Container>
                 <div className="Header__inner">
                     <Logo/>

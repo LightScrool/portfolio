@@ -8,6 +8,7 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import {TPopupReducerActionType} from "../../types/popup";
 import ContactForm from "./ContactForm";
+import {combineClassNames} from "../../utils";
 
 const Popup: FC = () => {
 
@@ -37,7 +38,7 @@ const Popup: FC = () => {
         >
             {state => (
                 <div
-                    className={`Popup ${state}`}
+                    className={combineClassNames("Popup", state)}
                     ref={nodeRef}
                     onClick={closePopup}
                 >
