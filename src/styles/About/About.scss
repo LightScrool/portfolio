@@ -1,10 +1,16 @@
 @import "src/styles/variables";
 
 .About {
+    $about-vertical-grid: 1000px;
+
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $about-vertical-grid) {
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
     }
 
     &__photo {
@@ -15,5 +21,21 @@
 
     &__text-blocks {
         width: calc(50% - 1rem);
+    }
+
+    &__photo, &__text-blocks {
+        @media (max-width: $about-vertical-grid) {
+            width: 100%;
+            padding: 0 10%;
+        }
+        @media (max-width: 850px) {
+            padding: 0 7%;
+        }
+        @media (max-width: 640px) {
+            padding: 0 5%;
+        }
+        @media (max-width: 480px) {
+            padding: 0 3%;
+        }
     }
 }
