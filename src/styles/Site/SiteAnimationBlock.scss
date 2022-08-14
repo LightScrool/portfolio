@@ -4,10 +4,6 @@
     $sticky-height: calc(100 * var(--vh, 1vh) - #{$header-size});
     $sticky-min-height: 50rem;
 
-    @media (max-width: 680px) {
-        display: none; // TODO: vertical version
-    }
-
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
@@ -16,8 +12,17 @@
         min-height: $sticky-min-height;
     }
 
+    @media #{$media-remake-site-section-animation} {
+        height: auto;
+        min-height: 0;
+    }
+
     &__sticky {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
         width: 100%;
         height: $sticky-height;
 
@@ -33,6 +38,11 @@
             margin: 0;
             transform: none;
             min-height: $sticky-min-height;
+        }
+
+        @media #{$media-remake-site-section-animation} {
+            height: auto;
+            min-height: 0;
         }
     }
 

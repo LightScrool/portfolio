@@ -2,10 +2,11 @@ import React, {FC, useRef} from 'react';
 import "../../styles/Site/SiteAnimationBlock.scss";
 import MySvg from "../../assests/MySvg";
 import {TMySvgId, TSiteItem} from "../../types";
-import {COLORS} from "../../styles/variables";
+import {COLORS, MEDIA_QUERIES} from "../../styles/variables";
 import SiteTextBlock from "./SiteTextBlock";
 import useScrollPercentAnimation from "../../hooks/useScrollPercentAnimation";
 import {HYPER_REFERENCES} from "../../data";
+import ShowOnMatchMedia from "../ShowOnMatchMedia";
 
 const SiteAnimationBlock: FC = () => {
     const items: TSiteItem[] = [
@@ -25,8 +26,9 @@ const SiteAnimationBlock: FC = () => {
     const animationPercent = useScrollPercentAnimation(animationBlock);
 
     return (
-            <div className="SiteAnimationBlock" ref={animationBlock}>
-                <div className="SiteAnimationBlock__sticky">
+        <div className="SiteAnimationBlock" ref={animationBlock}>
+            <div className="SiteAnimationBlock__sticky">
+                <ShowOnMatchMedia mediaQuery={MEDIA_QUERIES.remakeSiteSectionAnimation} inversion={true}>
                     <div className="SiteAnimationBlock__picture">
                         <MySvg
                             style={{transform: `rotate(${animationPercent * REVOLUTIONS_QUANTITY * 360}deg)`}}
@@ -34,16 +36,17 @@ const SiteAnimationBlock: FC = () => {
                             fill={{color: COLORS.blue, opacity: 1}}
                         />
                     </div>
-                    {items.map((item, index) => (
-                        <SiteTextBlock
-                            key={index}
-                            index={index}
-                            show={animationPercent > APPEARANCE_START + appearanceStep * index}
-                            data={item}
-                        />
-                    ))}
-                </div>
+                </ShowOnMatchMedia>
+                {items.map((item, index) => (
+                    <SiteTextBlock
+                        key={index}
+                        index={index}
+                        show={animationPercent > APPEARANCE_START + appearanceStep * index}
+                        data={item}
+                    />
+                ))}
             </div>
+        </div>
     );
 };
 

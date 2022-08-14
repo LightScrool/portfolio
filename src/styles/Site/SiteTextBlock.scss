@@ -127,7 +127,7 @@
         }
     }
     @include reduce-on-width(1100px, 0.9);
-    
+
     @media (max-width: 1000px) {
         &#SiteTextBlock2 { // Figma
             left: 3rem;
@@ -144,6 +144,37 @@
         &#SiteTextBlock7 { // TypeScript
             right: 11rem;
         }
+    }
+
+    @media #{$media-remake-site-section-animation} {
+        position: static;
+        width: calc(50% - 1rem);
+
+        &#SiteTextBlock1,
+        &#SiteTextBlock2,
+        &#SiteTextBlock3,
+        &#SiteTextBlock4,
+        &#SiteTextBlock5,
+        &#SiteTextBlock6,
+        &#SiteTextBlock7 {
+            transform: none;
+            text-align: left;
+            margin: 0 auto 2rem;
+        }
+
+        &#SiteTextBlock1 &__line,
+        &#SiteTextBlock2 &__line,
+        &#SiteTextBlock3 &__line,
+        &#SiteTextBlock4 &__line,
+        &#SiteTextBlock5 &__line,
+        &#SiteTextBlock6 &__line,
+        &#SiteTextBlock7 &__line {
+            margin-left: 0;
+        }
+    }
+
+    @media #{$media-remake-site-section-animation} and (max-width: 540px) {
+        width: 100%;
     }
 }
 

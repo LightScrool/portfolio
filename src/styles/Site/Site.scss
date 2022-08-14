@@ -7,6 +7,10 @@
     background: $gradient-black fixed;
     background-size: 100vw calc(100 * var(--vh, 1vh));
 
+    @media #{$media-remake-site-section-animation} {
+        border-radius: 0;
+    }
+
     &__inner {
         display: flex;
         width: 100%;

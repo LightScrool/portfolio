@@ -49,4 +49,5 @@ export const MEDIA_QUERIES = {
     fsz14: "(max-width: 900px)",
     fsz13: "(max-width: 820px)",
     fsz12: "(max-width: 720px)",
+    remakeSiteSectionAnimation: "(max-width: 680px)",
 }
