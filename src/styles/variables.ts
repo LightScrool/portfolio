@@ -41,8 +41,10 @@ export const TIMING = {
 
 export const MEDIA_QUERIES = {
     portrait: "(orientation: portrait)",
-    landscape : "(orientation: landscape)",
-    disableSiteSectionAnimation: "(prefers-reduced-motion: reduce), (hover: none), (max-width: 680px)",
+    landscape: "(orientation: landscape)",
+    halfSiteSection: "(prefers-reduced-motion: no-preference) and (hover: hover) and (max-width: 1120px) and (min-width: 920.1px) and (min-height: 630.1px), " +
+        "(prefers-reduced-motion: no-preference) and (hover: hover) and (max-height: 820px) and (min-width: 920.1px) and (min-height: 630.1px)",
+    disableSiteSectionAnimation: "(prefers-reduced-motion: reduce), (hover: none), (max-width: 920px), (max-height: 630px)",
     hideIntroOuter: "(max-width: 1400px)",
     container: "(max-width: 1200px)",
     verticalGrid: "(max-width: 1000px)",

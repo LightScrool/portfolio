@@ -59,12 +59,26 @@
         transform-origin: center;
         transform: translate(-50%, -50%);
 
-        @mixin reduce-on-width($width, $scale-ratio) {
-            @media #{$media-disable-site-section-animation} and (max-width: $width) {
+        @media #{$media-disable-site-section-animation}, #{$media-half-site-section} {
+            @media (max-width: 1100px) {
+                $scale-ratio: 0.9;
+                transform: translate(-50%, -50%) scale($scale-ratio);
+            }
+            @media (max-width: 780px) {
+                $scale-ratio: 0.75;
                 transform: translate(-50%, -50%) scale($scale-ratio);
             }
         }
-        @include reduce-on-width(1100px, 0.9);
-        @include reduce-on-width(780px, 0.75);
+
+        @media #{$media-half-site-section} {
+            @media (max-width: 1080px), (max-height: 740px) {
+                $scale-ratio: 0.9;
+                transform: translate(-50%, -50%) scale($scale-ratio);
+            }
+            @media (max-height: 690px) {
+                $scale-ratio: 0.75;
+                transform: translate(-50%, -50%) scale($scale-ratio);
+            }
+        }
     }
 }

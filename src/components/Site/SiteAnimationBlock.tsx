@@ -7,13 +7,14 @@ import SiteTextBlock from "./SiteTextBlock";
 import useScrollPercentAnimation from "../../hooks/useScrollPercentAnimation";
 import {HYPER_REFERENCES} from "../../data";
 import ShowOnMatchMedia from "../ShowOnMatchMedia";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const SiteAnimationBlock: FC = () => {
     const items: TSiteItem[] = [
         {name: "React"},
-        {name: "Figma", href: HYPER_REFERENCES.Figma},
-        {name: "SASS"},
         {name: "SVG"},
+        {name: "SASS"},
+        {name: "Figma", href: HYPER_REFERENCES.Figma},
         {name: "Git", href: HYPER_REFERENCES.GitHubProject},
         {name: "i18next"},
         {name: "TypeScript"},
@@ -24,6 +25,8 @@ const SiteAnimationBlock: FC = () => {
 
     const animationBlock = useRef<HTMLDivElement>(null);
     const animationPercent = useScrollPercentAnimation(animationBlock);
+
+    const halfSection = useMediaQuery(MEDIA_QUERIES.halfSiteSection);
 
     return (
         <div className="SiteAnimationBlock" ref={animationBlock}>
@@ -37,14 +40,19 @@ const SiteAnimationBlock: FC = () => {
                         />
                     </div>
                 </ShowOnMatchMedia>
-                {items.map((item, index) => (
-                    <SiteTextBlock
-                        key={index}
-                        index={index}
-                        show={animationPercent > APPEARANCE_START + appearanceStep * index}
-                        data={item}
-                    />
-                ))}
+                {
+                    // TODO: other component, appearance step for halfSection
+                    items.map((item, index) => {
+                    if (halfSection && (index === 1 || index === 2)) return <></>;
+                    return (
+                        <SiteTextBlock
+                            key={index}
+                            index={index}
+                            show={animationPercent > APPEARANCE_START + appearanceStep * index}
+                            data={item}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

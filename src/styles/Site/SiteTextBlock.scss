@@ -42,14 +42,12 @@
     }
 
     &#SiteTextBlock1 &__line {
-        transform-origin: center;
     }
 
     &#SiteTextBlock3,
     &#SiteTextBlock5,
     &#SiteTextBlock7 {
         text-align: right;
-        transform-origin: right;
     }
 
     &#SiteTextBlock3 &__line,
@@ -62,7 +60,6 @@
     &#SiteTextBlock4,
     &#SiteTextBlock6 {
         text-align: left;
-        transform-origin: left;
     }
 
     &#SiteTextBlock2 &__line,
@@ -75,44 +72,105 @@
     &#SiteTextBlock1 { // React
         top: 1.5rem;
         left: 50%;
+        transform-origin: center;
         transform: translateX(-50%);
     }
 
-    &#SiteTextBlock2 { // Figma
+    &#SiteTextBlock2 { // SVG
         top: 10.3rem;
         left: 5rem;
+        transform-origin: left top;
     }
 
     &#SiteTextBlock3 { // SASS
         top: 12.5rem;
         right: 2rem;
+        transform-origin: right top;
     }
 
-    &#SiteTextBlock4 { // SVG
+    &#SiteTextBlock4 { // Figma
         top: 50%;
         left: 0;
-        transform: translateY(-3rem);
+        transform-origin: left;
+        transform: translateY(-1.5rem);
     }
 
     &#SiteTextBlock5 { // Git & Github
         top: 50%;
         right: 0;
+        transform-origin: right;
         transform: translateY(1rem);
     }
 
-    &#SiteTextBlock6 { // NodeJS
+    &#SiteTextBlock6 { // i18next
         bottom: 3.5rem;
         left: 10rem;
+        transform-origin: left bottom;
     }
 
     &#SiteTextBlock7 { // TypeScript
         bottom: 1.5rem;
         right: 17.6rem;
+        transform-origin: right bottom;
     }
 
     // ------Adaptation------
-    @mixin reduce-on-width($width, $scale-ratio) {
-        @media #{$media-disable-site-section-animation} and (max-width: $width) {
+    @media (max-width: 1000px) {
+        &#SiteTextBlock2 { // SVG
+            left: 3rem;
+        }
+
+        &#SiteTextBlock3 { // SASS
+            right: 1.5rem;
+        }
+
+        &#SiteTextBlock6 { // i18next
+            left: 8rem;
+        }
+
+        &#SiteTextBlock7 { // TypeScript
+            right: 11rem;
+        }
+    }
+
+    @media #{$media-half-site-section} {
+        &#SiteTextBlock1 { // React
+            top: 0.3rem;
+        }
+
+        &#SiteTextBlock4 { // Figma
+            transform: translateY(calc(-50% - 6rem));
+        }
+
+        &#SiteTextBlock5 { // Git & Github
+            transform: translateY(calc(-50% - 0.5rem));
+        }
+
+        &#SiteTextBlock7 { // TypeScript
+            bottom: 0.6rem;
+        }
+    }
+
+    @media #{$media-half-site-section} {
+        @media (max-width: 1080px), (max-height: 740px) {
+            $scale-ratio: 0.9;
+            transform: scale($scale-ratio);
+
+            &#SiteTextBlock1 {
+                transform: translateX(-50%) scale($scale-ratio);
+            }
+            &#SiteTextBlock4 {
+                transform: translateY(calc(-50% - 6rem)) scale($scale-ratio);
+            }
+            &#SiteTextBlock5 {
+                transform: translateY(calc(-50% - 0.5rem)) scale($scale-ratio);
+            }
+        }
+    }
+
+    @media #{$media-disable-site-section-animation} {
+        @media (max-width: 1100px) {
+            $scale-ratio: 0.9;
             transform: scale($scale-ratio);
 
             &#SiteTextBlock1 {
@@ -124,25 +182,6 @@
             &#SiteTextBlock5 {
                 transform: translateY(1rem) scale($scale-ratio);
             }
-        }
-    }
-    @include reduce-on-width(1100px, 0.9);
-
-    @media (max-width: 1000px) {
-        &#SiteTextBlock2 { // Figma
-            left: 3rem;
-        }
-
-        &#SiteTextBlock3 { // SASS
-            right: 1.5rem;
-        }
-
-        &#SiteTextBlock6 { // NodeJS
-            left: 8rem;
-        }
-
-        &#SiteTextBlock7 { // TypeScript
-            right: 11rem;
         }
     }
 
