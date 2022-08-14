@@ -27,6 +27,9 @@ body {
 
 section {
     margin: calc(#{$header-size} + 0.5rem) 0;
+    @media #{$media-remake-header} {
+        margin: 4rem 0;
+    }
 
     &:first-of-type {
         margin-top: 0;

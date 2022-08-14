@@ -20,5 +20,8 @@
 
     &__title {
         padding-top: calc(#{$header-size} + 0.5rem);
+        @media #{$media-remake-header} {
+            padding-top: 4rem;
+        }
     }
 }

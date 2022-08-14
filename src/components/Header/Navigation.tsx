@@ -3,14 +3,12 @@ import "../../styles/Header/Navigation.scss";
 import LanguagesButton from "./LanguagesButton";
 import NavigationSections from "./NavigationSections";
 import ShowOnMatchMedia from "../ShowOnMatchMedia";
+import {MEDIA_QUERIES} from "../../styles/variables";
 
 const Navigation: FC = () => {
-
-    const showSectionsMediaQuery = "(min-width: 650px)";
-
     return (
         <div className="Navigation">
-            <ShowOnMatchMedia mediaQuery={showSectionsMediaQuery}>
+            <ShowOnMatchMedia mediaQuery={MEDIA_QUERIES.remakeHeader} inversion={true}>
                 <NavigationSections/>
             </ShowOnMatchMedia>
             <LanguagesButton/>

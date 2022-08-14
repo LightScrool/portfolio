@@ -43,6 +43,7 @@ $media-fsz14: (max-width: 900px);
 $media-fsz13: (max-width: 820px);
 $media-fsz12: (max-width: 720px);
 $media-remake-site-section-animation: (max-width: 680px);
+$media-remake-header: (max-width: 650px);
 
 // Mixins
 @mixin scale-on-hover($scale-ratio) {
