@@ -17,7 +17,7 @@
     }
 
     &__line {
-        @include line(4rem, 5px, $color-red);
+        @include line(4rem, 0.35rem, $color-red);
         margin: 1rem auto;
         transition: all $time-slow;
     }

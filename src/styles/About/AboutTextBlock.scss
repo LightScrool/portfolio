@@ -10,7 +10,7 @@
 
     &__title {
         &:after {
-            @include line(5rem, 5px, $color-red);
+            @include line(5rem, 0.35rem, $color-red);
             margin: 1rem 0;
         }
     }

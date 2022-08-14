@@ -14,7 +14,7 @@
     position: relative;
 
     &:after {
-        @include line(100%, 3px, transparent);
+        @include line(100%, 0.2rem, transparent);
         transition: all $time-standard;
         position: absolute;
     }
