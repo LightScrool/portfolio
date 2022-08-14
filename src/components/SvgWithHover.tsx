@@ -27,7 +27,12 @@ const SvgWithHover: FC<SvgWithHoverProps> = (
         target,
         rel
     }) => {
+
+    const enable = window.matchMedia("(hover: hover)").matches;
+
     return (
+        enable
+        ?
         <a
             className={combineClassNames("SvgWithHover", className)}
             onClick={onClick}
@@ -41,6 +46,16 @@ const SvgWithHover: FC<SvgWithHoverProps> = (
             <div className="SvgWithHover__on-hover">
                 {onHoverSvg}
             </div>
+        </a>
+        :
+        <a
+            className={combineClassNames("SvgWithHover", className)}
+            onClick={onClick}
+            href={href}
+            target={target}
+            rel={rel}
+        >
+            {offHoverSvg}
         </a>
     );
 };

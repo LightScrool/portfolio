@@ -26,11 +26,13 @@
         opacity: 0;
     }
 
-    &:hover &__off-hover {
-        opacity: 0;
-    }
+    @media (hover: hover){
+        &:hover &__off-hover {
+            opacity: 0;
+        }
 
-    &:hover &__on-hover {
-        opacity: 1;
+        &:hover &__on-hover {
+            opacity: 1;
+        }
     }
 }

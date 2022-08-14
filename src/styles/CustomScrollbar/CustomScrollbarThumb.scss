@@ -8,8 +8,10 @@
 
     transition: background $time-standard;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.55);
+    @media (hover: hover) {
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.55);
+        }
     }
 
     &:active {

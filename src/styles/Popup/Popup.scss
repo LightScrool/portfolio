@@ -45,11 +45,13 @@
             transition: fill $time-standard;
         }
 
-        &:hover {
-            transform: rotate(90deg);
+        @media (hover: hover) {
+            &:hover {
+                transform: rotate(90deg);
 
-            & path {
-                fill: $color-red;
+                & path {
+                    fill: $color-red;
+                }
             }
         }
     }
