@@ -11,8 +11,10 @@
     overflow: hidden;
 
     @media #{$media-container} {
-        max-height: 180vw;
         min-height: calc(20rem + 3 * #{$header-size}); // 20rem - approximate size of IntroBlock
+    }
+    @media #{$media-container} and (max-aspect-ratio: 1 / 2) {
+        max-height: calc(100 * var(--vh, 1vh) - 15rem);
     }
 
     &__inner {
