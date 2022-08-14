@@ -2,7 +2,6 @@
 
 .Footer {
     display: block;
-    height: 22rem;
     width: 100%;
     overflow: hidden;
 
@@ -28,6 +27,10 @@
         font-weight: $fw-semi;
         color: #fff;
         text-align: right;
+
+        @media #{$media-vertical-grid} {
+            text-align: center;
+        }
     }
 
     &__phone {
@@ -38,19 +41,46 @@
 
 .Footer-grid {
     width: 100%;
-    height: 100%;
+    padding: 7rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
 
+    @media #{$media-vertical-grid} {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+    @media (max-width: 350px) {
+        transform: scale(0.85);
+        padding: 1.7rem 0;
+    }
     &__item {
         &:first-child {
+            order: 0;
             justify-self: start;
+
+            @media #{$media-vertical-grid} {
+                justify-self: center;
+                order: 2;
+            }
+        }
+
+        order: 1;
+        @media #{$media-vertical-grid} {
+            order: 0;
         }
 
         &:last-child {
+            order: 2;
             justify-self: end;
+
+            @media #{$media-vertical-grid} {
+                justify-self: center;
+                order: 1;
+            }
         }
     }
 }
