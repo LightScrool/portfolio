@@ -146,7 +146,7 @@
         }
     }
 
-    @media #{$media-remake-site-section-animation} {
+    @media #{$media-remake-site-section} {
         position: static;
         width: calc(50% - 1rem);
 
@@ -159,7 +159,7 @@
         &#SiteTextBlock7 {
             transform: none;
             text-align: left;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
         }
 
         &#SiteTextBlock1 &__line,
@@ -173,7 +173,7 @@
         }
     }
 
-    @media #{$media-remake-site-section-animation} and (max-width: 540px) {
+    @media #{$media-remake-site-section} and (max-width: 590px) {
         width: 100%;
     }
 }

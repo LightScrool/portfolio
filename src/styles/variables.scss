@@ -42,7 +42,7 @@ $media-vertical-grid: (max-width: 1000px);
 $media-fsz14: (max-width: 900px);
 $media-fsz13: (max-width: 820px);
 $media-fsz12: (max-width: 720px);
-$media-remake-site-section-animation: (max-width: 680px);
+$media-remake-site-section: (max-width: 680px);
 $media-remake-header: (max-width: 650px);
 
 // Mixins
@@ -105,5 +105,24 @@ $media-remake-header: (max-width: 650px);
     @media (max-width: 480px) {
         margin-right: 3%;
         margin-left: 3%;
+    }
+}
+
+@mixin vertical-flex-padding {
+    @media #{$media-vertical-grid} {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    @media (max-width: 850px) {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+    @media (max-width: 640px) {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    @media (max-width: 480px) {
+        padding-right: 3%;
+        padding-left: 3%;
     }
 }

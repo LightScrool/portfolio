@@ -28,7 +28,7 @@ const SiteAnimationBlock: FC = () => {
     return (
         <div className="SiteAnimationBlock" ref={animationBlock}>
             <div className="SiteAnimationBlock__sticky">
-                <ShowOnMatchMedia mediaQuery={MEDIA_QUERIES.remakeSiteSectionAnimation} inversion={true}>
+                <ShowOnMatchMedia mediaQuery={MEDIA_QUERIES.remakeSiteSection} inversion={true}>
                     <div className="SiteAnimationBlock__picture">
                         <MySvg
                             style={{transform: `rotate(${animationPercent * REVOLUTIONS_QUANTITY * 360}deg)`}}
