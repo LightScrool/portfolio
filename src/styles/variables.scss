@@ -37,6 +37,7 @@ $media-portrait: (orientation: portrait);
 $media-landscape: (orientation: landscape);
 $media-hide-intro-outer: (max-width: 1400px);
 $media-container: (max-width: 1200px);
+$media-vertical-grid: (max-width: 1000px);
 $media-fsz14: (max-width: 900px);
 $media-fsz13: (max-width: 820px);
 $media-fsz12: (max-width: 720px);
@@ -77,5 +78,25 @@ $media-fsz12: (max-width: 720px);
     &:hover {
         background-color: transparent;
         color: $color-yellow;
+    }
+}
+
+@mixin flex-items-to-vertical {
+    @media #{$media-vertical-grid} {
+        width: 100%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    @media (max-width: 850px) {
+        margin-right: 7%;
+        margin-left: 7%;
+    }
+    @media (max-width: 640px) {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    @media (max-width: 480px) {
+        margin-right: 3%;
+        margin-left: 3%;
     }
 }

@@ -42,8 +42,9 @@ export const TIMING = {
 export const MEDIA_QUERIES = {
     portrait: "(orientation: portrait)",
     landscape : "(orientation: landscape)",
-    container: "(max-width: 1200px)",
     hideIntroOuter: "(max-width: 1400px)",
+    container: "(max-width: 1200px)",
+    verticalGrid: "(max-width: 1000px)",
     fsz14: "(max-width: 900px)",
     fsz13: "(max-width: 820px)",
     fsz12: "(max-width: 720px)",
