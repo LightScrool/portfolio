@@ -77,10 +77,12 @@ $media-fsz12: (max-width: 720px);
     background-color: $color-yellow;
     cursor: pointer;
 
-    transition: background $time-standard, color $time-standard;
-    &:hover {
-        background-color: transparent;
-        color: $color-yellow;
+    @media (hover: hover) {
+        transition: background $time-standard, color $time-standard;
+        &:hover {
+            background-color: transparent;
+            color: $color-yellow;
+        }
     }
 }
 
