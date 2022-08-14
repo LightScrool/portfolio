@@ -15,7 +15,7 @@
 
     &:after {
         @include line(100%, 0.2rem, transparent);
-        transition: all $time-standard;
+        transition: background $time-standard;
         position: absolute;
     }
 

@@ -14,7 +14,7 @@
     &__off-hover, &__on-hover {
         display: flex;
         width: 100%;
-        transition: all $time-standard;
+        transition: opacity $time-standard;
     }
 
     &__on-hover {
@@ -22,7 +22,7 @@
         top: 50%;
         left: 50%;
 
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%);
         opacity: 0;
     }
 
@@ -32,6 +32,5 @@
 
     &:hover &__on-hover {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
     }
 }

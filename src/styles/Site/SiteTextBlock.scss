@@ -7,25 +7,25 @@
     color: #fff;
     text-align: center;
 
-    transition: all $time-slow;
+    transition: opacity $time-slow;
 
     &__title {
         font-size: 2.25rem;
         font-weight: $fw-bold;
 
-        transition: all $time-slow;
+        transition: transform $time-slow;
     }
 
     &__line {
         @include line(4rem, 0.35rem, $color-red);
         margin: 1rem auto;
-        transition: all $time-slow;
+        transition: transform $time-slow;
     }
 
     &__text {
         white-space: pre-line;
 
-        transition: all $time-slow;
+        transition: transform $time-slow;
 
         & a {
             color: #fff;
