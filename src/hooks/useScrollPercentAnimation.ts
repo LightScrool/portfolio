@@ -8,7 +8,7 @@ const useScrollPercentAnimation = (
 ): number => {
 
     const [animationPercent, setAnimationPercent] = useState<number>(0);
-    const disableAnimation = useMediaQuery(MEDIA_QUERIES.disableActiveAnimation);
+    const disableAnimation = useMediaQuery(MEDIA_QUERIES.disableSiteSectionAnimation);
 
     useEffect(() => {
         function onScrollOrResize() {

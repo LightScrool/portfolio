@@ -1,24 +1,32 @@
 @import "../variables";
 
 .SiteAnimationBlock {
+    $sticky-height: calc(100 * var(--vh, 1vh) - #{$header-size});
+
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
-    @media #{$media-disable-active-animation} {
-        height: calc(100 * var(--vh, 1vh));
+    @media #{$media-disable-site-section-animation} {
+        height: $sticky-height;
     }
 
     &__sticky {
         display: block;
         width: 100%;
-        $height: calc(100 * var(--vh, 1vh) - #{$header-size});
-        height: $height;
+        height: $sticky-height;
 
         position: sticky;
         top: 50%;
         transform: translateY(calc(-50% + #{$header-size} / 2));
-        margin-top: calc(#{$height} / 2);
+        margin-top: calc(#{$sticky-height} / 2);
         margin-bottom: calc(-50 * var(--vh, 1vh) + #{$header-size});
+
+        @media #{$media-disable-site-section-animation} {
+            position: relative;
+            top: 0;
+            margin: 0;
+            transform: none;
+        }
     }
 
     &__picture {
