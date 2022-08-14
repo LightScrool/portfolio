@@ -36,18 +36,33 @@
         }
     }
 
-
     // ------Align------
-    &#SiteTextBlock3 &__line,
-    &#SiteTextBlock5 &__line,
-    &#SiteTextBlock7 &__line {
-        margin-right: 0;
+    &#SiteTextBlock1 {
+        text-align: center;
+    }
+
+    &#SiteTextBlock1 &__line {
+        transform-origin: center;
     }
 
     &#SiteTextBlock3,
     &#SiteTextBlock5,
     &#SiteTextBlock7 {
         text-align: right;
+        transform-origin: right;
+    }
+
+    &#SiteTextBlock3 &__line,
+    &#SiteTextBlock5 &__line,
+    &#SiteTextBlock7 &__line {
+        margin-right: 0;
+    }
+
+    &#SiteTextBlock2,
+    &#SiteTextBlock4,
+    &#SiteTextBlock6 {
+        text-align: left;
+        transform-origin: left;
     }
 
     &#SiteTextBlock2 &__line,
@@ -55,13 +70,6 @@
     &#SiteTextBlock6 &__line {
         margin-left: 0;
     }
-
-    &#SiteTextBlock2,
-    &#SiteTextBlock4,
-    &#SiteTextBlock6 {
-        text-align: left;
-    }
-
 
     // ------Positioning------
     &#SiteTextBlock1 { // React
@@ -101,6 +109,42 @@
         bottom: 1.5rem;
         right: 17.6rem;
     }
+
+    // ------Adaptation------
+    @mixin reduce-on-width($width, $scale-ratio) {
+        @media #{$media-disable-site-section-animation} and (max-width: $width) {
+            transform: scale($scale-ratio);
+
+            &#SiteTextBlock1 {
+                transform: translateX(-50%) scale($scale-ratio);
+            }
+            &#SiteTextBlock4 {
+                transform: translateY(-3rem) scale($scale-ratio);
+            }
+            &#SiteTextBlock5 {
+                transform: translateY(1rem) scale($scale-ratio);
+            }
+        }
+    }
+    @include reduce-on-width(1100px, 0.9);
+    
+    @media (max-width: 1000px) {
+        &#SiteTextBlock2 { // Figma
+            left: 3rem;
+        }
+
+        &#SiteTextBlock3 { // SASS
+            right: 1.5rem;
+        }
+
+        &#SiteTextBlock6 { // NodeJS
+            left: 8rem;
+        }
+
+        &#SiteTextBlock7 { // TypeScript
+            right: 11rem;
+        }
+    }
 }
 
 // ------react-transition-group------
@@ -134,4 +178,3 @@
         transform: translateY(30%);
     }
 }
-

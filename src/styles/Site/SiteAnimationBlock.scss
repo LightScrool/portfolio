@@ -2,12 +2,18 @@
 
 .SiteAnimationBlock {
     $sticky-height: calc(100 * var(--vh, 1vh) - #{$header-size});
+    $sticky-min-height: 50rem;
+
+    @media (max-width: 680px) {
+        display: none; // TODO: vertical version
+    }
 
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
     @media #{$media-disable-site-section-animation} {
         height: $sticky-height;
+        min-height: $sticky-min-height;
     }
 
     &__sticky {
@@ -26,6 +32,7 @@
             top: 0;
             margin: 0;
             transform: none;
+            min-height: $sticky-min-height;
         }
     }
 
@@ -37,6 +44,15 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        transform-origin: center;
         transform: translate(-50%, -50%);
+
+        @mixin reduce-on-width($width, $scale-ratio) {
+            @media #{$media-disable-site-section-animation} and (max-width: $width) {
+                transform: translate(-50%, -50%) scale($scale-ratio);
+            }
+        }
+        @include reduce-on-width(1100px, 0.9);
+        @include reduce-on-width(780px, 0.75);
     }
 }

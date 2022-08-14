@@ -35,7 +35,7 @@ $time-slow: 1.2s;
 // Media queries
 $media-portrait: (orientation: portrait);
 $media-landscape: (orientation: landscape);
-$media-disable-site-section-animation: (prefers-reduced-motion: reduce), (hover: none);
+$media-disable-site-section-animation: (prefers-reduced-motion: reduce), (hover: none), (max-width: 680px);
 $media-hide-intro-outer: (max-width: 1400px);
 $media-container: (max-width: 1200px);
 $media-vertical-grid: (max-width: 1000px);
