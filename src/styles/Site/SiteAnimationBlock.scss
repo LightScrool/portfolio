@@ -4,6 +4,9 @@
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
+    @media #{$media-disable-active-animation} {
+        height: calc(100 * var(--vh, 1vh));
+    }
 
     &__sticky {
         display: block;

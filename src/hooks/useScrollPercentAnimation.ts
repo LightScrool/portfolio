@@ -1,11 +1,14 @@
 import {RefObject, useEffect, useState} from "react";
 import {createWindowEventListeners} from "../utils";
+import useMediaQuery from "./useMediaQuery";
+import {MEDIA_QUERIES} from "../styles/variables";
 
 const useScrollPercentAnimation = (
     animationBlock: RefObject<HTMLElement>
 ): number => {
 
     const [animationPercent, setAnimationPercent] = useState<number>(0);
+    const disableAnimation = useMediaQuery(MEDIA_QUERIES.disableActiveAnimation);
 
     useEffect(() => {
         function onScrollOrResize() {
@@ -22,8 +25,13 @@ const useScrollPercentAnimation = (
             setAnimationPercent(currentAnimationPercent);
         }
 
+        if (disableAnimation) {
+            setAnimationPercent(1);
+            return;
+        }
+
         return createWindowEventListeners(onScrollOrResize, ['scroll', 'resize']);
-    }, [animationBlock])
+    }, [animationBlock, disableAnimation])
 
     return animationPercent;
 }

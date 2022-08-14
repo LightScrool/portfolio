@@ -42,6 +42,7 @@ export const TIMING = {
 export const MEDIA_QUERIES = {
     portrait: "(orientation: portrait)",
     landscape : "(orientation: landscape)",
+    disableActiveAnimation: "(prefers-reduced-motion: reduce), (hover: none)",
     hideIntroOuter: "(max-width: 1400px)",
     container: "(max-width: 1200px)",
     verticalGrid: "(max-width: 1000px)",
