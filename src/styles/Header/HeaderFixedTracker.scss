@@ -1,20 +1,6 @@
 @import "../variables";
 
 .Header {
-    width: 100%;
-    height: $header-size;
-    position: absolute;
-    z-index: 200;
-    top: 0;
-
-    &__inner {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     &._fixed, &._preFixed, &._postFixed {
         position: fixed;
         background-color: $color-black;
@@ -24,10 +10,12 @@
     &._preFixed {
         transform: translateY(-100%);
     }
+
     &._fixed {
         transition: transform $time-standard;
         transform: translateY(0);
     }
+
     &._postFixed {
         transition: transform $time-standard;
         transform: translateY(-100%);
