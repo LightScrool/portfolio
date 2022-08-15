@@ -29,7 +29,7 @@ const IntroPhoto: FC = () => {
                 stroke={{
                     color: "#fff",
                     opacity: 0.8,
-                    width: "1",
+                    width: 1,
                 }}
             />
             <MySvg

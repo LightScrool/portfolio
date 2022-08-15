@@ -37,7 +37,7 @@ export enum TMySvgId {
 }
 
 export type TSvgStroke = {
-    width: string | number // TODO: only number
+    width: number
     color: string
     opacity: number
 }
