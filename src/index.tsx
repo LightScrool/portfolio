@@ -5,6 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
 import enResource from "./assests/languages/en.json";
 import ruResource from "./assests/languages/ru.json";
 import store from "./store";
@@ -12,15 +13,22 @@ import {Provider} from "react-redux";
 
 i18n
     .use(initReactI18next)
+    .use(LanguageDetector)
     .init({
+        supportedLngs: ['en', 'ru'],
         resources: {
             en: {translation: enResource},
             ru: {translation: ruResource}
         },
-        lng: 'ru', // TODO: set to en
-        fallbackLng: 'ru', // TODO: set to en
+        fallbackLng: '',
         interpolation: {escapeValue: false},
-        debug: true, // TODO: set to false
+        debug: false,
+
+        detection: {
+            order: ['localStorage'],
+            lookupLocalStorage: 'i18nextLng',
+            caches: ['localStorage'],
+        },
     });
 
 const root = ReactDOM.createRoot(
