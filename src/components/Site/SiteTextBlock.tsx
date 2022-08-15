@@ -8,14 +8,12 @@ import {combineClassNames} from "../../utils";
 
 interface SiteTextBlockProps {
     data: TSiteItem
-    index: number,
     show: boolean,
 }
 
 const SiteTextBlock: FC<SiteTextBlockProps> = (
     {
         data,
-        index,
         show
     }) => {
 
@@ -36,7 +34,7 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
                 <div
                     ref={nodeRef}
                     className={combineClassNames("SiteTextBlock", state)}
-                    id={`SiteTextBlock${index + 1}`}
+                    id={`SiteTextBlock${data.id}`}
                 >
                     <div className="SiteTextBlock__title">
                         {t(`site.items.${data.name}.title`)}

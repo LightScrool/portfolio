@@ -13,3 +13,10 @@ export const PHONE_NUMBER = {
     href: "+79197088972",
     pretty: "+7 (919) 708-89-72"
 }
+
+export const SITE_SECTION_ANIMATION = {
+    revolutionsQuantityDefault: 1.5,
+    revolutionsQuantityHalf: 1,
+    appearanceStart: 0.15,
+    appearanceEnd: 0.65,
+}

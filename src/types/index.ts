@@ -62,6 +62,7 @@ export type TMediaItem = {
 }
 
 export type TSiteItem = {
+    id: number,
     name: string,
     href?: HYPER_REFERENCES
 }

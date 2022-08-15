@@ -7,6 +7,10 @@
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
+    @include media-half-site-section {
+        height: calc(180 * var(--vh, 1vh));
+    }
+
     @include media-disable-site-section-animation  {
         height: $sticky-height;
         min-height: $sticky-min-height;

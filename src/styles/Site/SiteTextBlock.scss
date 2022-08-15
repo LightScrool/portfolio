@@ -149,9 +149,7 @@
         &#SiteTextBlock7 { // TypeScript
             bottom: 0.6rem;
         }
-    }
 
-    @include media-half-site-section {
         @media (max-width: 1080px), (max-height: 740px) {
             $scale-ratio: 0.9;
             transform: scale($scale-ratio);
