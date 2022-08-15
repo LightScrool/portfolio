@@ -56,14 +56,16 @@ const App: FC = () => {
                 ref={bodyScrollbar}
                 onScroll={onScroll}
             >
-                <Popup/>
-                <Header/>
-                <Intro/>
-                <About/>
-                <Skills/>
-                <Site/>
-                <Works/>
-                <Footer/>
+                <div className="overflow-hidden">
+                    <Popup/>
+                    <Header/>
+                    <Intro/>
+                    <About/>
+                    <Skills/>
+                    <Site/>
+                    <Works/>
+                    <Footer/>
+                </div>
             </CustomScrollbar>
         </div>
     );
