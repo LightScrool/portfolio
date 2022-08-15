@@ -14,7 +14,8 @@ export const FONT_WEIGHTS = {
 }
 
 export const SIZES = {
-    header: "6rem"
+    header: "6rem",
+    containerWidth: "1200px"
 }
 
 export const COLORS = {

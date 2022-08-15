@@ -22,7 +22,7 @@
         bottom: -20rem;
         left: -19rem;
 
-        @media #{$media-hide-intro-outer} {
+        @include media-hide-intro-outer {
             bottom: -28rem;
         }
     }

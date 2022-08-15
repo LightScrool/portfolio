@@ -11,7 +11,7 @@
         height: auto;
     }
 
-    @media #{$media-remake-header} {
+    @include media-remake-header {
         width: 1.9rem;
     }
 }

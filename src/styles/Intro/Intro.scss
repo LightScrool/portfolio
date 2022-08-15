@@ -10,12 +10,13 @@
     position: relative;
     overflow: hidden;
 
-    @media #{$media-container} {
+    @include media-container {
         min-height: calc(20rem + 3 * #{$header-size}); // 20rem - approximate size of IntroBlock
+        @media (max-aspect-ratio: 1 / 2) {
+            max-height: calc(100 * var(--vh, 1vh) - 15rem);
+        }
     }
-    @media #{$media-container} and (max-aspect-ratio: 1 / 2) {
-        max-height: calc(100 * var(--vh, 1vh) - 15rem);
-    }
+
 
     &__inner {
         position: relative;
@@ -25,8 +26,10 @@
         justify-content: space-between;
         align-items: center;
 
-        @media  #{$media-portrait} and #{$media-container} {
-            justify-content: center;
+        @include media-container {
+            @include media-portrait {
+                justify-content: center;
+            }
         }
     }
 

@@ -8,15 +8,15 @@
 html {
     font-size: 15px;
 
-    @media #{$media-fsz14} {
+    @include media-fsz14 {
         font-size: 14px;
     }
 
-    @media #{$media-fsz13} {
+    @include media-fsz13 {
         font-size: 13px;
     }
 
-    @media #{$media-fsz12} {
+    @include media-fsz12 {
         font-size: 12px;
     }
 }
@@ -27,7 +27,7 @@ body {
 
 section {
     margin: calc(#{$header-size} + 0.5rem) 0;
-    @media #{$media-remake-header} {
+    @include media-remake-header {
         margin: 4rem 0;
     }
 

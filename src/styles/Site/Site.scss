@@ -7,7 +7,7 @@
     background: $gradient-black fixed;
     background-size: 100vw calc(100 * var(--vh, 1vh));
 
-    @media #{$media-remake-site-section} {
+    @include media-remake-site-section {
         border-radius: 0;
     }
 
@@ -20,7 +20,7 @@
 
     &__title {
         padding-top: calc(#{$header-size} + 0.5rem);
-        @media #{$media-remake-header} {
+        @include media-remake-header {
             padding-top: 4rem;
         }
     }

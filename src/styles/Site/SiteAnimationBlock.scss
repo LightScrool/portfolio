@@ -7,12 +7,12 @@
     display: flex;
     width: 100%;
     height: calc(250 * var(--vh, 1vh));
-    @media #{$media-disable-site-section-animation} {
+    @include media-disable-site-section-animation  {
         height: $sticky-height;
         min-height: $sticky-min-height;
     }
 
-    @media #{$media-remake-site-section} {
+    @include media-remake-site-section {
         height: auto;
         min-height: 0;
     }
@@ -32,7 +32,7 @@
         margin-top: calc(#{$sticky-height} / 2);
         margin-bottom: calc(-50 * var(--vh, 1vh) + #{$header-size});
 
-        @media #{$media-disable-site-section-animation} {
+        @include media-disable-site-section-animation  {
             position: relative;
             top: 0;
             margin: 0;
@@ -40,7 +40,7 @@
             min-height: $sticky-min-height;
         }
 
-        @media #{$media-remake-site-section} {
+        @include media-remake-site-section {
             height: auto;
             min-height: 0;
             @include vertical-flex-padding;
@@ -59,7 +59,7 @@
         transform-origin: center;
         transform: translate(-50%, -50%);
 
-        @media #{$media-disable-site-section-animation}, #{$media-half-site-section} {
+        @include media-disable-site-section-animation {
             @media (max-width: 1100px) {
                 $scale-ratio: 0.9;
                 transform: translate(-50%, -50%) scale($scale-ratio);
@@ -70,7 +70,7 @@
             }
         }
 
-        @media #{$media-half-site-section} {
+        @include media-half-site-section {
             @media (max-width: 1080px), (max-height: 740px) {
                 $scale-ratio: 0.9;
                 transform: translate(-50%, -50%) scale($scale-ratio);

@@ -11,6 +11,7 @@ $fw-extra: 800;
 
 // Sizes
 $header-size: 6rem;
+$container-width: 1200px;
 
 // Colors
 $color-black: #333;
@@ -33,22 +34,78 @@ $time-standard: 0.3s;
 $time-slow: 1.2s;
 
 // Media queries
-$media-portrait: (orientation: portrait);
-$media-landscape: (orientation: landscape);
-$media-half-site-section: (prefers-reduced-motion: no-preference) and (hover: hover) and (max-width: 1120px) and (min-width: 920.1px) and (min-height: 630.1px),
-(prefers-reduced-motion: no-preference) and (hover: hover) and (max-height: 820px) and (min-width: 920.1px) and (min-height: 630.1px);
-$media-disable-site-section-animation: (prefers-reduced-motion: reduce),
-(hover: none),
-(max-width: 920px),
-(max-height: 630px);
-$media-hide-intro-outer: (max-width: 1400px);
-$media-container: (max-width: 1200px);
-$media-vertical-grid: (max-width: 1000px);
-$media-fsz14: (max-width: 900px);
-$media-fsz13: (max-width: 820px);
-$media-fsz12: (max-width: 720px);
-$media-remake-site-section: (max-width: 680px);
-$media-remake-header: (max-width: 650px);
+@mixin media-portrait {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin media-landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin media-container {
+    @media (max-width: $container-width) {
+        @content;
+    }
+}
+
+@mixin media-vertical-grid {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin media-fsz14 {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin media-fsz13 {
+    @media (max-width: 820px) {
+        @content;
+    }
+}
+
+@mixin media-fsz12 {
+    @media (max-width: 720px) {
+        @content;
+    }
+}
+
+@mixin media-hide-intro-outer {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin media-remake-header {
+    @media (max-width: 650px) {
+        @content;
+    }
+}
+
+@mixin media-half-site-section {
+    @media (prefers-reduced-motion: no-preference) and (hover: hover) and (max-width: 1120px) and (min-width: 920.1px) and (min-height: 630.1px),
+    (prefers-reduced-motion: no-preference) and (hover: hover) and (max-height: 820px) and (min-width: 920.1px) and (min-height: 630.1px) {
+        @content;
+    }
+}
+
+@mixin media-disable-site-section-animation {
+    @media (prefers-reduced-motion: reduce), (hover: none), (max-width: 920px), (max-height: 630px) {
+        @content;
+    }
+}
+
+@mixin media-remake-site-section {
+    @media (max-width: 680px) {
+        @content;
+    }
+}
 
 // Mixins
 @mixin scale-on-hover($scale-ratio) {
@@ -94,7 +151,7 @@ $media-remake-header: (max-width: 650px);
 }
 
 @mixin flex-items-to-vertical {
-    @media #{$media-vertical-grid} {
+    @include media-vertical-grid {
         width: 100%;
         margin-right: 10%;
         margin-left: 10%;
@@ -114,7 +171,7 @@ $media-remake-header: (max-width: 650px);
 }
 
 @mixin vertical-flex-padding {
-    @media #{$media-vertical-grid} {
+    @include media-vertical-grid {
         padding-right: 10%;
         padding-left: 10%;
     }
