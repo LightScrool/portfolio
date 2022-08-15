@@ -3,7 +3,7 @@
 .CustomScrollbarThumb {
     z-index: 500;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 100vw;
+    border-radius: 100vmax;
     cursor: pointer;
 
     transition: background $time-standard;

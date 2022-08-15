@@ -1,4 +1,4 @@
-import React, {FC, useRef} from 'react';
+import React, {FC, useEffect, useRef} from 'react';
 import "../../styles/Popup/Popup.scss";
 import {Transition} from "react-transition-group";
 import {TIMING} from "../../styles/variables";
@@ -9,6 +9,8 @@ import {useDispatch} from "react-redux";
 import {TPopupReducerActionType} from "../../types/popup";
 import ContactForm from "./ContactForm";
 import {combineClassNames} from "../../utils";
+import {Scrollbars} from "react-custom-scrollbars-2";
+import CustomScrollbar from "../CustomScrollbar";
 
 const Popup: FC = () => {
 
@@ -25,6 +27,14 @@ const Popup: FC = () => {
     };
 
     const nodeRef = useRef<HTMLDivElement>(null);
+
+    const maxSize = "calc(100 * var(--vh, 1vh) - 9rem)";
+    const scrollbar = useRef<Scrollbars>(null);
+    useEffect(() => {
+        // For some reason TypeScript doesn't see "view" field of Scrollbars
+        // @ts-ignore
+        if (scrollbar.current) scrollbar.current.view.style.maxHeight = maxSize;
+    })
 
     return (
         <Transition
@@ -49,7 +59,15 @@ const Popup: FC = () => {
                         <a className="Popup__close-button" href="/#" onClick={closePopup}>
                             <MySvg Id={TMySvgId.cross} fill={{color: "#000", opacity: 1}}/>
                         </a>
-                        <ContactForm/>
+                        <CustomScrollbar
+                            autoHeight={true}
+                            ref={scrollbar}
+                            style={{maxHeight: maxSize}}
+                        >
+                            <div className="Popup__content">
+                                <ContactForm/>
+                            </div>
+                        </CustomScrollbar>
                     </div>
                 </div>
             )}

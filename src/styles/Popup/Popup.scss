@@ -1,6 +1,8 @@
 @import "src/styles/variables";
 
 .Popup {
+    $space-for-scroll: 13px;
+
     display: block;
     position: fixed;
     z-index: 1000;
@@ -14,18 +16,21 @@
 
     &__body {
         display: block;
-        width: 100%;
-        max-width: 36rem;
-        padding: 4rem 2rem 3rem;
+        width: 36rem;
+        max-width: calc(100 * var(--vw, 1vw) - 2rem);
+        max-height: calc(100 * var(--vh, 1vh) - 2rem);
+        padding: 4rem calc(2rem - #{$space-for-scroll}) 3rem 2rem;
 
         position: absolute;
         top: 50%;
         left: 50%;
+        transform-origin: center;
         transform: translate(-50%, -50%) scale(1);
-        transition: transform $time-standard;
 
         background-color: #fff;
         border-radius: 2rem;
+
+        transition: transform $time-standard;
     }
 
     &__close-button {
@@ -54,6 +59,10 @@
                 }
             }
         }
+    }
+
+    &__content {
+        padding-right: $space-for-scroll;
     }
 }
 

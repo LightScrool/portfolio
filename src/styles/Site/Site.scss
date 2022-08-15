@@ -5,7 +5,7 @@
 
     border-radius: 50vmin 0 0 0;
     background: $gradient-black fixed;
-    background-size: 100vw calc(100 * var(--vh, 1vh));
+    background-size: calc(100 * var(--vw, 1vw)) calc(100 * var(--vh, 1vh));
 
     @include media-remake-site-section {
         border-radius: 0;
