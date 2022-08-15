@@ -25,9 +25,10 @@ i18n
         debug: false,
 
         detection: {
-            order: ['localStorage'],
+            order: ['localStorage', 'htmlTag'],
             lookupLocalStorage: 'i18nextLng',
             caches: ['localStorage'],
+            htmlTag: document.documentElement
         },
     });
 
