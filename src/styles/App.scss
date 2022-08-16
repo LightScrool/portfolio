@@ -25,6 +25,11 @@ body {
     background-color: $color-dark-white;
 }
 
+svg {
+    width: 100%;
+    height: auto;
+}
+
 section {
     margin: calc(#{$header-size} + 0.5rem) 0;
     @include media-remake-header {

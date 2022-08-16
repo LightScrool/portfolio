@@ -6,11 +6,6 @@
     width: 1.5rem;
     cursor: pointer;
 
-    & svg {
-        width: 100%;
-        height: auto;
-    }
-
     @include media-remake-header {
         width: 1.9rem;
     }
