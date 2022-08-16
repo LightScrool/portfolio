@@ -20,6 +20,7 @@ export const SIZES = {
 
 export const COLORS = {
     black: "#333",
+    lightBlack: "#3D3D3D",
     red: "#FE654F",
     blue: "#4AD8F8",
     yellow: "#FAF33E",
@@ -29,7 +30,7 @@ export const COLORS = {
 
 export const PATTERNS = {
     gradientRed: "linear-gradient(242.56deg, #FF715E 12.86%, #FF4646 87.14%)",
-    gradientBlack: "linear-gradient(242.56deg, #3D3D3D 12.86%, #333333 87.14%)",
+    gradientBlack: `linear-gradient(242.56deg, ${COLORS.lightBlack} 12.86%, ${COLORS.black} 87.14%)`,
     shadowPicture: "drop-shadow(-10px 10px 40px rgba(0, 0, 0, 0.2))",
     shadowBlock: "0 5px 10px rgba(0, 0, 0, 0.15)",
 }
