@@ -50,12 +50,12 @@
     @include media-vertical-grid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
-        padding: 2rem 0;
+        padding: 3rem 0;
         gap: 1.5rem;
     }
     @media (max-width: 350px) {
         transform: scale(0.85);
-        padding: 1.7rem 0;
+        padding: 2.2rem 0;
     }
     &__item {
         &:first-child {
