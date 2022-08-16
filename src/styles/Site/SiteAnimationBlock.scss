@@ -22,11 +22,8 @@
     }
 
     &__sticky {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 2rem;
+        display: grid;
+
         width: 100%;
         height: $sticky-height;
 
@@ -49,6 +46,15 @@
             min-height: 0;
             @include vertical-flex-padding;
             padding-bottom: 4rem;
+
+            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            justify-items: center;
+
+            @media (max-width: 590px) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
