@@ -117,7 +117,7 @@
     // ------Adaptation------
     @media (max-width: 1000px) {
         &#SiteTextBlock2 { // SVG
-            left: 3rem;
+            left: 2.5rem;
         }
 
         &#SiteTextBlock3 { // SASS
@@ -175,10 +175,10 @@
                 transform: translateX(-50%) scale($scale-ratio);
             }
             &#SiteTextBlock4 {
-                transform: translateY(-3rem) scale($scale-ratio);
+                transform: translateY(-1.5rem) scale($scale-ratio);
             }
             &#SiteTextBlock5 {
-                transform: translateY(1rem) scale($scale-ratio);
+                transform: translateY(1.5rem) scale($scale-ratio);
             }
         }
     }
@@ -186,6 +186,7 @@
     @include media-remake-site-section {
         position: static;
         width: calc(50% - 1rem);
+        max-width: none;
 
         &#SiteTextBlock1,
         &#SiteTextBlock2,
