@@ -4,7 +4,6 @@
     &__body {
         display: flex;
         justify-content: space-around;
-        gap: 3rem;
         flex-wrap: wrap;
     }
 }
@@ -12,8 +11,23 @@
 .Works-item {
     width: calc(50% - 1.5rem);
     max-width: 28rem;
+    margin: 0 1.5rem;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+
     @media (max-width: 600px) {
         width: 100%;
+        margin: 1.5rem 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__picture {

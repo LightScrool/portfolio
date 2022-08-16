@@ -4,8 +4,13 @@ import MySvg from "../../assests/MySvg";
 import {useTranslation} from "react-i18next";
 import {TMySvgId} from "../../types";
 import SvgWithHover from "../SvgWithHover";
+import {combineClassNames} from "../../utils";
 
-const LanguagesButton: FC = () => {
+interface LanguagesButtonProps {
+    className?: string
+}
+
+const LanguagesButton: FC<LanguagesButtonProps> = ({className}) => {
     const {i18n} = useTranslation();
 
     const onClick: () => void = () => {
@@ -18,7 +23,7 @@ const LanguagesButton: FC = () => {
 
     return (
         <SvgWithHover
-            className="LanguagesButton"
+            className={combineClassNames(className, "LanguagesButton")}
             offHoverSvg={<MySvg Id={TMySvgId.languagesFill} fill={{color: "#fff", opacity: 1}}/>}
             onHoverSvg={<MySvg Id={TMySvgId.languagesStroke} fill={{color: "#fff", opacity: 1}}/>}
             onClick={onClick}

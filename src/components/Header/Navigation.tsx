@@ -9,9 +9,9 @@ const Navigation: FC = () => {
     return (
         <div className="Navigation">
             <ShowOnMatchMedia mediaQuery={MEDIA_QUERIES.remakeHeader} inversion={true}>
-                <NavigationSections/>
+                <NavigationSections className="Navigation__item"/>
             </ShowOnMatchMedia>
-            <LanguagesButton/>
+            <LanguagesButton className="Navigation__item"/>
         </div>
     );
 };

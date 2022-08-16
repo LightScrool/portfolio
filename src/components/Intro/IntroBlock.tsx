@@ -16,8 +16,8 @@ const IntroBlock: FC = () => {
             <div className="IntroBlock__subtitle">
                 <h3>{t("intro.subtitle")}</h3>
             </div>
-            <Media/>
-            <ContactButton/>
+            <Media className="IntroBlock__media"/>
+            <ContactButton className="IntroBlock__button"/>
         </div>
     );
 };

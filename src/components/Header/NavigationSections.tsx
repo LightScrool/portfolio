@@ -6,7 +6,11 @@ import {TNavItem} from "../../types";
 import {combineClassNames, createWindowEventListeners} from "../../utils";
 import useScrollTo from "../../hooks/useScrollTo";
 
-const NavigationSections: FC = () => {
+interface NavigationSectionsProps {
+    className?: string
+}
+
+const NavigationSections: FC<NavigationSectionsProps> = ({className}) => {
     const {t} = useTranslation();
     const offsets = useTypedSelector(state => state.offsets);
     const items = useMemo<TNavItem[]>(() => [
@@ -58,7 +62,7 @@ const NavigationSections: FC = () => {
             {items.map(item => (
                 <a
                     key={item.name}
-                    className={combineClassNames("NavigationSection", activeItem === item.name ? "_active" : "")}
+                    className={combineClassNames(className, "NavigationSection", activeItem === item.name ? "_active" : "")}
                     href="/#"
                     onClick={onClick(item.offset)}
                 >
