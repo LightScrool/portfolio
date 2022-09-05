@@ -21,6 +21,16 @@ html {
     }
 }
 
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track-piece,
+html::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-corner,
+html::-webkit-resizer {
+    display: none;
+}
+
 body {
     background-color: $color-dark-white;
 }
