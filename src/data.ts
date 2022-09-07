@@ -22,4 +22,4 @@ export const SITE_SECTION_ANIMATION = {
 }
 
 // Too small value in enter timeout of react-transition-group is cause bug, when item appears instantly
-export const INSTANT_APPEARANCE_FIX_TIME = 30;
+export const INSTANT_APPEARANCE_FIX_TIME = 50;
