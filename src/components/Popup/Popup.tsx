@@ -11,6 +11,7 @@ import ContactForm from "./ContactForm";
 import {combineClassNames} from "../../utils";
 import {Scrollbars} from "react-custom-scrollbars-2";
 import CustomScrollbar from "../CustomScrollbar";
+import {INSTANT_APPEARANCE_FIX_TIME} from "../../data";
 
 const Popup: FC = () => {
 
@@ -40,7 +41,7 @@ const Popup: FC = () => {
         <Transition
             in={active}
             timeout={{
-                enter: 20,// Too small value is cause bug, when item appears instantly
+                enter: INSTANT_APPEARANCE_FIX_TIME,
                 exit: TIMING.standard,
             }}
             unmountOnExit={true}

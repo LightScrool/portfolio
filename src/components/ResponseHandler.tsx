@@ -5,6 +5,7 @@ import {TMySvgId} from "../types";
 import {Transition} from "react-transition-group";
 import {TIMING} from "../styles/variables";
 import {combineClassNames} from "../utils";
+import {INSTANT_APPEARANCE_FIX_TIME} from "../data";
 
 interface ResponseHandlerProps {
     text: string,
@@ -28,7 +29,7 @@ const ResponseHandler: FC<ResponseHandlerProps> = (
         <Transition
             in={active}
             timeout={{
-                enter: 30,// Too small value is cause bug, when item appears instantly
+                enter: INSTANT_APPEARANCE_FIX_TIME,
                 exit: TIMING.standard,
             }}
             unmountOnExit={true}

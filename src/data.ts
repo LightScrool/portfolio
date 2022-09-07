@@ -16,7 +16,10 @@ export const PHONE_NUMBER = {
 
 export const SITE_SECTION_ANIMATION = {
     revolutionsQuantityDefault: 1.5,
-    revolutionsQuantityHalf: 1,
+    revolutionsQuantityHalf: 2/3,
     appearanceStart: 0.15,
     appearanceEnd: 0.65,
 }
+
+// Too small value in enter timeout of react-transition-group is cause bug, when item appears instantly
+export const INSTANT_APPEARANCE_FIX_TIME = 30;

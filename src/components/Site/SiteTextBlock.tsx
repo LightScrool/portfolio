@@ -5,6 +5,7 @@ import {TIMING} from "../../styles/variables";
 import {TSiteItem} from "../../types";
 import {Trans, useTranslation} from "react-i18next";
 import {combineClassNames} from "../../utils";
+import {INSTANT_APPEARANCE_FIX_TIME} from "../../data";
 
 interface SiteTextBlockProps {
     data: TSiteItem
@@ -24,7 +25,7 @@ const SiteTextBlock: FC<SiteTextBlockProps> = (
         <Transition
             in={show}
             timeout={{
-                enter: 20, // Too small value is cause bug, when item appears instantly
+                enter: INSTANT_APPEARANCE_FIX_TIME,
                 exit: TIMING.slow,
             }}
             unmountOnExit={true}

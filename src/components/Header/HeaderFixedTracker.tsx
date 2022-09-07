@@ -4,6 +4,7 @@ import {createWindowEventListeners} from "../../utils";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {TIMING} from "../../styles/variables";
 import HeaderContent from "./HeaderContent";
+import {INSTANT_APPEARANCE_FIX_TIME} from "../../data";
 
 const HeaderFixedTracker = () => {
     const aboutOffset = useTypedSelector(state => state.offsets.about);
@@ -37,7 +38,7 @@ const HeaderFixedTracker = () => {
 
                 if (fixed.current) {
                     setClassMod("_preFixed")
-                    newClassModTimeout.current = setTimeout(() => setClassMod("_fixed"), 20);
+                    newClassModTimeout.current = setTimeout(() => setClassMod("_fixed"), INSTANT_APPEARANCE_FIX_TIME);
                     return
                 }
                 setClassMod("_postFixed")
