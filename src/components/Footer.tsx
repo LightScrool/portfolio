@@ -4,7 +4,6 @@ import Container from "./Container";
 import ContactButton from "./ContactButton";
 import Media from "./Media";
 import {useTranslation} from "react-i18next";
-import {PHONE_NUMBER} from "../data";
 
 const Footer: FC = () => {
     const {t} = useTranslation();
@@ -22,7 +21,6 @@ const Footer: FC = () => {
                         </div>
                         <div className="Footer-grid__item">
                             <div className="Footer__text">{t('footer.name')}</div>
-                            <a className="Footer__phone" href={`tel:${PHONE_NUMBER.href}`}>{PHONE_NUMBER.pretty}</a>
                         </div>
                     </div>
                 </Container>

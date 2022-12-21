@@ -9,11 +9,6 @@ export enum HYPER_REFERENCES {
     Figma = "https://www.figma.com/file/mTEq9TY3ZqpNGKUkaFNkC4/Portfolio?node-id=286%3A100"
 }
 
-export const PHONE_NUMBER = {
-    href: "+79197088972",
-    pretty: "+7 (919) 708-89-72"
-}
-
 export const SITE_SECTION_ANIMATION = {
     revolutionsQuantityDefault: 1.5,
     revolutionsQuantityHalf: 2/3,
